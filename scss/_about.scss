@@ -1,0 +1,67 @@
+/*
+* 04. About sectio style
+*/
+
+#about {
+    &.section-padding {
+        padding-bottom: 0;
+    }
+}
+
+.about-image {
+    img {
+        border-radius: 3px;
+    }
+}
+
+.about-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    p {
+        margin-bottom: 30px;
+    }
+}
+.list {
+    margin-bottom: 0px;
+    li {
+        position: relative;
+        padding: 3px 0;
+        padding-left: 24px;
+        &:after {
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 15px;
+            left: 0;
+            background: #2c3e50;
+            top: 43%;
+        }
+    }
+}
+
+.hire-btn {
+    padding-right: 42px;
+    position: relative;
+}
+
+.hire-btn > .lnr-envelope {
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    font-size: 22px;
+}
+.download-btn {
+    padding-right: 42px;
+    position: relative;
+}
+.download-btn > .lnr-cloud-download {
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    font-size: 22px;
+}

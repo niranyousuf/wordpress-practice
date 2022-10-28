@@ -1,0 +1,179 @@
+/* 01. all default and common styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    position: relative;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-family: $ubuntu-font;
+    font-weight: 400;
+    background-color: $bright;
+    line-height: 1.4;
+}
+
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+div,
+span,
+header,
+footer,
+button,
+article,
+section {
+    margin: 0;
+    padding: 0;
+    color: $text-color;
+}
+
+h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 36px;
+    font-weight: 700;
+    font-family: $miriam-libre;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: normal;
+    margin-bottom: 28px;
+    font-weight: 700;
+}
+
+h4 {
+    color: $dark;
+    font-size: clamp(1.2rem, 2vw, 1.75rem);
+    line-height: normal;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+h5 {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-family: $miriam-libre;
+}
+
+h6 {
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+embed,
+img {
+    width: 100%;
+}
+
+.semi-bold {
+    font-weight: 600;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+/* Secions */
+.section-padding {
+    padding-top: 80px;
+    padding-bottom: 50px;
+
+    &:nth-of-type(odd) {
+        background: rgba(#fafafa, 0.3);
+    }
+}
+
+.section-title {
+    margin: 0 auto;
+    max-width: 750px;
+    text-align: center;
+
+    p {
+        margin-bottom: 36px;
+    }
+}
+
+
+
+/* all anchor tag with button link */
+a {
+    font-weight: 400;
+    transition: all 300ms ease;
+    text-decoration: none;
+    color: $secondary-color;
+
+    &.active,
+    &:hover {
+        color: $text-color;
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &.btn {
+        color: $bright;
+        min-width: 210px;
+        font-size: 22px;
+        padding: 10px 25px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        transition: all 300ms ease;
+        border: 1px solid $primary-color;
+        background-color: $primary-color;
+
+
+        &:focus {
+            color: $bright;
+            box-shadow: none;
+        }
+
+        &:hover {
+            color: $primary-color;
+            text-decoration: none;
+            border: 1px solid $primary-color;
+        }
+    
+    }
+
+    &.btn-outline {
+        font-size: 22px;
+        border-radius: 3px;
+        padding: 10px 25px;
+        margin-bottom: 20px;
+        color: $primary-color;
+        background: transparent;
+        transition: all 300ms ease;
+        border: 1px solid $primary-color;
+    }
+
+    &.btn-small {
+        color: $bright;
+        font-size: 18px;
+        padding: 8px 20px;
+        border-radius: 3px;
+        margin-bottom: 20px;
+        transition: all 300ms ease;
+        border: 1px solid $primary-color;
+        background-color: $primary-color;
+    }
+}

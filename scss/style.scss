@@ -1,0 +1,26 @@
+/*
+* Author          : A.H.M. Yousuf Niran
+* Version         : 1.1
+* Url             : nirayousuf.xyz
+*/
+
+
+// variables
+$dark: #000000;
+$white: #ffffff;
+$bright: #ffffff;
+$base-color: #fdda91;
+$text-color: #141c3a;
+$primary-color: #19B6F6;
+$secondary-color: #6371c5;
+$miriam-libre: 'Miriam Libre', sans-serif;
+$ubuntu-font:  'Ubuntu', sans-serif;
+
+// pages
+// @import "./_icon.scss";
+@import "./_default.scss";
+@import "./_nav.scss";
+@import "./_banner.scss";
+@import "./_latest.scss";
+@import "./_testimonials.scss";
+@import "./_footer.scss";

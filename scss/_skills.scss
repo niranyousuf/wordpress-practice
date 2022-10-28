@@ -1,0 +1,61 @@
+/* 06. Skills style */
+.skills h4 {
+    margin-bottom: 12px;
+    font-family: "Oswald", sans-serif;
+}
+
+.progress {
+    overflow: inherit;
+    border-radius: 3px;
+
+    .progress-bar {
+        position: relative;
+        border-radius: 3px;
+
+        &::before {
+            right: 0;
+            width: 0;
+            height: 0;
+            content: "";
+            bottom: 100%;
+            position: absolute;
+            border-right-color: #3498db;
+            border: 5px solid transparent;
+        }
+
+        &::after {
+            right: 0;
+            margin: 0;
+            height: 24px;
+            color: #fff;
+            padding: 0 8px;
+            line-height: 2;
+            font-size: 12px;
+            position: absolute;
+            border-radius: 3px;
+            background: #3498db;
+            bottom: calc(100% + 5px);
+            content: attr(aria-valuenow) "%";
+        }
+    }
+}
+
+.skills-logo {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(5, 1fr);
+
+    .image {
+        width: 100%;
+        height: 100%;
+        max-width: 150px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 20px;
+        // border: 1px solid $dark;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

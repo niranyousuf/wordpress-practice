@@ -1,0 +1,40 @@
+/* 02. Navigation var styles */
+nav {
+    &.navbar {
+        padding: 15px 0;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: transparent;
+        transition: all 300ms ease;
+
+        .navbar-brand {
+            font-size: 32px;
+
+            img {
+                height: 50px;
+                margin-top: -6px;
+            }
+        }
+    }
+}
+/* Navigation menu */
+#main_menu {
+    .navbar-nav {
+        margin-left: auto;
+    }
+}
+
+/* Sticky Menu */
+nav {
+    &.navbar {
+        &.sticky {
+            padding: 5px 0;
+            background: rgba($white, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            box-shadow: 0 1px 15px 0 rgba($dark, 0.08);
+        }
+    }
+}

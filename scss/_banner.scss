@@ -1,0 +1,32 @@
+/* 03. Hero section style */
+#hero {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 150px 0;
+    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
+    background: rgba(#fafafa, 0.7);
+
+
+    @media (max-width: 1191px) {
+        padding: 190px 0px 150px;
+    }
+
+    @media (max-width: 767px) {
+        padding: 160px 0px 100px;
+    }
+
+    h1 {
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: 40px;
+        letter-spacing: -0.045em;
+        font-size: clamp(2.5rem, 4.6875vw, 4.5rem); // 90px - 40px
+        font-family: $miriam-libre;
+    }
+
+    p {
+        margin-bottom: 40px;
+        font-size: 22px;
+    }
+}

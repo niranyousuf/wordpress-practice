@@ -1,0 +1,52 @@
+/* 03. Testimonials style */
+.testimonials {
+    position: relative;
+
+    .single-slide {
+        padding: 130px 0;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .slide-content {
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: rgba($dark, 0.6);
+            padding: 50px;
+            
+            h2 {
+                color: $white;
+                margin-bottom: 15px;
+            }
+            p {
+                color: $white;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .owl-dots {
+        position: absolute;
+        width: 100%;
+        top: 50px;
+
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            &.owl-dot {
+                height: 10px;
+                aspect-ratio: 1;
+                background-color: $white;
+                border-radius: 50%;
+
+                &:hover,
+                &.active {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
