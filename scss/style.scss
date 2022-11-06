@@ -1,7 +1,7 @@
 /*
 * Author          : A.H.M. Yousuf Niran
 * Version         : 1.1
-* Url             : nirayousuf.xyz
+* Url             : http://niranyousuf.me/
 */
 
 
@@ -17,8 +17,8 @@ $miriam-libre: 'Miriam Libre', sans-serif;
 $ubuntu-font:  'Ubuntu', sans-serif;
 
 // pages
-// @import "./_icon.scss";
 @import "./_default.scss";
+@import "./_icon.scss";
 @import "./_nav.scss";
 @import "./_banner.scss";
 @import "./_latest.scss";

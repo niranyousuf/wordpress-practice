@@ -1,7 +1,8 @@
+@charset "UTF-8";
 /*
 * Author          : A.H.M. Yousuf Niran
 * Version         : 1.1
-* Url             : nirayousuf.xyz
+* Url             : http://niranyousuf.me/
 */
 /* 01. all default and common styles */
 body {
@@ -185,6 +186,177 @@ a.btn-small {
   background-color: #19B6F6;
 }
 
+@font-face {
+  font-family: 'fontello';
+  src: url("../font/fontello.eot?59603333");
+  src: url("../font/fontello.eot?59603333#iefix") format("embedded-opentype"), url("../font/fontello.woff2?59603333") format("woff2"), url("../font/fontello.woff?59603333") format("woff"), url("../font/fontello.ttf?59603333") format("truetype"), url("../font/fontello.svg?59603333#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+      font-family: 'fontello';
+      src: url('../font/fontello.svg?59603333#fontello') format('svg');
+    }
+  }
+  */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-mail:before {
+  content: '\e800';
+}
+
+/* '' */
+.icon-wrench:before {
+  content: '\e801';
+}
+
+/* '' */
+.icon-location:before {
+  content: '\e802';
+}
+
+/* '' */
+.icon-globe:before {
+  content: '\e803';
+}
+
+/* '' */
+.icon-html5:before {
+  content: '\e804';
+}
+
+/* '' */
+.icon-feather:before {
+  content: '\e805';
+}
+
+/* '' */
+.icon-briefcase:before {
+  content: '\e806';
+}
+
+/* '' */
+.icon-flow-branch:before {
+  content: '\e807';
+}
+
+/* '' */
+.icon-cog-alt:before {
+  content: '\e808';
+}
+
+/* '' */
+.icon-right-open:before {
+  content: '\e809';
+}
+
+/* '' */
+.icon-wrench-2:before {
+  content: '\e80a';
+}
+
+/* '' */
+.icon-ok:before {
+  content: '\e80b';
+}
+
+/* '' */
+.icon-cancel:before {
+  content: '\e80c';
+}
+
+/* '' */
+.icon-twitter:before {
+  content: '\f099';
+}
+
+/* '' */
+.icon-facebook:before {
+  content: '\f09a';
+}
+
+/* '' */
+.icon-menu:before {
+  content: '\f0c9';
+}
+
+/* '' */
+.icon-linkedin:before {
+  content: '\f0e1';
+}
+
+/* '' */
+.icon-upload-cloud:before {
+  content: '\f0ee';
+}
+
+/* '' */
+.icon-angle-double-right:before {
+  content: '\f101';
+}
+
+/* '' */
+.icon-desktop:before {
+  content: '\f108';
+}
+
+/* '' */
+.icon-unlink:before {
+  content: '\f127';
+}
+
+/* '' */
+.icon-instagram:before {
+  content: '\f16d';
+}
+
+/* '' */
+.icon-wordpress:before {
+  content: '\f19a';
+}
+
+/* '' */
+.icon-git:before {
+  content: '\f1d3';
+}
+
+/* '' */
+.icon-github-squared:before {
+  content: '\f300';
+}
+
+/* '' */
 /* 02. Navigation var styles */
 nav.navbar {
   padding: 15px 0;
@@ -406,6 +578,13 @@ nav.navbar.sticky {
 
 .widget-post {
   margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .widget-post span {
@@ -420,6 +599,7 @@ nav.navbar.sticky {
   line-height: 1.3;
   letter-spacing: normal;
   max-width: 350px;
+  margin-bottom: 0;
 }
 
 .widget-post .post-title:hover {
@@ -434,7 +614,7 @@ nav.navbar.sticky {
 footer {
   z-index: 1;
   overflow: hidden;
-  padding-top: 176px;
+  padding-top: 120px;
   position: relative;
   padding-bottom: 50px;
   background-size: cover;
@@ -474,18 +654,10 @@ footer.black_bg .footer-widgets .single-footer-wid ul li a {
   color: #cccccc;
 }
 
-footer .footer-widgets .single-footer-wid {
-  margin-top: 40px;
-}
-
 @media (max-width: 991px) {
   footer .footer-widgets .single-footer-wid {
     margin-top: 30px;
   }
-}
-
-footer .footer-widgets .single-footer-wid .widget-title {
-  padding-bottom: 15px;
 }
 
 footer .footer-widgets .single-footer-wid .widget-title h4 {
@@ -505,7 +677,7 @@ footer .footer-widgets .single-footer-wid ul li a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   margin-bottom: 10px;
-  color: #fdda91;
+  color: #000000;
 }
 
 footer .footer-widgets .single-footer-wid ul li a:hover {
@@ -517,13 +689,18 @@ footer .footer-widgets .site-info {
   margin-top: 30px;
 }
 
+footer .footer-widgets .site-info a {
+  font-size: 32px;
+  font-weight: 600;
+}
+
 footer .footer-widgets .site-info a img {
   height: 35px;
   width: auto !important;
 }
 
 footer .footer-widgets .site-info p {
-  color: #fdda91;
+  color: #000000;
   font-size: 18px;
 }
 
@@ -544,6 +721,7 @@ footer .footer-widgets .site-info .social-link a {
   transition: all 0.3s;
   display: inline-block;
   background-color: #ffffff;
+  border: 0.031rem solid rgba(51, 51, 51, 0.13);
 }
 
 footer .footer-widgets .site-info .social-link a .fb {
@@ -567,13 +745,10 @@ footer .footer-widgets .site-info .social-link a:nth-of-type(1) {
 }
 
 footer .footer-widgets .site-info .social-link a:hover {
-  color: #ffffff;
   background-color: #333333;
 }
 
-footer .changelog {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  color: #fdda91;
+footer .footer-widgets .site-info .social-link a:hover .icon::before {
+  color: #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
