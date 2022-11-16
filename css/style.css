@@ -360,7 +360,7 @@ a.btn-small {
 /* 02. Navigation var styles */
 nav.navbar {
   padding: 15px 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -371,12 +371,27 @@ nav.navbar {
 }
 
 nav.navbar .navbar-brand {
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+nav.navbar .navbar-brand span {
+  font-weight: 300;
 }
 
 nav.navbar .navbar-brand img {
   height: 50px;
   margin-top: -6px;
+}
+
+nav.navbar .navbar-toggler {
+  padding: 3px 6px;
+  border-radius: 3px;
+}
+
+nav.navbar .navbar-toggler:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 /* Navigation menu */
@@ -402,7 +417,7 @@ nav.navbar.sticky {
   padding: 150px 0;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
           clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-  background: rgba(250, 250, 250, 0.7);
+  background: #fbfbfb;
 }
 
 @media (max-width: 1191px) {
@@ -431,30 +446,50 @@ nav.navbar.sticky {
   font-size: 22px;
 }
 
-.news-and-events {
-  position: relative;
-  margin-bottom: 30px;
+.page-banner {
+  min-height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.news-and-events::after {
-  top: 50%;
-  left: 50%;
-  width: 1px;
-  content: "";
-  height: 350px;
-  position: absolute;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: rgba(25, 182, 246, 0.1);
+.page-banner .banner-content h2 {
+  margin-bottom: 24px;
+}
+
+.page-banner .banner-content p {
+  max-width: 750px;
+}
+
+.news-and-events {
+  position: relative;
+  padding-bottom: 80px;
 }
 
 .news-and-events .latest {
   margin: 0 auto;
+  position: relative;
+}
+
+@media (max-width: 768.98px) {
+  .news-and-events .latest {
+    margin-bottom: 60px;
+  }
+}
+
+.news-and-events .latest h3 {
   max-width: 550px;
+  margin: 0 auto;
+  margin-bottom: 24px;
 }
 
 .news-and-events .latest .latest-details {
   position: relative;
+  max-width: 550px;
+  margin: 0 auto;
   padding-left: 130px;
   margin-bottom: 24px;
 }
@@ -501,6 +536,17 @@ nav.navbar.sticky {
 
 .news-and-events .latest.latest-news {
   position: relative;
+}
+
+.news-and-events .latest.latest-news::after {
+  position: absolute;
+  content: "";
+  height: 100vh;
+  width: 50vw;
+  background-color: rgba(25, 182, 246, 0.05);
+  left: -15px;
+  bottom: -110px;
+  z-index: -1;
 }
 
 .news-and-events .latest.latest-news .latest-details .latest-date {
@@ -706,6 +752,12 @@ footer .footer-widgets .site-info p {
 
 footer .footer-widgets .site-info .social-link {
   margin-top: 25px;
+}
+
+@media (max-width: 768.98px) {
+  footer .footer-widgets .site-info .social-link {
+    margin-bottom: 30px;
+  }
 }
 
 footer .footer-widgets .site-info .social-link a {

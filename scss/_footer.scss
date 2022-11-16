@@ -149,6 +149,10 @@ footer {
             .social-link {
                 margin-top: 25px;
 
+                @media (max-width: 768.98px) {
+                    margin-bottom: 30px;
+                }
+
                 a {
                     width: 32px;
                     height: 32px;

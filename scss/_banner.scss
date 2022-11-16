@@ -5,7 +5,7 @@
     position: relative;
     padding: 150px 0;
     clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-    background: rgba(#fafafa, 0.7);
+    background: #fbfbfb;
 
 
     @media (max-width: 1191px) {
@@ -28,5 +28,23 @@
     p {
         margin-bottom: 40px;
         font-size: 22px;
+    }
+}
+
+
+// single page banner 
+.page-banner {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+
+    .banner-content {
+        h2 {
+            margin-bottom: 24px;
+        }
+
+        p {
+            max-width: 750px;
+        }
     }
 }

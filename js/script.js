@@ -1,13 +1,13 @@
 (function ($) {
     "user strict";
 
-    $(window).on('scroll', function () {
-        if ($(this).scrollTop() > 36) {
-            $('.navbar').addClass('sticky');
-        } else {
-            $('.navbar').removeClass('sticky');
-        }
-    });
+    // $(window).on('scroll', function () {
+    //     if ($(this).scrollTop() > 36) {
+    //         $('.navbar').addClass('sticky');
+    //     } else {
+    //         $('.navbar').removeClass('sticky');
+    //     }
+    // });
 
     $('.owl-carousel').owlCarousel({
         loop: true,
