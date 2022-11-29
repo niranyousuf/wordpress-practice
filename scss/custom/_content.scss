@@ -1,0 +1,95 @@
+/* 08. Blog page and blog section style */
+.content {
+    padding: 80px 0;
+    position: relative;
+
+    .metabox {
+        background-color: #faf0ca;
+        border-radius: 3px;
+        padding: 10px 15px;
+        display: inline-block;
+        margin-bottom: 30px;
+        box-shadow: 2px 2px 1px rgba($dark, 0.07);
+
+        &.meta_bradcumb {
+            position: absolute;
+            top: 0;
+            transform: translateY(-50%);
+            padding: 0;
+
+            .back_to_prev_page {
+                background-color: #0d3b66;
+                color: $white;
+                display: inline-block;
+                padding: 10px 15px;
+                border-radius: 3px 0 0 3px;
+                font-weight: normal;
+
+                .icon {
+                    color: $white;
+                }
+            }
+            .current_page {
+                padding: 10px 15px 10px 11px;
+                color: $secondary-color;
+            }
+        }
+    }
+
+    .page_links {
+        position: relative;
+        z-index: 1;
+        background-color: #faf0ca;
+        margin: 0 0 40px 0;
+
+        @media (min-width: 767px) {
+            margin: 0 0 40px 20px;
+            width: 300px;
+            float: right;
+        }
+
+        .page__title {
+            margin: 0;
+            font-weight: normal;
+            text-align: center;
+            padding: 20px 0;
+            background-color: #0d3b66;
+            color: $white;
+            font-size: 24px;
+            a {
+                color: $white;
+                text-decoration: none;
+                background-color: #0d3b66;
+            }
+        }
+
+        .min_list {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    li {
+        border-top: 1px solid #f4de89;
+        &:first-child {
+            border-top: none;
+        }
+        &.current_page_item {
+            text-align: center;
+            background-color: #f4e6b1;
+            color: $secondary-color;
+            font-weight: bold;
+        }
+        display: block;
+        text-align: center;
+        padding: 17px 10px;
+        text-decoration: none;
+        color: #0d3b66;
+        transition: all 0.3s;
+    }
+    .generic-content {
+        p,
+        li {
+            font-size: 1.15rem;
+        }
+    }
+}
