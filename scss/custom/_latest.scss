@@ -1,6 +1,12 @@
 .news-and-events {
     position: relative;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    @media (min-width: 1920px) {
+        background-size: cover;
+    }
 
     .latest {
         margin: 0 auto;
@@ -14,7 +20,7 @@
             
             max-width: 550px;
             margin: 0 auto;
-            margin-bottom: 24px;
+            margin-bottom: 42px;
         }
 
         .latest-details {
@@ -53,24 +59,15 @@
 
             .latest-content {
                 h5 {
-                    font-weight: 500;
+                    > a {
+                        font-weight: 600;
+                    }
                 }
             }
         }
 
         &.latest-news {
             position: relative;
-
-            &::after {
-                position: absolute;
-                content: "";
-                height: 100vh;
-                width: 50vw;
-                background-color: rgba($primary-color, 0.05);
-                left: -15px;
-                bottom: -110px;
-                z-index: -1;
-            }
 
             .latest-details {
                 .latest-date {

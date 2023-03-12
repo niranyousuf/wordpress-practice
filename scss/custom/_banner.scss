@@ -3,10 +3,11 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    padding: 150px 0;
-    clip-path: polygon(0 0, 100% 0, 100% 88%, 0% 100%);
-    background: #fbfbfb;
-
+    padding-top: 132px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 
     @media (max-width: 1191px) {
         padding: 190px 0px 150px;
@@ -16,12 +17,19 @@
         padding: 160px 0px 100px;
     }
 
+    .hero-content {
+        text-align: center;
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 50px 0;
+    }
+
     h1 {
         font-weight: 600;
         line-height: 1.2;
         margin-bottom: 40px;
         letter-spacing: -0.045em;
-        font-size: clamp(2.5rem, 4.6875vw, 4.5rem); // 90px - 40px
+        font-size: clamp(2.2rem, 4.6875vw, 4rem); // 90px - 40px
         font-family: $miriam-libre;
     }
 
