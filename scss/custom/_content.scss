@@ -4,12 +4,12 @@
     position: relative;
 
     .metabox {
-        background-color: #faf0ca;
+        background-color: #f6f8fc;
         border-radius: 3px;
         padding: 10px 15px;
         display: inline-block;
         margin-bottom: 30px;
-        box-shadow: 2px 2px 1px rgba($dark, 0.07);
+        box-shadow: 2px 0px 10px rgba($dark, 0.07);
 
         &.meta_bradcumb {
             position: absolute;
@@ -39,7 +39,7 @@
     .page_links {
         position: relative;
         z-index: 1;
-        background-color: #faf0ca;
+        background-color: #f6f8fc;
         margin: 0 0 40px 0;
 
         @media (min-width: 767px) {
@@ -66,18 +66,31 @@
         .min_list {
             margin: 0;
             padding: 0;
+
+            .page_item {
+                transition: all 200ms ease;
+                a {
+                    display: block;
+                    color: $dark;
+                }
+                &:hover {
+                    background-color: #e9ecf7;
+                }
+            }
         }
     }
     li {
-        border-top: 1px solid #f4de89;
+        border-top: 1px solid #e1e1e1;
         &:first-child {
             border-top: none;
         }
         &.current_page_item {
             text-align: center;
-            background-color: #f4e6b1;
+            background-color: #e9ecf7;
             color: $secondary-color;
-            font-weight: bold;
+            a {
+                font-weight: 600;
+            }
         }
         display: block;
         text-align: center;

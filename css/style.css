@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
-* Author          : A.H.M. Yousuf Niran
-* Version         : 1.1
+* Author          : AHM Yousuf Niran
+* Version         : 1.1.1
 * Url             : http://niranyousuf.me/
 */
 /* 01. all default and common styles */
@@ -16,6 +16,11 @@ body {
   font-weight: 400;
   background-color: #ffffff;
   line-height: 1.4;
+}
+@media (min-width: 768px) {
+  body.admin-bar header {
+    margin-top: 32px;
+  }
 }
 
 a,
@@ -299,7 +304,8 @@ nav.navbar::after {
 }
 nav.navbar .navbar-brand {
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 600;
+  color: #6371c5;
 }
 nav.navbar .navbar-brand span {
   font-weight: 300;
@@ -657,12 +663,12 @@ nav.navbar .navbar-toggler span.bar {
   position: relative;
 }
 .content .metabox {
-  background-color: #faf0ca;
+  background-color: #f6f8fc;
   border-radius: 3px;
   padding: 10px 15px;
   display: inline-block;
   margin-bottom: 30px;
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.07);
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.07);
 }
 .content .metabox.meta_bradcumb {
   position: absolute;
@@ -688,7 +694,7 @@ nav.navbar .navbar-toggler span.bar {
 .content .page_links {
   position: relative;
   z-index: 1;
-  background-color: #faf0ca;
+  background-color: #f6f8fc;
   margin: 0 0 40px 0;
 }
 @media (min-width: 767px) {
@@ -716,8 +722,18 @@ nav.navbar .navbar-toggler span.bar {
   margin: 0;
   padding: 0;
 }
+.content .page_links .min_list .page_item {
+  transition: all 200ms ease;
+}
+.content .page_links .min_list .page_item a {
+  display: block;
+  color: #000000;
+}
+.content .page_links .min_list .page_item:hover {
+  background-color: #e9ecf7;
+}
 .content li {
-  border-top: 1px solid #f4de89;
+  border-top: 1px solid #e1e1e1;
   display: block;
   text-align: center;
   padding: 17px 10px;
@@ -730,9 +746,11 @@ nav.navbar .navbar-toggler span.bar {
 }
 .content li.current_page_item {
   text-align: center;
-  background-color: #f4e6b1;
+  background-color: #e9ecf7;
   color: #6371c5;
-  font-weight: bold;
+}
+.content li.current_page_item a {
+  font-weight: 600;
 }
 .content .generic-content p,
 .content .generic-content li {
@@ -751,6 +769,7 @@ nav.navbar .navbar-toggler span.bar {
 }
 #footer .product-info a.logo {
   font-size: 32px;
+  font-weight: 600;
 }
 #footer .product-info a.logo img {
   height: 33px;

@@ -3,39 +3,29 @@
     <footer id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5">
+                <div class="col-lg-7">
                     <div class="product-info">
-                        <a href="#" class="logo">
-                            Coding <span>Tutor</span>
+                        <a href="<?php echo site_url() ?>" class="logo">
+                            Coding<span>Tutor</span>
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, quia.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-7">
+                <div class="col-lg-5">
                     <div class="row">
-                        <div class="col-lg-4">
-                            <div class="pages footer-links">
+                        <div class="col-lg-6">
+                            <div class="policies footer-links">
                                 <h3>Pages</h3>
                                 <ul class="links">
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Campus</a></li>
-                                    <li><a href="#">Support</a></li>
-                                    <li><a href="#">FAQ</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="policies footer-links">
-                                <h3>Policies</h3>
-                                <ul class="links">
-                                    <li><a href="#">Privacy policy</a></li>
+                                    <li><a href="<?php echo site_url('/about-us') ?>">About Us</a></li>
+                                    <li><a href="<?php echo site_url('/privacy-policy') ?>">Privacy policy</a></li>
                                     <li><a href="#">Refund policy</a></li>
                                     <li><a href="#">Terms & conditions</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-6">
                             <div class="social-media footer-links">
                                 <h3>Social media</h3>
                                 <ul class="links">
@@ -53,7 +43,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright">
-                        <p>© 2023 WPChillers | All Rights Reserved</p>
+                        <p>&copy; <?php echo date('Y') ?> Coding Tutor | All Rights Reserved</p>
                     </div>
                 </div>
             </div>

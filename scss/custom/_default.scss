@@ -10,6 +10,14 @@ body {
     font-weight: 400;
     background-color: $bright;
     line-height: 1.4;
+
+    @media (min-width: 768px) {
+        &.admin-bar {
+            header {
+                margin-top: 32px;
+            }
+        }
+    }
 }
 
 a,
@@ -111,8 +119,6 @@ img {
     margin: 0 auto;
 }
 
-
-
 /* all anchor tag with button link */
 a {
     font-weight: 400;
@@ -141,7 +147,6 @@ a {
         border: 1px solid $primary-color;
         background-color: $primary-color;
 
-
         &:focus {
             color: $bright;
             box-shadow: none;
@@ -152,7 +157,6 @@ a {
             text-decoration: none;
             border: 1px solid $primary-color;
         }
-    
     }
 
     &.btn-outline {
