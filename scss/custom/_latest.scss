@@ -22,6 +22,17 @@
             margin: 0 auto;
             margin-bottom: 42px;
         }
+        
+        .event-cta-btn {
+            background-color: $base-color;
+            border-color: $base-color;
+            color: black;
+            margin-top: 20px;
+            
+            &:hover {
+                background-color: rgba($base-color, 0.4);
+            }
+        }
 
         .latest-details {
             position: relative;
@@ -72,6 +83,17 @@
             .latest-details {
                 .latest-date {
                     background-color: rgba($primary-color, 0.2);
+                }
+            }
+
+            .latest-cta-btn {
+                background-color: $primary-color;
+                border-color: $primary-color;
+                color: black;
+                margin-top: 20px;
+
+                &:hover {
+                    background-color: rgba($primary-color, 0.4);
                 }
             }
         }

@@ -9,6 +9,16 @@
     background-size: cover;
     background-position: center center;
 
+    &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($white, 0.6);
+    }
+
     @media (max-width: 1191px) {
         padding: 190px 0px 150px;
     }
@@ -22,6 +32,8 @@
         max-width: 880px;
         margin: 0 auto;
         padding: 50px 0;
+        position: relative;
+        z-index: 1;
     }
 
     h1 {
@@ -39,14 +51,29 @@
     }
 }
 
-
-// single page banner 
+// single page banner
 .page-banner {
     min-height: 400px;
     display: flex;
     align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($white, 0.6);
+    }
 
     .banner-content {
+        position: relative;
+        z-index: 1;
         h2 {
             margin-bottom: 24px;
         }
@@ -54,5 +81,27 @@
         p {
             max-width: 750px;
         }
+    }
+}
+
+.error404 {
+    .page-banner {
+        height: 100vh;
+        width: 100vw;
+
+        .banner-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+                font-size: clamp(2.2rem, 11vw, 6.5rem);
+                font-weight: 700;
+            }
+        }
+    }
+    #footer {
+        display: none;
     }
 }

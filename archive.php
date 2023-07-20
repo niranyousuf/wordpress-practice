@@ -8,8 +8,12 @@ get_header();
             <div class="row">
                 <div class="col-12">
                     <div class="banner-content max_container">
-                        <h2>Welcome to our blog</h2>
-                        <p>Keep up with our latest news</p>
+                        <h2><?php if(is_category()) : ?>
+                            <span>Post form <?php single_cat_title() ?> category</span>
+                        <?php elseif(is_author()): ?>
+                            Posts by: <span class="text-capitalize"><?php the_author() ?></span>
+                        <?php else: the_archive_title(); endif; ?></h2>
+                        <p><?php the_archive_description(); ?></p>
                     </div>
                 </div>
             </div>

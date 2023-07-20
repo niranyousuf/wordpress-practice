@@ -7,7 +7,7 @@ while(have_posts()) :
 	the_post();
 ?>
 
-	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero-bg.svg);">
+	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -20,11 +20,11 @@ while(have_posts()) :
         </div>
     </section>
 
-	<div class="post">
+	<div class="page-content">
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="content max_container">
+                    <div class="page-content__content max_container">
 
 
 						<?php

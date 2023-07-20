@@ -24,6 +24,28 @@
             });
         }
 
+        // Post next and prev title triming function
+        $(function () {
+            var postTitle = $(".latest-content .latest-title a").toArray();
+            const trimTitle = (title, limit = 20) => {
+                const newTitle = [];
+                if (title.length > limit) {
+                    title.split(" ").reduce((acc, cur) => {
+                        if (acc + cur.length <= limit) {
+                            newTitle.push(cur);
+                        }
+                        return acc + cur.length;
+                    }, 0);
+                    // return the result
+                    return `${newTitle.join(" ")} ...`;
+                }
+                return title;
+            };
+
+            postTitle.forEach((el) => {
+                el.innerHTML = trimTitle(el.innerText, 27);
+            });
+        });
 
 
     });
@@ -43,5 +65,6 @@
         dots: true,
         items: 1
     });
+
 
 })(jQuery);

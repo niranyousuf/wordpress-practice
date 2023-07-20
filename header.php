@@ -22,18 +22,11 @@
 
                 <div class="main_menu">
                     <ul class="navBar">
-                        <li class="nav-item">
+                        <li class="nav-item <?php if (is_page('about-us')) echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/about-us') ?>">About Us</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Campus</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Blog</a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Notes</a>
+                        <li class="nav-item <?php if (get_post_type() == 'post') echo 'current-menu-item'; ?>">
+                            <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>
                     </ul>
                 </div>

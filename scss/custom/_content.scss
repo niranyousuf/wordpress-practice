@@ -1,40 +1,7 @@
 /* 08. Blog page and blog section style */
-.content {
+.page-content__content {
     padding: 80px 0;
     position: relative;
-
-    .metabox {
-        background-color: #f6f8fc;
-        border-radius: 3px;
-        padding: 10px 15px;
-        display: inline-block;
-        margin-bottom: 30px;
-        box-shadow: 2px 0px 10px rgba($dark, 0.07);
-
-        &.meta_bradcumb {
-            position: absolute;
-            top: 0;
-            transform: translateY(-50%);
-            padding: 0;
-
-            .back_to_prev_page {
-                background-color: #0d3b66;
-                color: $white;
-                display: inline-block;
-                padding: 10px 15px;
-                border-radius: 3px 0 0 3px;
-                font-weight: normal;
-
-                .icon {
-                    color: $white;
-                }
-            }
-            .current_page {
-                padding: 10px 15px 10px 11px;
-                color: $secondary-color;
-            }
-        }
-    }
 
     .page_links {
         position: relative;
@@ -103,6 +70,83 @@
         p,
         li {
             font-size: 1.15rem;
+        }
+    }
+}
+
+.metabox {
+    background-color: #f6f8fc;
+    border-radius: 3px;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-bottom: 30px;
+    box-shadow: 2px 0px 5px rgba($dark, 0.04);
+
+    p {
+        a {
+            font-weight: 500;
+            text-transform: capitalize;
+        }
+    }
+
+    &.meta_bradcumb {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        padding: 0;
+
+        > span {
+            padding-left: 8px;
+            padding-right: 12px;
+
+            a {
+                text-transform: capitalize;
+            }
+        }
+
+        .back_to_prev_page {
+            background-color: #0d3b66;
+            color: $white;
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 3px 0 0 3px;
+            font-weight: normal;
+
+            .icon {
+                color: $white;
+            }
+        }
+        .current_page {
+            padding: 10px 15px 10px 11px;
+            color: $secondary-color;
+        }
+    }
+}
+
+// Post page style
+.post-page {
+    padding: 80px 0;
+    .blog-page__singlle-post {
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+        border-bottom: 1px solid rgba($dark, 0.03);
+
+        .post__content {
+            .btn {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .pagination {
+        gap: 5px;
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
         }
     }
 }
