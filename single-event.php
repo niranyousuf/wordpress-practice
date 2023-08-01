@@ -25,17 +25,11 @@ while(have_posts()) : the_post();
                     <div class="page-content__content max_container">
 
 						<div class="metabox meta_bradcumb">
-							<a class="back_to_prev_page" href="<?php echo site_url('/blog') ?>">
+							<a class="back_to_prev_page" href="<?php echo get_post_type_archive_link('event') ?>">
 								<span class="icon icon-home"></span>
-								Blog Home
+								Event home
 							</a>
-							<span>Posted By: 
-                                <?php the_author_posts_link() ?>    
-                                on 
-                                <?php the_time('j. M, y') ?>
-                                in 
-                                <?php echo get_the_category_list( ", " ) ?>
-                            </span>
+							<span><?php the_title(); ?></span>
 						</div>
 
                         <div class="generic-content">
@@ -48,5 +42,7 @@ while(have_posts()) : the_post();
     </div>
 
 <?php
+
 endwhile;
+
 get_footer();

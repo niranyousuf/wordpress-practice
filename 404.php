@@ -4,7 +4,7 @@ get_header();
 
 ?>
 
-<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
+    <section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
         <div class="container">
             <div class="row">
                 <div class="col-12">

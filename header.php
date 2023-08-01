@@ -12,7 +12,7 @@
         <nav class="navbar">
 
             <div class="container">
-                <a class="navbar-brand" href="<?php echo site_url(); ?>">Coding<span>Tutor</span></a>
+                <a class="navbar-brand" href="<?php echo site_url(); ?>">Code<span>Monster</span></a>
                 
                 <button class="navbar-toggler" type="button">
                     <span class="bar"></span>
@@ -25,11 +25,16 @@
                         <li class="nav-item <?php if (is_page('about-us')) echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/about-us') ?>">About Us</a>
                         </li>
+                        <li class="nav-item <?php if (get_post_type() == 'event' || is_page('past-events')) echo 'current-menu-item'; ?>">
+                            <a class="nav-link" href="<?php echo get_post_type_archive_link('event') ?>">Events</a>
+                        </li>
                         <li class="nav-item <?php if (get_post_type() == 'post') echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>
                     </ul>
                 </div>
+                
             </div>
+            
         </nav>
     </header>

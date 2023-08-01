@@ -30,48 +30,51 @@ get_header();
                     <div class="latest-events latest">
                         <h3>Upcuming event</h3>
 
+
+                        <?php
+                        $today = date('Ymd');
+                        $homepageEvents = new WP_Query(array(
+                            'posts_per_page' => 3,
+                            'post_type' => 'event',
+                            'meta_key' => 'event_date',
+                            'orderby' => 'meta_value_num',
+                            'order' => 'ASC',
+                            'meta_query' => array(
+                                array(
+                                    'key' => 'event_date',
+                                    'compare' => '>=',
+                                    'value' => $today,
+                                    'type' => 'numeric'
+                                )
+                            )
+                        ));
+
+                        while($homepageEvents->have_posts()) : $homepageEvents->the_post();
+                        ?>
+
                         <div class="latest-details">
                             <a class="latest-date" href="#">
-                                <span class="latest-month">Mar</span>
-                                <span class="latest-day">25</span>
+                                <span class="latest-month"><?php 
+                                    $eventDate = new DateTime(get_field('event_date'));
+                                    echo $eventDate->format('M');
+                                ?></span>
+                                <span class="latest-day"><?php echo $eventDate->format('d'); ?></span>
                             </a>
                             <div class="latest-content">
-                                <h5 class="latest-title"><a href="#">Poetry in the 100</a></h5>
-                                <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and
-                                    snacks.
-                                    <a href="#">Learn more</a>
+                                <h5 class="latest-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h5>
+                                
+                                <p><?php
+                                        $content = get_the_content();
+                                        $trimmed_content = wp_trim_words($content, 12, '...');
+                                        echo $trimmed_content; 
+                                    ?>
+                                    <a href="<?php the_permalink(); ?>">Read more</a>
                                 </p>
                             </div>
                         </div>
 
-                        <div class="latest-details">
-                            <a class="latest-date" href="#">
-                                <span class="latest-month">Mar</span>
-                                <span class="latest-day">25</span>
-                            </a>
-                            <div class="latest-content">
-                                <h5 class="latest-title"><a href="#">Poetry in the 100</a></h5>
-                                <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and
-                                    snacks.
-                                    <a href="#">Learn more</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="latest-details">
-                            <a class="latest-date" href="#">
-                                <span class="latest-month">Mar</span>
-                                <span class="latest-day">25</span>
-                            </a>
-                            <div class="latest-content">
-                                <h5 class="latest-title"><a href="#">Poetry in the 100</a></h5>
-                                <p>Bring poems you&rsquo;ve wrote to the 100 building this Tuesday for an open mic and
-                                    snacks.
-                                    <a href="#">Learn more</a>
-                                </p>
-                            </div>
-                        </div>
-
+                        
+                        <?php endwhile; wp_reset_postdata(); ?>
                         
                         <div class="text-center">
                             <a class="btn big-btn event-cta-btn" href="<?php echo site_url('/events'); ?>">View all Event </a>
@@ -101,6 +104,12 @@ get_header();
                                         $content = get_the_content();
                                         $trimmed_content = wp_trim_words($content, 12, '...');
                                         echo $trimmed_content; 
+                                        
+                                        // if(has_excerpt()) {
+                                        //     echo get_the_excerpt();
+                                        // } else {
+                                        //     echo $trimmed_content; 
+                                        // }
                                     ?>
                                     <a href="<?php the_permalink(); ?>">Read more</a>
                                 </p>
@@ -109,7 +118,7 @@ get_header();
                         <?php endwhile; wp_reset_postdata(); ?>
 
                         <div class="text-center">
-                            <a class="btn big-btn latest-cta-btn" href="<?php echo site_url('/blog'); ?>">View all blog posts </a>
+                            <a class="btn big-btn latest-cta-btn" href="<?php echo get_post_type_archive_link('event') ?>">View all blog posts </a>
                         </div>
                     </div>
                 </div>

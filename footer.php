@@ -6,7 +6,7 @@
                 <div class="col-lg-7">
                     <div class="product-info">
                         <a href="<?php echo site_url() ?>" class="logo">
-                            Coding<span>Tutor</span>
+                            Code<span>Monster</span>
                         </a>
                         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, quia.</p>
                     </div>
@@ -43,7 +43,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright">
-                        <p>&copy; <?php echo date('Y') ?> Coding Tutor | All Rights Reserved</p>
+                        <p>&copy; <?php echo date('Y') ?> CodeMonster | All Rights Reserved</p>
                     </div>
                 </div>
             </div>

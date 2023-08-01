@@ -552,7 +552,7 @@ nav.navbar .navbar-toggler span.bar {
 }
 
 .page-banner {
-  min-height: 400px;
+  min-height: 336px;
   display: flex;
   align-items: center;
   background-repeat: no-repeat;
@@ -572,12 +572,14 @@ nav.navbar .navbar-toggler span.bar {
 .page-banner .banner-content {
   position: relative;
   z-index: 1;
+  margin-top: 80px;
 }
 .page-banner .banner-content h2 {
   margin-bottom: 24px;
 }
 .page-banner .banner-content p {
   max-width: 750px;
+  font-size: 22px;
 }
 
 .error404 .page-banner {
@@ -771,7 +773,7 @@ nav.navbar .navbar-toggler span.bar {
 .page-content__content .page_links .min_list .page_item:hover {
   background-color: #e9ecf7;
 }
-.page-content__content li {
+.page-content__content > li {
   border-top: 1px solid #e1e1e1;
   display: block;
   text-align: center;
@@ -780,20 +782,29 @@ nav.navbar .navbar-toggler span.bar {
   color: #0d3b66;
   transition: all 0.3s;
 }
-.page-content__content li:first-child {
+.page-content__content > li:first-child {
   border-top: none;
 }
-.page-content__content li.current_page_item {
+.page-content__content > li.current_page_item {
   text-align: center;
   background-color: #e9ecf7;
   color: #6371c5;
 }
-.page-content__content li.current_page_item a {
+.page-content__content > li.current_page_item a {
   font-weight: 600;
 }
 .page-content__content .generic-content p,
 .page-content__content .generic-content li {
   font-size: 1.15rem;
+  text-align: inherit;
+  border: 0;
+}
+.page-content__content .generic-content ul {
+  padding-left: 32px;
+}
+.page-content__content .generic-content ul li {
+  list-style: circle;
+  padding: 5px 0;
 }
 
 .metabox {
@@ -856,6 +867,37 @@ nav.navbar .navbar-toggler span.bar {
 }
 .post-page .pagination a:hover {
   text-decoration: none;
+}
+.post-page .latest-details {
+  position: relative;
+  padding-left: 130px;
+  margin-bottom: 24px;
+}
+.post-page .latest-details .latest-date {
+  left: 0;
+  font-size: 28px;
+  font-weight: 500;
+  padding: 12px 22px;
+  border-radius: 4px;
+  position: absolute;
+  background-color: rgba(253, 218, 145, 0.2);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.post-page .latest-details .latest-date > span {
+  line-height: 1;
+}
+.post-page .latest-details .latest-date > span.latest-month {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+.post-page .latest-details .latest-date > span.latest-day {
+  font-weight: 500;
+}
+.post-page .latest-details .latest-content h5 > a {
+  font-weight: 600;
 }
 
 /* 10. Footer styles */

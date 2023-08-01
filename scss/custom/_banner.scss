@@ -53,7 +53,7 @@
 
 // single page banner
 .page-banner {
-    min-height: 400px;
+    min-height: 336px;
     display: flex;
     align-items: center;
     background-repeat: no-repeat;
@@ -74,12 +74,14 @@
     .banner-content {
         position: relative;
         z-index: 1;
+        margin-top: 80px;
         h2 {
             margin-bottom: 24px;
         }
 
         p {
             max-width: 750px;
+            font-size: 22px;
         }
     }
 }
