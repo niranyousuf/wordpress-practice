@@ -1,0 +1,65 @@
+<?php
+
+get_header();
+
+while(have_posts()) : the_post();
+?>
+
+	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner-content max_container">
+                        <h2><?php the_title() ?></h2>
+                        <p>DON'T FORGET TO REPLACE ME LATER</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<div class="page-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page__content max_container">
+
+			
+
+                        <div class="generic-content">
+                            <?php the_content(); ?>
+                        </div>
+
+
+
+
+                        <?php $relatedPrograms = get_field('related_programs'); 
+                        if($relatedPrograms) : ?>
+                        <div class="post_relation">
+                            <h2 class="block_title">Exparts in</h2>
+                            <?php foreach($relatedPrograms as $program) : ?>
+                                <div class="single__post max_container">
+                                    <h2><a href="<?php echo get_the_permalink($program) ?>"><?php echo get_the_title($program) ?></a></h2>
+                                    <div class="post__content">
+                                        <p><?php
+                                            $content = get_the_content($program);
+                                            $trimmed_content = wp_trim_words($content, 36, '...');
+                                            echo $trimmed_content; 
+                                        ?></p>
+                                    </div>
+                                </div>
+                            <?php endforeach; endif; ?>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php
+
+endwhile;
+
+get_footer();

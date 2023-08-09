@@ -12,6 +12,12 @@
         margin: 0 auto;
         position: relative;
 
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         @media (max-width: 768.98px) {
             margin-bottom: 60px;
         }
@@ -23,11 +29,16 @@
             margin-bottom: 42px;
         }
         
+        .latest-cta-btn,
         .event-cta-btn {
-            background-color: $base-color;
-            border-color: $base-color;
+            background-color: $secondary-color;
+            border-color: $secondary-color;
             color: $white;
             margin-top: 20px;
+
+            &::before {
+                border-color: $secondary-color;
+            }
         }
 
         .latest-details {
@@ -35,7 +46,7 @@
             max-width: 550px;
             margin: 0 auto;
             padding-left: 130px;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
 
             .latest-date {
                 left: 0;
@@ -46,7 +57,7 @@
                 padding: 12px 22px;
                 border-radius: 4px;
                 position: absolute;
-                background-color: rgba($base-color, 0.2);
+                background-color: rgba($secondary-color, 0.2);
 
                 display: flex;
                 align-items: center;
@@ -75,25 +86,95 @@
             }
         }
 
-        &.latest-news {
-            position: relative;
+        // &.latest-news {
+        //     position: relative;
 
-            .latest-details {
-                .latest-date {
-                    background-color: rgba($primary-color, 0.2);
-                }
-            }
+        //     .latest-details {
+        //         .latest-date {
+        //             background-color: rgba($primary-color, 0.2);
+        //         }
+        //     }
 
-            .latest-cta-btn {
-                background-color: $primary-color;
-                border-color: $primary-color;
-                color: $white;
-                margin-top: 20px;
+        //     .latest-cta-btn {
+        //         background-color: $primary-color;
+        //         border-color: $primary-color;
+        //         color: $white;
+        //         margin-top: 20px;
 
-                &::before {
-                    border-color: $primary-color;
-                }
-            }
+        //         &::before {
+        //             border-color: $primary-color;
+        //         }
+        //     }
+        // }
+    }
+}
+
+
+
+/* ************************************ */
+/* core service section  */
+/* ************************************ */
+.core-service {
+    .section-title {
+        max-width: 760px;
+        margin: 0 auto;
+        h2 {
+            margin-bottom: 82px;
+            // background: linear-gradient(90.3deg, #a926b5 19.46%, #6e1a8c 78.53%);
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
+            // background-clip: text;
+        }
+    }
+
+    .service-block {
+        padding: 36px;
+        // padding-top: 60px;
+        border-radius: 16.2801px;
+        margin-bottom: 30px;
+
+        margin: 0px 5px;
+        margin-bottom: 70px;
+        transition: all 200ms ease;
+        filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.05));
+        
+        position: relative;
+        
+        &:hover {
+            filter: drop-shadow(0px 6px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        .layer {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+
+            background-color: #ffffff;
+            clip-path: polygon(85% 0, 100% 24%, 100% 100%, 0 100%, 0 0);
+
+            left: 0;
+            top: 0;
+            z-index: -1;
+            border-radius: 16px;
+        }
+
+        img {
+            width: 76px;
+            position: absolute;
+            left: 36px;
+            top: -40px;
+        }
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 22px;
+        }
+        p {
+            font-size: 18px;
+            color: #757095;
         }
     }
 }

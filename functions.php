@@ -20,8 +20,8 @@ function ct_assets() {
     //   ));
 
 }
-
 add_action('wp_enqueue_scripts', 'ct_assets');
+
 
 
 function ct_features() {
@@ -29,9 +29,12 @@ function ct_features() {
     // register_nav_menu( "header_menu", "Header Menu" );
 
     add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 
 }
 add_action( 'after_setup_theme', 'ct_features' );
+
+
 
 // Events post filtering Query
 function ct_adjust_queries($query) {

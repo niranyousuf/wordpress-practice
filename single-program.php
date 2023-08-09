@@ -35,7 +35,35 @@ while(have_posts()) : the_post();
                         <div class="generic-content"><?php the_content(); ?></div>
 
                             <?php
+                                $relatedProfessors = new WP_Query(array(
+                                    'posts_per_page' => -1,
+                                    'post_type' => 'professor',
+                                    'orderby' => 'title',
+                                    'order' => 'ASC',
+                                    'meta_query' => array(
+                                        array(
+                                            'key' => 'related_programs',
+                                            'compare' => 'LIKE',
+                                            'value' => '"' . get_the_ID() . '"',
+                                        )
+                                    )
+                                ));
 
+                                if($relatedProfessors->have_posts()) :
+                            ?> 
+                                
+                            <div class="post_relation post-page">
+                                <h2 class="block_title"><strong><?php the_title() ?></strong> Exparts</h2>
+                            <?php while($relatedProfessors->have_posts()) : $relatedProfessors->the_post(); ?>
+                                <div class="single__post max_container">
+                                        <div class="latest-content">
+                                            <h5 class="latest-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h5>
+                                        </div>
+                                </div>
+                            <?php endwhile; wp_reset_postdata(); endif; ?>
+
+
+                            <?php
                                 $today = date('Ymd');
                                 $relatedEvents = new WP_Query(array(
                                     'posts_per_page' => 3,
@@ -63,11 +91,8 @@ while(have_posts()) : the_post();
                                 
                             <div class="post_relation post-page">
                                 <h2 class="block_title">Upcoming <strong><?php the_title() ?></strong> Events</h2>
-                            
                             <?php while($relatedEvents->have_posts()) : $relatedEvents->the_post(); ?>
-
                                 <div class="single__post max_container">
-                                    
                                     <div class="latest-details">
                                         <a class="latest-date" href="#">
                                             <span class="latest-month"><?php 
@@ -78,7 +103,6 @@ while(have_posts()) : the_post();
                                         </a>
                                         <div class="latest-content">
                                             <h5 class="latest-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h5>
-                                            
                                             <p><?php
                                                     $content = get_the_content();
                                                     $trimmed_content = wp_trim_words($content, 32, '...');
@@ -88,13 +112,13 @@ while(have_posts()) : the_post();
                                             </p>
                                         </div>
                                     </div>
-
                                 </div>
-                                        
                             <?php endwhile; wp_reset_postdata(); endif; ?>
+
+
+
+
                         </div>
-
-
 
                     </div>
                 </div>

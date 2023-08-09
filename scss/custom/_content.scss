@@ -38,7 +38,7 @@
                 transition: all 200ms ease;
                 a {
                     display: block;
-                    color: $dark;
+                    color: $black;
                     padding: 18px;
                 }
                 &:hover {
@@ -95,7 +95,7 @@
     padding: 10px 15px;
     display: inline-block;
     margin-bottom: 30px;
-    box-shadow: 2px 0px 5px rgba($dark, 0.04);
+    box-shadow: 2px 0px 5px rgba($black, 0.04);
 
     p {
         a {
@@ -166,7 +166,7 @@
             padding: 12px 22px;
             border-radius: 4px;
             position: absolute;
-            background-color: rgba($base-color, 0.2);
+            background-color: rgba($secondary-color, 0.2);
 
             display: flex;
             align-items: center;
@@ -199,7 +199,7 @@
 .single__post {
     padding-bottom: 32px;
     margin-bottom: 32px;
-    border-bottom: 1px solid rgba($dark, 0.03);
+    border-bottom: 1px solid rgba($black, 0.03);
 
     .post__content {
         .btn {
@@ -212,7 +212,7 @@
     margin-top: 60px;
     padding-top: 48px;
 
-    border-top: 1px solid rgba($dark, 0.1);
+    border-top: 1px solid rgba($black, 0.1);
     .block_title {
         margin-bottom: 36px;
     }

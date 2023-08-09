@@ -8,7 +8,7 @@
                         <a href="<?php echo site_url() ?>" class="logo">
                             Code<span>Monster</span>
                         </a>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, quia.</p>
+                        <p>Experience remarkable WordPress products with a new level of power, beauty, and human-centered designs. Think you know WordPress products? Think deeper!</p>
                     </div>
                 </div>
 

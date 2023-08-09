@@ -49,6 +49,21 @@
 
 
     });
+
+    $(window).on("load", function () {
+        function reSizeArea(e) {
+            var arr = $.makeArray(e);
+            var ah = $.map(arr, function (h) {
+                return $(h).height();
+            });
+            var mh = Math.max.apply($(this).height(), ah);
+            e.height(mh);
+        }
+        if ($(window).width() > 575) {
+            reSizeArea($(".service-block"));
+        }
+    });
+    
     $(window).on('scroll', function () {
         if ($(this).scrollTop() > 36) {
             $('.navbar').addClass('sticky');

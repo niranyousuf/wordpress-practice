@@ -26,10 +26,22 @@ get_header();
     <section class="section-padding news-and-events" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/feature-bg.svg);">
         <div class="container">
             <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Upcoming Events</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-lg-6">
+                    <div class="section-media">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/event.svg" alt="">
+                    </div>
+                </div>
+
                 <div class="col-lg-6">
                     <div class="latest-events latest">
-                        <h3>Upcuming event</h3>
-
 
                         <?php
                         $today = date('Ymd');
@@ -81,9 +93,26 @@ get_header();
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding news-and-events">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Latest News</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6 order-last order-lg-first">
                     <div class="latest-news latest">
-                        <h3>From Our Blogs</h3>
 
                         <?php 
                             $homepagePost = new WP_Query(array(
@@ -122,10 +151,109 @@ get_header();
                         </div>
                     </div>
                 </div>
+
+                <div class="col-lg-6 order-first order-lg-last">
+                    <div class="section-media">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/news-2.svg" alt="">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    
+    <!-- Core services section -->
+    <section class="core-service section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>Get the most reliable resources with beginner friendly guideline</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Scratch</h3>
+                        <p>Hello World! Learn basic WordPress and start roaming with simple and easy steps! </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Speed</h3>
+                        <p>Optimizations, plugins and suggestions to help speed up your WordPress website.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Security</h3>
+                        <p>Harden site security to help your website keep safe from the malicious hackers.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>SEO</h3>
+                        <p>Most recommended steps, plugins and strategies for having better SEO solutions. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Experience</h3>
+                        <p>Gets the best ideas for your WordPress usage. Quick resource guide to ease your hassle.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Technical errors</h3>
+                        <p>Get technical help from the professionals. We share our real life experiences here.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Online Store</h3>
+                        <p>Quick and smart solutions for your business. Level up your business with an online store.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Trending</h3>
+                        <p>Stay up to date with the latest WordPress news, updates and whereabouts</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-block">
+                        <span class="layer"></span>
+                        <!-- <img src="/assets/img/service/automatic-order-export.svg" alt="Block Image"> -->
+                        <h3>Promote</h3>
+                        <p>Place your products for promoting and help people to find out their solutions </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    
 
     <div class="testimonials">
         <div class="testimonial owl-carousel">
@@ -157,7 +285,7 @@ get_header();
         </div>
     </div>
 
-    <div class="scroller">
+    <!-- <div class="scroller">
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
@@ -165,7 +293,7 @@ get_header();
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     
     
