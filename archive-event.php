@@ -21,7 +21,7 @@
 
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="col-md-12">
-                        <div class="blog-page__singlle-post max_container">
+                        <div class="single__post max_container">
                             
                             <div class="latest-details">
                                 <a class="latest-date" href="#">

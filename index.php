@@ -21,7 +21,7 @@ get_header();
             <div class="row">
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="col-md-12">
-                        <div class="blog-page__singlle-post max_container">
+                        <div class="single__post max_container">
                             <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
                             <div class="metabox">
                                 <p>Posted By: 
@@ -42,7 +42,7 @@ get_header();
                 <?php endwhile; ?>
 
                 <div class="col-md-12">
-                    <div class="pagination">
+                    <div class="pagination max_container">
                         <?php echo paginate_links(); ?>
                     </div>
                 </div>

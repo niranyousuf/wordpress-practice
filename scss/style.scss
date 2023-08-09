@@ -4,18 +4,16 @@
 * Url             : http://niranyousuf.me/
 */
 
-
 // variables
 $dark: #000000;
 $white: #ffffff;
-$bright: #ffffff;
-$base-color: #fdda91;
+$secondary-color: #0041a9;
 $text-color: #141c3a;
-$primary-color: #19B6F6;
-$secondary-color: #6371c5;
+$primary-color: #1f6e8c;
+$base-color: #ee5913;
 
-$miriam-libre: 'Miriam Libre', sans-serif;
-$ubuntu-font:  'Ubuntu', sans-serif;
+$miriam-libre: "Miriam Libre", sans-serif;
+$ubuntu-font: "Ubuntu", sans-serif;
 
 // pages
 @import "./custom/_default.scss";

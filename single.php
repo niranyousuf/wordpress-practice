@@ -22,7 +22,7 @@ while(have_posts()) : the_post();
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="page-content__content max_container">
+                    <div class="page__content max_container">
 
 						<div class="metabox meta_bradcumb">
 							<a class="back_to_prev_page" href="<?php echo site_url('/blog') ?>">

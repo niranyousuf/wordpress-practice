@@ -26,12 +26,8 @@
         .event-cta-btn {
             background-color: $base-color;
             border-color: $base-color;
-            color: black;
+            color: $white;
             margin-top: 20px;
-            
-            &:hover {
-                background-color: rgba($base-color, 0.4);
-            }
         }
 
         .latest-details {
@@ -43,6 +39,8 @@
 
             .latest-date {
                 left: 0;
+                width: 94px;
+                aspect-ratio: 10/9;
                 font-size: 28px;
                 font-weight: 500;
                 padding: 12px 22px;
@@ -89,11 +87,11 @@
             .latest-cta-btn {
                 background-color: $primary-color;
                 border-color: $primary-color;
-                color: black;
+                color: $white;
                 margin-top: 20px;
 
-                &:hover {
-                    background-color: rgba($primary-color, 0.4);
+                &::before {
+                    border-color: $primary-color;
                 }
             }
         }

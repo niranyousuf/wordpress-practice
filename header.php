@@ -25,9 +25,15 @@
                         <li class="nav-item <?php if (is_page('about-us')) echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/about-us') ?>">About Us</a>
                         </li>
+
+                        <li class="nav-item <?php if (get_post_type() == 'program' || is_page('past-programs')) echo 'current-menu-item'; ?>">
+                            <a class="nav-link" href="<?php echo get_post_type_archive_link('program') ?>">Programs</a>
+                        </li>
+
                         <li class="nav-item <?php if (get_post_type() == 'event' || is_page('past-events')) echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo get_post_type_archive_link('event') ?>">Events</a>
                         </li>
+                        
                         <li class="nav-item <?php if (get_post_type() == 'post') echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>

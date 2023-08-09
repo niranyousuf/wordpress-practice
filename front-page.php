@@ -16,7 +16,7 @@ get_header();
                             human-centered designs.
                             Think you know WordPress products? Think deeper!
                         </p>
-                        <a class="btn btn-big" href="#products">Take a look</a>
+                        <a class="btn btn-big" href="<?php echo get_post_type_archive_link('program') ?>">Take a look</a>
                     </div>
                 </div>
             </div>
