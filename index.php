@@ -2,19 +2,14 @@
 
 get_header();
 
+
+pageBanner(array(
+    'title' => 'Welcome to our blog',
+    'subtitle' => 'Keep up with our latest news'
+));
+
+
 ?>
-	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="banner-content max_container">
-                        <h2>Welcome to our blog</h2>
-                        <p>Keep up with our latest news</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="post-page">
         <div class="container">

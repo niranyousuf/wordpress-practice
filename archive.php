@@ -2,23 +2,23 @@
 
 get_header();
 
+$archiveTitle;
+$category = get_the_category(); 
+
+if(is_category()) {
+    $archiveTitle = 'Post form '.$category[0]->cat_name . ' category';
+} else if (is_author()) {
+    $archiveTitle = 'Posts by: <span class="text-capitalize">' . get_the_author() . '</span>';
+} else {
+    $archiveTitle = get_the_archive_title();
+}
+
+pageBanner(array(
+    'title' => $archiveTitle,
+    'subtitle' => get_the_archive_description()
+));
+
 ?>
-	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="banner-content max_container">
-                        <h2><?php if(is_category()) : ?>
-                            <span>Post form <?php single_cat_title() ?> category</span>
-                        <?php elseif(is_author()): ?>
-                            Posts by: <span class="text-capitalize"><?php the_author() ?></span>
-                        <?php else: the_archive_title(); endif; ?></h2>
-                        <p><?php the_archive_description(); ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="post-page">
         <div class="container">

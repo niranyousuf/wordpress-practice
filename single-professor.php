@@ -3,20 +3,10 @@
 get_header();
 
 while(have_posts()) : the_post();
-?>
 
-	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="banner-content max_container">
-                        <h2><?php the_title() ?></h2>
-                        <p>DON'T FORGET TO REPLACE ME LATER</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+pageBanner();
+?>
 
 	<div class="page-content">
         <div class="container">
@@ -27,7 +17,17 @@ while(have_posts()) : the_post();
 			
 
                         <div class="generic-content">
-                            <?php the_content(); ?>
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <div class="featured-media">
+                                        <?php the_post_thumbnail('professorPortrait'); ?>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-8">
+                                    <?php the_content(); ?>
+                                </div>
+                            </div>
                         </div>
 
 
@@ -36,7 +36,7 @@ while(have_posts()) : the_post();
                         <?php $relatedPrograms = get_field('related_programs'); 
                         if($relatedPrograms) : ?>
                         <div class="post_relation">
-                            <h2 class="block_title">Exparts in</h2>
+                            <h2 class="block_title">Expert in</h2>
                             <?php foreach($relatedPrograms as $program) : ?>
                                 <div class="single__post max_container">
                                     <h2><a href="<?php echo get_the_permalink($program) ?>"><?php echo get_the_title($program) ?></a></h2>
@@ -50,6 +50,7 @@ while(have_posts()) : the_post();
                                 </div>
                             <?php endforeach; endif; ?>
                         </div>
+
 
                         
                     </div>

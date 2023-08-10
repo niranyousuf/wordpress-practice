@@ -1,5 +1,36 @@
 <?php 
 
+function pageBanner($args = NULL) {
+
+    $args['title'] = isset($args['title']) ? $args['title'] : get_the_title();
+
+    $args['subtitle'] = isset($args['subtitle']) ? $args['subtitle'] : get_field('page_banner_subtitle');
+
+    if(!isset($args['photo'])) {
+        $pageBannerImg = get_field('page_banner_background_image'); 
+        if($pageBannerImg) {
+            $args['photo'] = $pageBannerImg['sizes']['pageBanner'];
+        } else {
+            $args['photo'] = get_theme_file_uri('/images/hero.jpg');
+        }
+    }
+
+?>
+	<section class="page-banner" style="background-image: url(<?php echo $args['photo']; ?>);">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner-content max_container">
+                        <h2><?php echo $args['title']; ?></h2>
+                        <p><?php echo $args['subtitle']; ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php }
+
 function ct_assets() {
     wp_enqueue_style('google-font', "//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i");
     wp_enqueue_style('font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
@@ -30,6 +61,9 @@ function ct_features() {
 
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+    add_image_size( 'professorLandscape', 400, 260, true);
+    add_image_size( 'professorPortrait', 480, 650, true);
+    add_image_size( 'pageBanner', 1500, 350, true);
 
 }
 add_action( 'after_setup_theme', 'ct_features' );

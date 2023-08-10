@@ -44,6 +44,7 @@ get_header();
                     <div class="latest-events latest">
 
                         <?php
+                        
                         $today = date('Ymd');
                         $homepageEvents = new WP_Query(array(
                             'posts_per_page' => 3,
@@ -61,32 +62,15 @@ get_header();
                             )
                         ));
 
-                        while($homepageEvents->have_posts()) : $homepageEvents->the_post();
-                        ?>
+                        while($homepageEvents->have_posts()) {
+                            $homepageEvents->the_post();
 
-                        <div class="latest-details">
-                            <a class="latest-date" href="#">
-                                <span class="latest-month"><?php 
-                                    $eventDate = new DateTime(get_field('event_date'));
-                                    echo $eventDate->format('M');
-                                ?></span>
-                                <span class="latest-day"><?php echo $eventDate->format('d'); ?></span>
-                            </a>
-                            <div class="latest-content">
-                                <h5 class="latest-title"><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h5>
-                                
-                                <p><?php
-                                        $content = get_the_content();
-                                        $trimmed_content = wp_trim_words($content, 12, '...');
-                                        echo $trimmed_content; 
-                                    ?>
-                                    <a href="<?php the_permalink(); ?>">Read more</a>
-                                </p>
-                            </div>
-                        </div>
-
+                            get_template_part('template-parts/content', 'event');
+                        } 
                         
-                        <?php endwhile; wp_reset_postdata(); ?>
+                        wp_reset_postdata(); 
+                        
+                        ?>
                         
                         <div class="text-center">
                             <a class="btn big-btn event-cta-btn" href="<?php echo site_url('/events'); ?>">View all Event </a>

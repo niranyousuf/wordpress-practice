@@ -2,19 +2,13 @@
 
 get_header();
 
+pageBanner(array(
+    'title' => 'All Program',
+    'subtitle' => 'There is something for everyone. Have a look around.'
+));
+
 ?>
-	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="banner-content max_container">
-                        <h2>All Programs</h2>
-                        <p>There is something for everyone. Have a look around.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <section class="post-page">
         <div class="container">

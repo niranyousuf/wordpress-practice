@@ -7,20 +7,21 @@
 // variables
 $black: #000000;
 $white: #ffffff;
-$secondary-color: #0041a9;
+$base-color: #ee5913;
 $text-color: #141c3a;
 $primary-color: #1f6e8c;
-$base-color: #ee5913;
+$secondary-color: #0041a9;
 
 $miriam-libre: "Miriam Libre", sans-serif;
 $ubuntu-font: "Ubuntu", sans-serif;
 
 // pages
-@import "./custom/_default.scss";
-@import "./custom/_icon.scss";
-@import "./custom/_nav.scss";
-@import "./custom/_banner.scss";
-@import "./custom/_latest.scss";
-@import "./custom/_testimonials.scss";
-@import "./custom/_content.scss";
-@import "./custom/_footer.scss";
+@import "./_default.scss";
+@import "./_icon.scss";
+@import "./_nav.scss";
+@import "./_banner.scss";
+@import "./_latest.scss";
+@import "./_about.scss";
+@import "./_testimonials.scss";
+@import "./_content.scss";
+@import "./_footer.scss";

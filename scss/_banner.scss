@@ -68,7 +68,8 @@
         width: 100%;
         top: 0;
         left: 0;
-        background-color: rgba($white, 0.6);
+        background: linear-gradient( rgba($white, 0.8), $white);
+        border-bottom: 1px solid #f7f7f7;
     }
 
     .banner-content {

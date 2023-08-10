@@ -3,20 +3,10 @@
 get_header();
 
 while(have_posts()) : the_post();
-?>
 
-	<section class="page-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="banner-content max_container">
-                        <h2><?php the_title() ?></h2>
-                        <p>DON'T FORGET TO REPLACE ME LATER</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+pageBanner();
+
+?>
 
 	<div class="page-content">
         <div class="container">

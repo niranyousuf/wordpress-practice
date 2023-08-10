@@ -26,7 +26,7 @@
                             <a class="nav-link" href="<?php echo site_url('/about-us') ?>">About Us</a>
                         </li>
 
-                        <li class="nav-item <?php if (get_post_type() == 'program' || is_page('past-programs')) echo 'current-menu-item'; ?>">
+                        <li class="nav-item <?php if (get_post_type() == 'program') echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo get_post_type_archive_link('program') ?>">Programs</a>
                         </li>
 
