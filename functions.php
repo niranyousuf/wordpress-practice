@@ -96,3 +96,9 @@ function ct_adjust_queries($query) {
 
 }
 add_action('pre_get_posts', 'ct_adjust_queries');
+
+function ct_map_key($api) {
+    $api['key'] = 'b02535a203bc590c402decba28aaf3f3ebb8f406';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'ct_map_key');

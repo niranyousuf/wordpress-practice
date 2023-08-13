@@ -33,6 +33,10 @@
                         <li class="nav-item <?php if (get_post_type() == 'event' || is_page('past-events')) echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo get_post_type_archive_link('event') ?>">Events</a>
                         </li>
+
+                        <li class="nav-item <?php if (get_post_type() == 'campus') echo 'current-menu-item'; ?>">
+                            <a class="nav-link" href="<?php echo get_post_type_archive_link('campus') ?>">Campuses</a>
+                        </li>
                         
                         <li class="nav-item <?php if (get_post_type() == 'post') echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
