@@ -7,7 +7,19 @@
     background-color: rgba($white, 0.99);
     left: 0;
     top: 0;
-    z-index: 9999;
+    transition: all 400ms ease;
+
+    transform: translateY(-400px);
+    visibility: hidden;
+    opacity: 0;
+    z-index: 0;
+
+    &.show-box {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+        z-index: 9999;
+    }
 
     .search_box {
         position: absolute;
@@ -31,7 +43,7 @@
                 align-items: center;
                 justify-content: center;
                 
-                font-size: clamp(1.5rem, 8vw, 2.5rem);
+                font-size: clamp(1.5rem, 3.4vw, 2.5rem);
 
                 &.icon-cancel {
                     float: right;
@@ -47,7 +59,7 @@
                     height: 100%;
                     border: 0;
                     background-color: transparent;
-                    font-size: clamp(1.5rem, 8vw, 2.5rem);
+                    font-size: clamp(1.5rem, 3.4vw, 2.5rem);
 
                     &:focus,
                     &:focus-visible {

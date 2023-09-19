@@ -64,7 +64,7 @@
             reSizeArea($(".service-block"));
         }
     });
-    
+
     $(window).on('scroll', function () {
         if ($(this).scrollTop() > 36) {
             $('.navbar').addClass('sticky');
@@ -83,4 +83,13 @@
     });
 
 
-})(jQuery);
+    $('.search-btn').on('click', function () {
+        $('.search_overlay').addClass('show-box');
+    });
+    $('.search-hide').on('click', function () {
+        $('.search_overlay').removeClass('show-box');
+    });
+
+
+}) (jQuery);
+
