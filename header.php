@@ -41,6 +41,11 @@
                         <li class="nav-item <?php if (get_post_type() == 'post') echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>
+
+                        
+                        <li class="nav-item">
+                            <a class="search-btn nav-link" href="#"><span class="icon icon-search"></span></a>
+                        </li>
                     </ul>
                 </div>
                 
