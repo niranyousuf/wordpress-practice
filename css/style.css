@@ -22,6 +22,9 @@ body {
     margin-top: 32px;
   }
 }
+body.no-scroll {
+  overflow: hidden;
+}
 
 a,
 p,
@@ -207,6 +210,14 @@ a.btn-small {
     opacity: 0;
   }
 }
+@keyframes spinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @font-face {
   font-family: "fontello";
   src: url("../font/fontello.eot?59603333");
@@ -281,6 +292,9 @@ a.btn-small {
 .icon-search:before {
   content: "\e80f";
 } /* '' */
+.icon-spin6:before {
+  content: "\e839";
+} /* '' */
 .icon-twitter:before {
   content: "\f099";
 } /* '' */
@@ -1127,7 +1141,6 @@ nav.navbar .navbar-toggler span.bar {
   left: 0;
   top: 0;
   transition: all 400ms ease;
-  transform: translateY(-400px);
   visibility: hidden;
   opacity: 0;
   z-index: 0;
@@ -1139,10 +1152,6 @@ nav.navbar .navbar-toggler span.bar {
   z-index: 9999;
 }
 .search_overlay .search_box {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: 0;
   background-color: rgba(31, 110, 140, 0.05);
 }
 .search_overlay .search_box .field_group {
@@ -1179,4 +1188,11 @@ nav.navbar .navbar-toggler span.bar {
 }
 .search_overlay .search_box .field_group input.search_input::placeholder {
   color: rgba(0, 0, 0, 0.2);
+}
+
+#search__results .icon-spin6 {
+  margin-top: 50px;
+  display: inline-block;
+  font-size: clamp(1.5rem, 3.4vw, 2.5rem);
+  animation: spinner 1s linear infinite;
 }/*# sourceMappingURL=style.css.map */

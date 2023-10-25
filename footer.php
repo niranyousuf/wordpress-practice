@@ -57,13 +57,23 @@
                     <div class="col-md-12">
                         <div class="field_group">
                             <span class="icon icon-search"></span>
-                            <input type="text" placeholder="What are you looking for?" class="search_input">
+                            <input type="text" placeholder="What are you looking for?" id="search_input" class="search_input">
                             <span class="icon icon-cancel search-hide"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+
+        <div class="search_results">
+            <div class="container">
+                <div class="row">
+                    <div id="search__results"></div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <?php wp_footer(); ?>

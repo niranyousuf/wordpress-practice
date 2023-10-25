@@ -18,6 +18,9 @@ body {
             }
         }
     }
+    &.no-scroll {
+        overflow: hidden;
+    }
 }
 
 a,
@@ -210,7 +213,7 @@ a {
 }
 
 /* Ripple Out */
-@-webkit-keyframes hvr-ripple-out {
+@keyframes hvr-ripple-out {
     100% {
         top: -12px;
         right: -12px;
@@ -219,12 +222,13 @@ a {
         opacity: 0;
     }
 }
-@keyframes hvr-ripple-out {
-    100% {
-        top: -12px;
-        right: -12px;
-        bottom: -12px;
-        left: -12px;
-        opacity: 0;
+
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }

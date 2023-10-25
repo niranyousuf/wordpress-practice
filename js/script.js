@@ -83,13 +83,5 @@
     });
 
 
-    $('.search-btn').on('click', function () {
-        $('.search_overlay').addClass('show-box');
-    });
-    $('.search-hide').on('click', function () {
-        $('.search_overlay').removeClass('show-box');
-    });
-
-
 }) (jQuery);
 
