@@ -1,4 +1,8 @@
 <?php 
+function ct_custom_rest_api() {
+
+}
+add_action( 'rest_api_init', 'ct_custom_rest_api' )
 
 function pageBanner($args = NULL) {
 
