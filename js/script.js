@@ -144,8 +144,8 @@
                     <h2>Your search results</h2>
                     ${combaineResult.length ? `<ul class="search-result__list">` : `<p>There is no match for your search!</p>`}
                         ${combaineResult.map((item) => {
-                                return `<li><a href="${item.link}">${item.title.rendered}</a></li>`
-                            }).join('')}
+                            return `<li><a href="${item.link}">${item.title.rendered}</a> ${item.type == 'post' ? `by ${item.authorName}` : ''}</li>`
+                        }).join('')}
                     ${combaineResult.lentgh ? `</ul>` : ''}
                 `);
 

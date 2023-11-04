@@ -1,8 +1,10 @@
 <?php 
 function ct_custom_rest_api() {
-
+    register_rest_field( 'post', 'authorName', array(
+        'get_callback' => function() {return get_the_author();}
+    ) );
 }
-add_action( 'rest_api_init', 'ct_custom_rest_api' )
+add_action( 'rest_api_init', 'ct_custom_rest_api' );
 
 function pageBanner($args = NULL) {
 
