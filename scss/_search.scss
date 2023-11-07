@@ -97,11 +97,13 @@
         li {
             padding: 10px 0;
             border-bottom: 1px solid rgba($secondary-color, 0.05);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 300;
             a {
                 text-decoration: underline;
-                font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+                font-size: inherit;
                 transition: all 200ms ease;
-
+                font-weight: 400;
                 &:hover {
                     text-decoration: none;
                 }

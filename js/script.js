@@ -135,22 +135,33 @@
         }
 
         getResults() {
-            $.when(
-                $.getJSON(ctData.root_url + '/wp-json/wp/v2/posts?search=' + this.searchField.val()),
-                $.getJSON(ctData.root_url + '/wp-json/wp/v2/pages?search=' + this.searchField.val())
-            ).then((posts, pages) => {
-                var combaineResult = posts[0].concat(pages[0])
-                this.resultsDiv.html(`
-                    <h2>Your search results</h2>
-                    ${combaineResult.length ? `<ul class="search-result__list">` : `<p>There is no match for your search!</p>`}
-                        ${combaineResult.map((item) => {
-                            return `<li><a href="${item.link}">${item.title.rendered}</a> ${item.type == 'post' ? `by ${item.authorName}` : ''}</li>`
-                        }).join('')}
-                    ${combaineResult.lentgh ? `</ul>` : ''}
-                `);
 
-                this.loaderVisible = false;
-            })
+            $.getJSON(ctData.root_url + '/wp-json/ct/v1/search?term=' + this.searchField.val(), (results) => {
+                this.resultsDiv.html(`
+                    
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <h2>General Information</h2>
+                            ${results.generalInfo.length ? `<ul class="search-result__list">` : `<p>There is no match for your search!</p>`}
+                                ${results.generalInfo.map((item) => {
+                                    return `<li><a href="${item.permalink}">${item.title}</a> ${item.postType == 'post' ? `by ${item.authorName}` : ''}</li>`
+                                }).join('')}
+                            ${results.generalInfo.lentgh ? `</ul>` : ''}
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Programs</h2>
+                            <h2>Professors</h2>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <h2>Campuses</h2>
+                            <h2>Events</h2>
+                        </div>
+                    </div>
+                `)
+            });
+
         }
 
         keyPressDispatcher(e) {

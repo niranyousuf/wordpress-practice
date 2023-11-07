@@ -1,4 +1,4 @@
-testing<?php
+<?php
 
 get_header();
 

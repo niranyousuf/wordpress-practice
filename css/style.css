@@ -1214,11 +1214,14 @@ nav.navbar .navbar-toggler span.bar {
 #search__results .search-result__list li {
   padding: 10px 0;
   border-bottom: 1px solid rgba(0, 65, 169, 0.05);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 300;
 }
 #search__results .search-result__list li a {
   text-decoration: underline;
-  font-size: clamp(1.5rem, 3.4vw, 2.25rem);
+  font-size: inherit;
   transition: all 200ms ease;
+  font-weight: 400;
 }
 #search__results .search-result__list li a:hover {
   text-decoration: none;

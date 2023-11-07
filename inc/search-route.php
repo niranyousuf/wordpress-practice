@@ -19,7 +19,8 @@ function ctSearchQuery($data) {
         'generalInfo' => array(),
         'events' => array(),
         'professors' => array(),
-        'programs' => array()
+        'programs' => array(),
+        'campuses' => array()
     );
 
     while($searchQuery->have_posts()) {
@@ -29,7 +30,8 @@ function ctSearchQuery($data) {
             array_push($searchResults['generalInfo'], array(
                 'title' => get_the_title(),
                 'permalink' => get_the_permalink(),
-                
+                'postType' => get_post_type(),
+                'authorName' => get_the_author()
             ));
         }
 
@@ -42,6 +44,13 @@ function ctSearchQuery($data) {
         }
         if(get_post_type() == 'program') {
             array_push($searchResults['programs'], array(
+                'title' => get_the_title(),
+                'permalink' => get_the_permalink(),
+                
+            ));
+        }
+        if(get_post_type() == 'campus') {
+            array_push($searchResults['campuss'], array(
                 'title' => get_the_title(),
                 'permalink' => get_the_permalink(),
                 
