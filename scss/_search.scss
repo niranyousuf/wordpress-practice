@@ -82,7 +82,7 @@
     padding-bottom: 48px;
 
     h2 {
-        padding-bottom: 20px;
+        padding-bottom: 0px;
         border-bottom: 1px solid rgba($secondary-color, 0.1);
     }
 
@@ -92,8 +92,13 @@
         animation: spinner 1s linear infinite;
     }
 
+    p {
+        margin-bottom: 30px;
+    }
+
     .search-result__list {
         list-style: none;
+        margin-bottom: 30px;
         li {
             padding: 10px 0;
             border-bottom: 1px solid rgba($secondary-color, 0.05);

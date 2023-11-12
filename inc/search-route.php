@@ -50,7 +50,7 @@ function ctSearchQuery($data) {
             ));
         }
         if(get_post_type() == 'campus') {
-            array_push($searchResults['campuss'], array(
+            array_push($searchResults['campuses'], array(
                 'title' => get_the_title(),
                 'permalink' => get_the_permalink(),
                 
