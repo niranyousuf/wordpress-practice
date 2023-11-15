@@ -57,14 +57,32 @@ function ctSearchQuery($data) {
             ));
         }
         if(get_post_type() == 'event') {
+            $eventDate = new DateTime(get_field('event_date'));
+
+            $content = get_the_content();
+            $trimmed_content = wp_trim_words($content, 10, '  &raquo;');
+
             array_push($searchResults['events'], array(
                 'title' => get_the_title(),
                 'permalink' => get_the_permalink(),
-                
+                'month' => $eventDate->format('M'),
+                'day' => $eventDate->format('d'),
+                'exarpt' =>  $trimmed_content
             ));
         }
 
     }
+
+    $programRelatedQuery = new WP_Query(array(
+        'post_type' => 'professor',
+        'meta_query' => array(
+            array(
+                'key' => ,
+                'compare' => ,
+                'value' => 
+            )
+        )
+    ))
 
     return $searchResults;
 }
