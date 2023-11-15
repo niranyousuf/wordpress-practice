@@ -1212,6 +1212,12 @@ nav.navbar .navbar-toggler span.bar {
 #search__results p {
   margin-bottom: 30px;
 }
+#search__results .user-profile {
+  width: 200px;
+}
+#search__results .user-profile p {
+  margin-bottom: 0;
+}
 #search__results .search-result__list {
   list-style: none;
   margin-bottom: 30px;

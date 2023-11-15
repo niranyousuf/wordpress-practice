@@ -1,5 +1,5 @@
 <div class="latest-details">
-    <a class="latest-date" href="#">
+    <a class="latest-date" href="<?php the_permalink(); ?>">
         <span class="latest-month"><?php 
             $eventDate = new DateTime(get_field('event_date'));
             echo $eventDate->format('M');

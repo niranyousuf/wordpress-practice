@@ -156,7 +156,20 @@
                                     return `<li><a href="${item.permalink}">${item.title}</a></li>`
                                 }).join('')}
                             ${results.programs.length ? `</ul>` : ''}
+
                             <h2>Professors</h2>
+                            ${results.professors.length ? `<ul class="profile-lists">` : `<p>No Professors match!</p>`}
+                                ${results.professors.map((item) => {
+                                    return `
+                                    <li class="user-profile">
+                                        <a href="${item.permalink}" class="profile-card">
+                                            <img class="author-image" src="${item.image}" alt="${item.title}">
+                                            <p>${item.title}</p>
+                                        </a>
+                                    </li>
+                                    `
+                                }).join('')}
+                            ${results.professors.length ? `</ul>` : ''}
                         </div>
 
                         <div class="col-lg-4">
