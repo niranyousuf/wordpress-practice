@@ -19,7 +19,7 @@ pageBanner(array(
                             <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
                             <div class="post__content">
                                 <p><?php
-                                    $content = get_the_content();
+                                    $content = get_field('main_body_content');;
                                     $trimmed_content = wp_trim_words($content, 36, '...');
                                     echo $trimmed_content; 
                                 ?></p>
