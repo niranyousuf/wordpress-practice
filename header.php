@@ -34,17 +34,20 @@
                             <a class="nav-link" href="<?php echo get_post_type_archive_link('event') ?>">Events</a>
                         </li>
 
-                        <!-- <li class="nav-item <?php // if (get_post_type() == 'campus') echo 'current-menu-item'; ?>">
-                            <a class="nav-link" href="<?php // echo get_post_type_archive_link('campus') ?>">Campuses</a>
-                        </li> -->
+                        <li class="nav-item <?php if (get_post_type() == 'campus') echo 'current-menu-item'; ?>">
+                            <a class="nav-link" href="<?php echo get_post_type_archive_link('campus') ?>">Campuses</a>
+                        </li>
                         
                         <li class="nav-item <?php if (get_post_type() == 'post') echo 'current-menu-item'; ?>">
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>
 
                         
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a class="search-btn nav-link" href="#"><span class="icon icon-search"></span></a>
+                        </li> -->
+                        <li class="nav-item">
+                            <a class="search-btn nav-link" href="<?php echo esc_url(site_url('/search')) ?>"><span class="icon icon-search"></span></a>
                         </li>
                     </ul>
                 </div>

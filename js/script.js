@@ -216,6 +216,8 @@
             setTimeout(() => this.searchField.focus(), 301);
             this.showOverlay = true;
 
+            return false;
+
         }
 
         closeOverlay() {
