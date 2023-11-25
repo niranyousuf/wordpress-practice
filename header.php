@@ -42,12 +42,27 @@
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>
 
-                        
-                        <!-- <li class="nav-item">
-                            <a class="search-btn nav-link" href="#"><span class="icon icon-search"></span></a>
-                        </li> -->
+
+                        <?php if(is_user_logged_in()) : ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo wp_logout_url(); ?>">
+                                    <span class="user_avatar"><?php echo get_avatar(get_current_user_id(), 60); ?></span>
+                                    <span class="btn_text">Logout</span>
+                                </a>
+                            </li>
+                        <?php else: ?>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo wp_login_url(); ?>">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="<?php echo wp_registration_url(); ?>">Sign Up</a>
+                            </li>
+                        <?php endif; ?>
+
+
+
                         <li class="nav-item">
-                            <a class="search-btn nav-link" href="<?php echo esc_url(site_url('/search')) ?>"><span class="icon icon-search"></span></a>
+                            <a class="search-btn nav-link" href="<?php echo esc_url(site_url('/search')); ?>"><span class="icon icon-search"></span></a>
                         </li>
                     </ul>
                 </div>

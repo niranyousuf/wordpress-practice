@@ -1,0 +1,51 @@
+body.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px;
+  background: #f2f2f2 url(../img/login-bg.svg) center top no-repeat;
+  background-size: auto 626px;
+  font-size: 17px;
+}
+body.login form {
+  border: none;
+  box-shadow: none;
+}
+body.login .message {
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#login {
+  box-sizing: border-box;
+  width: 500px;
+  max-width: 100%;
+  padding: 15px 30px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 5px;
+}
+
+z #login h1 a,
+.login h1 a {
+  display: none;
+}
+
+.login-logo {
+  display: block;
+  text-align: center;
+  margin: 100px 0 0;
+  font-size: 48px;
+  text-decoration: none;
+  color: #000;
+}
+.login-logo > img {
+  height: 55px;
+  width: auto;
+}
+.login-logo:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}/*# sourceMappingURL=login.css.map */

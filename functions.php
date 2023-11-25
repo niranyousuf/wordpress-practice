@@ -111,3 +111,47 @@ function ct_adjust_queries($query) {
 //     return $api;
 // }
 // add_filter('acf/fields/google_map/api', 'ct_map_key');
+
+
+// Redirect subscriber accounts out of admin and onto homepage
+function ct_redirect_subs_frontend() {
+    $currentUser = wp_get_current_user();
+    if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == 'subscriber') {
+        wp_redirect( site_url('/') );
+        exit;
+    }
+}
+add_action('admin_init', 'ct_redirect_subs_frontend');
+
+// Disable admin bar for subscriber
+function ct_no_subs_adminbar() {
+    $currentUser = wp_get_current_user();
+    if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == 'subscriber') {
+        show_admin_bar( false );
+    }
+}
+add_action('wp_loaded', 'ct_no_subs_adminbar');
+
+
+// Customize login screen
+add_filter('login_headerurl', 'ct_login_header_url');
+function ct_login_header_url() {
+    return esc_url(site_url('/'));
+}
+function ct_login_script() {
+	wp_enqueue_style( 'codemonstar-login',  get_template_directory_uri() . "/css/login.css" );
+    wp_enqueue_style('google-font', "//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i");
+}
+add_action( 'login_enqueue_scripts', 'ct_login_script' );
+
+// Header title change 
+// function ct_header_title() {
+//     return get_bloginfo( 'name' );
+// }
+// add_filter( 'login_headertitle', 'ct_header_title' );
+
+// login Form logo
+add_action( 'login_header', function ($a) {
+    // printf('<a class="login-logo" href="%1$s"><img src="%2$s" alt=""></a>', site_url(), get_template_directory_uri().'/assets/images/logo.svg');
+    printf('<a class="login-logo" href="%1$s"><strong>Code</strong>Monstar</a>', site_url());
+} );
