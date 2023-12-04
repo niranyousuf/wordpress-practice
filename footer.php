@@ -49,45 +49,6 @@
             </div>
         </div>
     </footer>
-<!-- 
-    <div class="search_overlay">
-        <div class="search_box">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="field_group">
-                            <span class="icon icon-search"></span>
-                            <input type="text" placeholder="What are you looking for?" id="search_input" class="search_input">
-                            <span class="icon icon-cancel search-hide"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="search_results">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div id="search__results">
-
-                        <h2>Your search results</h2>
-
-                        <ul class="search-result__list">
-                            <li><a href="#">JavaScript is the best</a></li>
-                            <li><a href="#">WordPres is a CMS system</a></li>
-                            <li><a href="#">C is the mother of all language</a></li>
-                        </ul>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div> -->
-
 
     <?php wp_footer(); ?>
 </body>

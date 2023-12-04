@@ -41,9 +41,7 @@ function pageBanner($args = NULL) {
 <?php }
 
 function ct_assets() {
-    wp_enqueue_style('google-font', "//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i");
-    wp_enqueue_style('font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
-
+    wp_enqueue_style('google-font', "//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@600&display=swap");
     wp_enqueue_style('bootstrap_css', get_theme_file_uri("./css/bootstrap.min.css"), null, microtime());
     wp_enqueue_style('owl.carousel.min_css', get_theme_file_uri("./css/owl.carousel.min.css"), null, microtime());
     wp_enqueue_style('ct_main_style_css', get_theme_file_uri("./css/style.css"), null, microtime());
@@ -140,7 +138,7 @@ function ct_login_header_url() {
 }
 function ct_login_script() {
 	wp_enqueue_style( 'codemonstar-login',  get_template_directory_uri() . "/css/login.css" );
-    wp_enqueue_style('google-font', "//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i");
+    wp_enqueue_style('google-font', "//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@600&display=swap");
 }
 add_action( 'login_enqueue_scripts', 'ct_login_script' );
 
@@ -153,5 +151,5 @@ add_action( 'login_enqueue_scripts', 'ct_login_script' );
 // login Form logo
 add_action( 'login_header', function ($a) {
     // printf('<a class="login-logo" href="%1$s"><img src="%2$s" alt=""></a>', site_url(), get_template_directory_uri().'/assets/images/logo.svg');
-    printf('<a class="login-logo" href="%1$s"><strong>Code</strong>Monstar</a>', site_url());
+    printf('<div class="login-logo-block"><a class="login-logo" href="%1$s"><strong>Code</strong>Monstar</a></div>', site_url());
 } );

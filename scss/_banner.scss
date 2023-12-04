@@ -40,9 +40,8 @@
         font-weight: 600;
         line-height: 1.2;
         margin-bottom: 40px;
-        letter-spacing: -0.045em;
         font-size: clamp(2.2rem, 4.6875vw, 4rem); // 90px - 40px
-        font-family: $miriam-libre;
+        font-family: $title-font;
     }
 
     p {

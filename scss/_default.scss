@@ -6,7 +6,7 @@ body {
     position: relative;
     overflow-x: hidden;
     box-sizing: border-box;
-    font-family: $ubuntu-font;
+    font-family: $default-font;
     font-weight: 400;
     background-color: $white;
     line-height: 1.4;
@@ -49,7 +49,6 @@ section {
 h2 {
     font-size: clamp(2rem, 8vw, 2.75rem);
     margin-bottom: 24px;
-    font-family: $miriam-libre;
     
     &.block_title {
         font-size: clamp(2rem, 8vw, 3rem);
@@ -72,7 +71,6 @@ h4 {
 h5 {
     font-size: clamp(1.2rem, 2vw, 1.5rem);
     margin-bottom: 10px;
-    font-family: $miriam-libre;
 }
 
 h6 {

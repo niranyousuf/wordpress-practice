@@ -12,8 +12,8 @@ $text-color: #141c3a;
 $primary-color: #1f6e8c;
 $secondary-color: #0041a9;
 
-$miriam-libre: "Miriam Libre", sans-serif;
-$ubuntu-font: "Ubuntu", sans-serif;
+$default-font: 'Inter', sans-serif;
+$title-font: 'Lora', serif;
 
 // pages
 @import "./_default.scss";
@@ -26,3 +26,4 @@ $ubuntu-font: "Ubuntu", sans-serif;
 @import "./_content.scss";
 @import "./_footer.scss";
 @import "./_search.scss";
+@import "./_my-note.scss";

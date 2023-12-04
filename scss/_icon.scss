@@ -17,7 +17,6 @@
     speak: never;
     display: inline-block;
     text-decoration: inherit;
-    width: 1em;
     margin-right: 0.2em;
     text-align: center;
     font-variant: normal;
@@ -30,31 +29,24 @@
 
 
 .icon-mail:before { content: '\e800'; } /* '' */
-.icon-wrench:before { content: '\e801'; } /* '' */
+.icon-edit:before { content: '\e801'; } /* '' */
 .icon-location:before { content: '\e802'; } /* '' */
-.icon-globe:before { content: '\e803'; } /* '' */
-.icon-html5:before { content: '\e804'; } /* '' */
-.icon-feather:before { content: '\e805'; } /* '' */
-.icon-briefcase:before { content: '\e806'; } /* '' */
-.icon-flow-branch:before { content: '\e807'; } /* '' */
-.icon-cog-alt:before { content: '\e808'; } /* '' */
+.icon-right:before { content: '\e803'; } /* '' */
+.icon-arrow-right:before { content: '\e804'; } /* '' */
+.icon-trash-empty:before { content: '\e805'; } /* '' */
 .icon-right-open:before { content: '\e809'; } /* '' */
-.icon-wrench-2:before { content: '\e80a'; } /* '' */
 .icon-ok:before { content: '\e80b'; } /* '' */
 .icon-cancel:before { content: '\e80c'; } /* '' */
 .icon-home:before { content: '\e80d'; } /* '' */
-.icon-github-circled:before { content: '\e80e'; } /* '' */
 .icon-search:before { content: '\e80f'; } /* '' */
+.icon-x:before { content: '\e814'; } /* '' */
 .icon-spin6:before { content: '\e839'; } /* '' */
 .icon-twitter:before { content: '\f099'; } /* '' */
 .icon-facebook:before { content: '\f09a'; } /* '' */
 .icon-menu:before { content: '\f0c9'; } /* '' */
 .icon-linkedin:before { content: '\f0e1'; } /* '' */
-.icon-upload-cloud:before { content: '\f0ee'; } /* '' */
 .icon-angle-double-right:before { content: '\f101'; } /* '' */
-.icon-desktop:before { content: '\f108'; } /* '' */
 .icon-unlink:before { content: '\f127'; } /* '' */
 .icon-instagram:before { content: '\f16d'; } /* '' */
 .icon-wordpress:before { content: '\f19a'; } /* '' */
-.icon-git:before { content: '\f1d3'; } /* '' */
 .icon-github-squared:before { content: '\f300'; } /* '' */

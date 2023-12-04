@@ -1,0 +1,75 @@
+.note-list {
+	.note_body {
+		transition: all 200ms ease;
+		&:not(:last-child) {
+			margin-bottom: 42px;
+			border-bottom: 1px solid rgba($black, 0.05);
+			padding-bottom: 32px;
+		}
+
+		.note-title {
+			width: 75%;
+			display: inline-block;
+
+			color: $text-color;
+			font-size: clamp(1.2rem, 2vw, 1.75rem);
+			font-weight: 500;
+			border: none;
+			padding: 10px 20px;
+
+			&:focus {
+				box-shadow: none;
+				outline: 0;
+			}
+
+			&.active-field {
+				border: 1px solid rgba($black, 0.05);
+			}
+		}
+
+		.note-body {
+			width: 100%;
+			color: $black;
+			font-size: 18px;
+			border: none;
+			resize: none;
+			display: block;
+			line-height: 1.65;
+			padding: 7px;
+			border: 1px solid transparent;
+			height: 175px;
+			outline: none;
+			overflow: auto;
+			position: relative;
+			padding: 10px 20px;
+
+			&.active-field {
+				border: 1px solid rgba($black, 0.05);
+			}
+		}
+
+		.update-note {
+			color: $white;
+			font-size: 18px;
+			padding: 8px 20px;
+			border-radius: 3px;
+			margin-bottom: 20px;
+			transition: all 300ms ease;
+			border: 1px solid $text-color;
+			background-color: $text-color;
+			display: none;
+			
+			.icon {
+				color: $white;
+			}
+		}
+
+		.btns {
+			float: right;
+			button {
+				padding: 8px 15px;
+				border-radius: 4px;
+			}
+		}
+	}
+}

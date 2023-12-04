@@ -9,8 +9,6 @@ pageBanner();
 
 ?>
 
-    </section>
-
 	<div class="page-content">
         <div class="container">
             <div class="row">

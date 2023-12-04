@@ -8,18 +8,19 @@
 </head>
 
 <body <?php body_class(); ?> >
-    <header class="fixed-top">
-        <nav class="navbar">
+<header class="fixed-top">
+    <nav class="navbar">
 
-            <div class="container">
-                <a class="navbar-brand" href="<?php echo site_url(); ?>">Code<span>Monster</span></a>
-                
-                <button class="navbar-toggler" type="button">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+        <div class="container">
+            <a class="navbar-brand" href="<?php echo site_url(); ?>">Code<span>Monster</span></a>
+            
+            <button class="navbar-toggler" type="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
 
+            <div class="menu_group">
                 <div class="main_menu">
                     <ul class="navBar">
                         <li class="nav-item <?php if (is_page('about-us')) echo 'current-menu-item'; ?>">
@@ -42,20 +43,26 @@
                             <a class="nav-link" href="<?php echo site_url('/blog') ?>">Blog</a>
                         </li>
 
-
+                    </ul>
+                </div>
+                <div class="user_menu">
+                    <ul class="user-nav">
                         <?php if(is_user_logged_in()) : ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo wp_logout_url(); ?>">
+                                <a class="nav-link btn-mini bg_sec" href="<?php echo esc_url(site_url('/my-notes')); ?>">My Notes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn-mini" href="<?php echo wp_logout_url(); ?>">
                                     <span class="user_avatar"><?php echo get_avatar(get_current_user_id(), 60); ?></span>
-                                    <span class="btn_text">Logout</span>
+                                    <span class="btn_text">Log Out</span>
                                 </a>
                             </li>
                         <?php else: ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo wp_login_url(); ?>">Login</a>
+                                <a class="nav-link btn-mini bg_sec" href="<?php echo wp_login_url(); ?>">Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="<?php echo wp_registration_url(); ?>">Sign Up</a>
+                                <a class="nav-link btn-mini" href="<?php echo wp_registration_url(); ?>">Sign Up</a>
                             </li>
                         <?php endif; ?>
 
@@ -66,8 +73,9 @@
                         </li>
                     </ul>
                 </div>
-                
             </div>
             
-        </nav>
-    </header>
+        </div>
+        
+    </nav>
+</header>
