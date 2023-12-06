@@ -20,7 +20,15 @@ pageBanner();
                 <div class="col-12">
                     <div class="page__content max_container">
 
-                        <div class="note-list" id="my-note">
+                        <div class="new-note">
+                            <h2>Create New Note</h2>
+                            <input class="new-note-title" placeholder="Write your note title">
+                            <textarea class="new-note-content" placeholder="Write your note here"></textarea>
+                            <button class="create-note">Create Note</button>
+                        </div>
+
+
+                        <div class="note-list" id="my-notes">
                             <?php 
                                 $userNotes = new WP_Query(array(
                                     'post_type' => 'note',
@@ -40,11 +48,10 @@ pageBanner();
                                     <button class="delete-note"><span class="icon icon-trash-empty"></span> Delete</button>
                                 </div>
 
-                                <textarea readonly class="note-body"><?php echo esc_attr( wp_strip_all_tags( get_the_content() ) ); ?></textarea>
+                                <textarea readonly class="note-content"><?php echo esc_attr( wp_strip_all_tags( get_the_content() ) ); ?></textarea>
 
                                 <button class="update-note">Save <span class="icon icon-right"></span></button>
 
-                                
                             </div>
 
                             <?php endwhile; wp_reset_query(); ?>

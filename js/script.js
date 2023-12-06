@@ -272,15 +272,17 @@
         }
 
         events() {
-            $('.delete-note').on('click', this.deleteNote)
-            $('.edit-note').on('click', this.editNote.bind(this))
+            $('#my-notes').on('click', '.delete-note', this.deleteNote)
+            $('#my-notes').on('click', '.edit-note', this.editNote.bind(this))
+            $('#my-notes').on('click', '.update-note', this.updateNote.bind(this))
+            $('.create-note').on('click', this.createNote.bind(this))
         }
 
 
         // Methods will go here
         editNote(e) {
             var thisNote = $(e.target).parents(".note_body");
-            if(thisNote.data('state') == 'editable') {
+            if (thisNote.data('state') == 'editable') {
                 this.disableEdit(thisNote);
             } else {
                 this.unableEdit(thisNote);
@@ -289,18 +291,41 @@
 
         unableEdit(thisNote) {
             thisNote.find('.edit-note').html(`<span class="icon icon-cancel"></span> Cancel`)
-            thisNote.find('.note-title, .note-body').removeAttr('readonly').addClass('active-field');
+            thisNote.find('.note-title, .note-content').removeAttr('readonly').addClass('active-field');
             thisNote.find('.update-note').fadeIn();
             thisNote.data('state', 'editable');
         }
-        
+
         disableEdit(thisNote) {
             thisNote.find('.edit-note').html(`<span class="icon icon-edit"></span> Edit`)
-            thisNote.find('.note-title, .note-body').attr('readonly', 'readonly').removeClass('active-field');
+            thisNote.find('.note-title, .note-content').attr('readonly', 'readonly').removeClass('active-field');
             thisNote.find('.update-note').fadeOut();
             thisNote.data('state', 'cancle');
         }
- 
+
+        updateNote(e) {
+            var thisNote = $(e.target).parents(".note_body");
+            var ourUpdatedPost = {
+                'title': thisNote.find('.note-title').val(),
+                'content': thisNote.find('.note-content').val()
+            }
+            $.ajax({
+                beforeSend: (xhr) => {
+                    xhr.setRequestHeader('X-WP-Nonce', ctData.nonce);
+                },
+                url: ctData.root_url + '/wp-json/wp/v2/note/' + thisNote.data('id'),
+                type: 'POST',
+                data: ourUpdatedPost,
+                success: (response) => {
+                    this.disableEdit(thisNote);
+                    console.log(response);
+                },
+                error: () => {
+                    console.log('Sorry');
+                }
+            })
+        }
+
         deleteNote(e) {
             var thisNote = $(e.target).parents(".note_body");
             $.ajax({
@@ -318,6 +343,44 @@
                 }
             })
         }
+
+
+        
+        createNote(e) {
+            var ourNewPost = {
+                'title': $('.new-note-title').val(),
+                'content': $('.new-note-content').val(),
+                'status': 'publish'
+            }
+            $.ajax({
+                beforeSend: (xhr) => {
+                    xhr.setRequestHeader('X-WP-Nonce', ctData.nonce);
+                },
+                url: ctData.root_url + '/wp-json/wp/v2/note/',
+                type: 'POST',
+                data: ourNewPost,
+                success: (response) => {
+                    $('.new-note-title, .new-note-content').val('');
+                    $(`
+                        <div class="note_body" data-id="${response.id}"=>
+                            <input readonly class="note-title" value="${response.title.raw}">
+                            <div class="btns">
+                                <button class="edit-note"><span class="icon icon-edit"></span> Edit</button>
+                                <button class="delete-note"><span class="icon icon-trash-empty"></span> Delete</button>
+                            </div>
+                            <textarea readonly class="note-content">${response.content.raw}</textarea>
+                            <button class="update-note">Save <span class="icon icon-right"></span></button>
+                        </div>
+                    `).prependTo('#my-notes').hide().slideDown();
+                    console.log(response);
+                    console.log('Congrats');
+                },
+                error: () => {
+                    console.log('Sorry');
+                }
+            })
+        }
+
     }
 
     var my_notes = new MyNotes();
