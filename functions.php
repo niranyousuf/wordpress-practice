@@ -1,13 +1,19 @@
 <?php 
 
 require get_theme_file_path('/inc/search-route.php');
-
+// get author name por each post in rest api
 function ct_custom_rest_api() {
     register_rest_field( 'post', 'authorName', array(
         'get_callback' => function() {return get_the_author();}
     ) );
+
+
+    register_rest_field( 'note', 'userNoteCount', array(
+        'get_callback' => function() {return count_user_posts(get_current_user_id(), 'note');}
+    ) );
 }
 add_action( 'rest_api_init', 'ct_custom_rest_api' );
+
 
 function pageBanner($args = NULL) {
 
@@ -102,10 +108,11 @@ function ct_adjust_queries($query) {
     }
 
 }
-// add_action('pre_get_posts', 'ct_adjust_queries');
+add_action('pre_get_posts', 'ct_adjust_queries');
+
 
 // function ct_map_key($api) {
-//     $api['key'] = 'b02535a203bc590c402decba28aaf3f3ebb8f406';
+//     $api['key'] = 'AIzaSyBEv-3hQ-zHY3ZYhWAC9p7I1WhZHaGZzNY';
 //     return $api;
 // }
 // add_filter('acf/fields/google_map/api', 'ct_map_key');
@@ -153,3 +160,24 @@ add_action( 'login_header', function ($a) {
     // printf('<a class="login-logo" href="%1$s"><img src="%2$s" alt=""></a>', site_url(), get_template_directory_uri().'/assets/images/logo.svg');
     printf('<div class="login-logo-block"><a class="login-logo" href="%1$s"><strong>Code</strong>Monstar</a></div>', site_url());
 } );
+
+
+// Force note posts to be private
+function ct_make_note_private($data, $postarr) {
+
+    if($data['post_type'] == 'note') {
+
+        if(count_user_posts(get_current_user_id(), 'note') > 4 AND !$postarr['ID']) {
+            die('You have reached your note limit.');
+        }
+
+        $data['post_title'] = sanitize_text_field($data['post_title']);
+        $data['post_content'] = sanitize_textarea_field($data['post_content']);
+    }
+
+    if($data['post_type'] == 'note' AND $data['post_status'] != 'trash') {
+        $data['post_status'] = 'private';
+    }
+    return $data;
+}
+add_filter('wp_insert_post_data', 'ct_make_note_private', 10, 2);

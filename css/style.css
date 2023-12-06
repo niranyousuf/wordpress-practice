@@ -1407,4 +1407,8 @@ nav.navbar .navbar-toggler span.bar {
 }
 .new-note .create-note .icon {
   color: #ffffff;
+}
+.new-note .note-limit {
+  color: #ee5913;
+  display: none;
 }/*# sourceMappingURL=style.css.map */

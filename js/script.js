@@ -334,9 +334,12 @@
                 },
                 url: ctData.root_url + '/wp-json/wp/v2/note/' + thisNote.data('id'),
                 type: 'DELETE',
-                success: () => {
+                success: (response) => {
                     thisNote.slideUp();
                     console.log('Congrats');
+                    if(response.userNoteCount < 5) {
+                        $('.note-limit').removeClass('active');
+                    }
                 },
                 error: () => {
                     console.log('Sorry');
@@ -375,7 +378,10 @@
                     console.log(response);
                     console.log('Congrats');
                 },
-                error: () => {
+                error: (response) => {
+                    if(response.responseText == 'You have reached your note limit.') {
+                        $('.note-limit').addClass('active');
+                    }
                     console.log('Sorry');
                 }
             })

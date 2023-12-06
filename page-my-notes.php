@@ -25,6 +25,7 @@ pageBanner();
                             <input class="new-note-title" placeholder="Write your note title">
                             <textarea class="new-note-content" placeholder="Write your note here"></textarea>
                             <button class="create-note">Create Note</button>
+                            <p class="note-limit">Note limit reached: delete an existing note to make room for new one.</p>
                         </div>
 
 
@@ -36,22 +37,20 @@ pageBanner();
                                     'author' => get_current_user_id()
                                 ));
 
-                                while($userNotes->have_posts()) :
-                                    $userNotes->the_post();
+                                while($userNotes->have_posts()) : $userNotes->the_post();
                             ?>
 
                             <div class="note_body" data-id="<?php the_ID(); ?>"=>
-                                <input readonly class="note-title" value="<?php echo esc_attr(get_the_title()); ?>">
+                                <input readonly class="note-title" value="<?php echo str_replace('Private: ', '',esc_attr(get_the_title())); ?>">
                                 
                                 <div class="btns">
                                     <button class="edit-note"><span class="icon icon-edit"></span> Edit</button>
                                     <button class="delete-note"><span class="icon icon-trash-empty"></span> Delete</button>
                                 </div>
 
-                                <textarea readonly class="note-content"><?php echo esc_attr( wp_strip_all_tags( get_the_content() ) ); ?></textarea>
+                                <textarea readonly class="note-content"><?php echo esc_textarea( wp_strip_all_tags( get_the_content() ) ); ?></textarea>
 
                                 <button class="update-note">Save <span class="icon icon-right"></span></button>
-
                             </div>
 
                             <?php endwhile; wp_reset_query(); ?>
