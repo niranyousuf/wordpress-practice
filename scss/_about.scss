@@ -47,3 +47,29 @@
         padding: 24px;
     }
 }
+
+
+.like-box {
+    display: inline-block;
+    padding: 6px 16px;
+    background-color: #f6f6f7;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 20px;
+    box-shadow: -4px 4px 14px 0px rgba($black, 0.014);
+
+
+    .icon {
+        color: $base-color;
+        &.icon-thumbs-up-alt {
+            display: none;
+        }
+    }
+
+    .like-count {
+        color: $base-color;
+        margin-left: 4px;
+        font-weight: 600;
+    }
+}

@@ -259,6 +259,9 @@ a.btn-small {
 .icon-trash-empty:before {
   content: "\e805";
 } /* '' */
+.icon-thumbs-up:before {
+  content: "\e806";
+} /* '' */
 .icon-right-open:before {
   content: "\e809";
 } /* '' */
@@ -298,6 +301,9 @@ a.btn-small {
 .icon-unlink:before {
   content: "\f127";
 } /* '' */
+.icon-thumbs-up-alt:before {
+  content: "\f164";
+} /* '' */
 .icon-instagram:before {
   content: "\f16d";
 } /* '' */
@@ -841,6 +847,28 @@ nav.navbar .navbar-toggler span.bar {
 .user-profile .self-info {
   color: #ffffff;
   padding: 24px;
+}
+
+.like-box {
+  display: inline-block;
+  padding: 6px 16px;
+  background-color: #f6f6f7;
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 20px;
+  box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.014);
+}
+.like-box .icon {
+  color: #ee5913;
+}
+.like-box .icon.icon-thumbs-up-alt {
+  display: none;
+}
+.like-box .like-count {
+  color: #ee5913;
+  margin-left: 4px;
+  font-weight: 600;
 }
 
 /* 03. Testimonials style */
