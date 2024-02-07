@@ -14,8 +14,6 @@ pageBanner();
                 <div class="col-12">
                     <div class="page__content max_container">
 
-			
-
                         <div class="generic-content">
                             <div class="row">
                                 <div class="col-lg-4">
