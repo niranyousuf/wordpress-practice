@@ -59,6 +59,19 @@
     font-size: 20px;
     box-shadow: -4px 4px 14px 0px rgba($black, 0.014);
 
+    &[data-exists="yes"] {
+        .icon {
+            &.icon-thumbs-up-alt {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+            &.icon-thumbs-up {
+                display: none;
+            }
+        }
+    }
+
 
     .icon {
         color: $base-color;

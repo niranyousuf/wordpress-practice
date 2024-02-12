@@ -859,6 +859,14 @@ nav.navbar .navbar-toggler span.bar {
   font-size: 20px;
   box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.014);
 }
+.like-box[data-exists=yes] .icon.icon-thumbs-up-alt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.like-box[data-exists=yes] .icon.icon-thumbs-up {
+  display: none;
+}
 .like-box .icon {
   color: #ee5913;
 }
