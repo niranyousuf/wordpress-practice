@@ -858,6 +858,7 @@ nav.navbar .navbar-toggler span.bar {
   margin-left: 10px;
   font-size: 20px;
   box-shadow: -4px 4px 14px 0px rgba(0, 0, 0, 0.014);
+  cursor: pointer;
 }
 .like-box[data-exists=yes] .icon.icon-thumbs-up-alt {
   display: inline-flex;

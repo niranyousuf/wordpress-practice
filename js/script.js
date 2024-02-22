@@ -337,7 +337,7 @@
                 success: (response) => {
                     thisNote.slideUp();
                     console.log('Congrats');
-                    if(response.userNoteCount < 5) {
+                    if (response.userNoteCount < 5) {
                         $('.note-limit').removeClass('active');
                     }
                 },
@@ -348,7 +348,7 @@
         }
 
 
-        
+
         createNote(e) {
             var ourNewPost = {
                 'title': $('.new-note-title').val(),
@@ -379,7 +379,7 @@
                     console.log('Congrats');
                 },
                 error: (response) => {
-                    if(response.responseText == 'You have reached your note limit.') {
+                    if (response.responseText == 'You have reached your note limit.') {
                         $('.note-limit').addClass('active');
                     }
                     console.log('Sorry');
@@ -392,23 +392,37 @@
     var my_notes = new MyNotes();
 
 
-    
+
     // ***************************************************************************************************
     // Like CRUD
     // ***************************************************************************************************
 
     class Like {
         constructor() {
-
-            alert("like js testig")
-
+            this.events();
         }
 
         events() {
-
+            $(".like-box").on('click', this.ourClickDispatcher.bind(this));
         }
 
         // Methods
+        ourClickDispatcher(e) {
+            var currentLikeBox = $(e.target).closest(".like-box");
+            if(currentLikeBox.data('exists') == 'yes') {
+                this.deleteLike();
+            } else {
+                this.createLike();
+            }
+        }
+
+        createLike() {
+            console.log("You clicked for create a new like");
+        }
+
+        deleteLike() {
+            console.log("You clicked for delete the like");
+        }
     }
 
     var post_like = new Like();
