@@ -1,3 +1,5 @@
 /.vscode
 /university-static-master
 .DS_Store
+*/.DS_Store
+*/**/.DS_Store
