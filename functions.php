@@ -2,6 +2,7 @@
 
 require get_theme_file_path('/inc/search-route.php');
 require get_theme_file_path('/inc/custom-posts.php');
+require get_theme_file_path('/inc/like-route.php');
 // get author name por each post in rest api
 function ct_custom_rest_api() {
     register_rest_field( 'post', 'authorName', array(
