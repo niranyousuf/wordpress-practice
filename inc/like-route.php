@@ -13,8 +13,16 @@ function ct_like_routes() {
 }
 
 
-function createLike() {
-	return 'Thanks for trying to create a like. ';
+function createLike($data) {
+	$professorId = sanitize_text_field( $data['professorId'] );
+	wp_insert_post( array(
+		'post_type' => 'like',
+		'post_status' => 'publish',
+		'post_title' => 'Our PHP Create post test',
+		'meta_input' => array(
+			'liked_professor_id' => $professorId
+		)
+	) );
 }
 
 function deleteLike() {

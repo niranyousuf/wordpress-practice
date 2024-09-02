@@ -48,7 +48,7 @@ pageBanner();
                                             $existStatus = "yes";
                                         };
                                         ?>
-                                        <div class="like-box" data-exists="<?php echo $existStatus; ?>">
+                                        <div class="like-box" data-professor="<?php the_ID(); ?>" data-exists="<?php echo $existStatus; ?>">
                                             <span class="icon icon-thumbs-up-alt" aria-hidden="true"></span>
                                             <span class="icon icon-thumbs-up" aria-hidden="true"></span>
                                             <span class="like-count"><?php echo $likeCount->found_posts; ?></span>
