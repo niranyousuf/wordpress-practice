@@ -2,14 +2,18 @@
 body {
   margin: 0;
   padding: 0;
+
   font-size: 100%;
+  line-height: 1.4;
+  font-family: $font-main;
+
+  display: flex;
+  min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  flex-direction: column;
   box-sizing: border-box;
-  font-family: $font-main;
-  font-weight: 300;
   background-color: $color-white;
-  line-height: 1.4;
 
   @media (min-width: 768px) {
     &.admin-bar {
@@ -18,7 +22,7 @@ body {
       }
     }
   }
-  &.no-scroll {
+  &.menu-extended {
     overflow: hidden;
   }
 }
@@ -43,12 +47,12 @@ article,
 section {
   margin: 0;
   padding: 0;
+  font-weight: 400;
   color: $color-gray;
 }
 
 h2 {
   font-size: clamp(2rem, 8vw, 2.75rem);
-  margin-bottom: 24px;
   text-transform: uppercase;
   font-family: $font-title;
   &.block_title {
@@ -58,87 +62,84 @@ h2 {
 
 h3 {
   font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: normal;
-  margin-bottom: 22px;
-  text-transform: uppercase;
-  font-family: $font-title;
+  font-family: $font-alt;
 }
 h4 {
   color: $color-black;
   font-size: clamp(1.2rem, 2vw, 1.75rem);
-  line-height: normal;
-  margin-bottom: 15px;
 }
 
 h5 {
   font-size: clamp(1.2rem, 2vw, 1.5rem);
-  margin-bottom: 10px;
+  font-family: $font-alt;
 }
 
 h6 {
   font-size: clamp(1rem, 1.5vw, 1.3rem);
-  margin-bottom: 10px;
+  font-family: $font-alt;
 }
 
 p {
-  font-size: 18px;
+  font-size: 1.125rem;
+
+  + p {
+    margin-top: 1rem;
+  }
 }
 
-ul,
-ol,
-li {
-  list-style: none;
-}
 embed,
 img {
   width: 100%;
-}
-
-.semi-bold {
-  font-weight: 600;
-}
-
-.regular {
-  font-weight: 400;
+  height: auto;
 }
 
 /* Secions */
 .section-padding {
-  padding-top: 100px;
-  padding-bottom: 70px;
+  padding-top: 6.25rem;
+  padding-bottom: 6.25rem;
 
   &:nth-of-type(odd) {
-    background-color: #fdfdfd;
+    background-color: $color-offwhite;
   }
 }
 
 .section-title {
-  margin: 0 auto;
   max-width: 750px;
   text-align: center;
+  margin: 0 auto;
   margin-bottom: 72px;
 
-  h2 {
-    font-weight: 600;
-  }
-
   p {
-    margin-bottom: 36px;
+    margin-top: 1rem;
   }
 }
 
 /* all anchor tag with button link */
 a {
-  font-weight: 400;
   transition: all 300ms ease;
   text-decoration: none;
 
   &.active,
-  &:hover {
+  &:hover,
+  &:focus {
     text-decoration: none;
+    outline: none;
+  }
+}
+
+.btn {
+  @extend %button;
+  &:after {
+    @include ripple-out;
   }
 
-  &:focus {
-    outline: none;
+  &:hover {
+    &::after {
+      @include ripple-out-hover;
+    }
+  }
+
+  &_group {
+    margin-top: 1.5rem;
   }
 }
