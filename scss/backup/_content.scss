@@ -21,10 +21,10 @@
             text-align: center;
             padding: 20px 0;
             background-color: #0d3b66;
-            color: $white;
+            color:  $color-white;
             font-size: 24px;
             a {
-                color: $white;
+                color:  $color-white;
                 text-decoration: none;
                 background-color: #0d3b66;
             }
@@ -38,7 +38,7 @@
                 transition: all 200ms ease;
                 a {
                     display: block;
-                    color: $black;
+                    color:  $color-black;
                     padding: 18px;
                 }
                 &:hover {
@@ -55,7 +55,7 @@
         &.current_page_item {
             text-align: center;
             background-color: #e9ecf7;
-            color: $secondary-color;
+            color:  $color-white;
             a {
                 font-weight: 600;
             }
@@ -95,7 +95,7 @@
     padding: 10px 15px;
     display: inline-block;
     margin-bottom: 30px;
-    box-shadow: 2px 0px 5px rgba($black, 0.04);
+    box-shadow: 2px 0px 5px rgba( $color-black, 0.04);
 
     p {
         a {
@@ -121,19 +121,19 @@
 
         .back_to_prev_page {
             background-color: #0d3b66;
-            color: $white;
+            color:  $color-white;
             display: inline-block;
             padding: 10px 15px;
             border-radius: 3px 0 0 3px;
             font-weight: normal;
 
             .icon {
-                color: $white;
+                color:  $color-white;
             }
         }
         .current_page {
             padding: 10px 15px 10px 11px;
-            color: $secondary-color;
+            color:  $color-white;
         }
     }
 }
@@ -166,7 +166,7 @@
             padding: 12px 22px;
             border-radius: 4px;
             position: absolute;
-            background-color: rgba($secondary-color, 0.2);
+            background-color: rgba( $color-white, 0.2);
 
             display: flex;
             align-items: center;
@@ -199,7 +199,7 @@
 .single__post {
     padding-bottom: 32px;
     margin-bottom: 32px;
-    border-bottom: 1px solid rgba($black, 0.03);
+    border-bottom: 1px solid rgba( $color-black, 0.03);
 
     .post__content {
         .btn {
@@ -212,7 +212,7 @@
     margin-top: 60px;
     padding-top: 48px;
 
-    border-top: 1px solid rgba($black, 0.1);
+    border-top: 1px solid rgba( $color-black, 0.1);
     .block_title {
         margin-bottom: 36px;
     }

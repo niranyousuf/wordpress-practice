@@ -1,80 +1,80 @@
 body.login {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-pack: center;
-    justify-content: center;
-    padding: 0 10px;
-    background: #f2f2f2 url(../img/login-bg.svg) center top no-repeat;
-    background-size: auto 626px;
-    font-size: 17px;
-    font-family: 'Inter', sans-serif;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0 10px;
+  background: #f2f2f2 url(../img/login-bg.svg) center top no-repeat;
+  background-size: auto 626px;
+  font-size: 17px;
+  font-family: "Inter", sans-serif;
 
-    form {
-        border: none;
-        box-shadow: none;
-    }
+  form {
+    border: none;
+    box-shadow: none;
+  }
 
-    .message {
-        text-align: center;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-    }
+  .message {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
 }
 
 #login {
-    box-sizing: border-box;
-    width: 500px;
-    max-width: 100%;
-    padding: 15px 30px;
-    border: 1px solid #e5e5e5;
-    background: #fff;
-    border-radius: 5px;
-    
-    margin: auto;
-    margin-top: 48px;
+  box-sizing: border-box;
+  width: 500px;
+  max-width: 100%;
+  padding: 15px 30px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  border-radius: 5px;
+
+  margin: auto;
+  margin-top: 48px;
 }
 #login,
 .login {
-    h1 {
-        a {
-            display: none;
-        }
+  h1 {
+    a {
+      display: none;
     }
+  }
 }
 .login-logo-block {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    margin: 80px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 80px 0 0;
 }
 .login-logo {
-    display: block;
-    text-align: center;
-    padding: 18px 32px;
-    border-radius: 8px;
+  display: block;
+  text-align: center;
+  padding: 18px 32px;
+  border-radius: 8px;
 
-    font-size: 48px;
-    text-decoration: none;
-    color: #141c3a;
-    font-weight: 300;
+  font-size: 48px;
+  text-decoration: none;
+  color: #141c3a;
+  font-weight: 300;
 
-    strong {
-        font-family: "Lora", serif;
-        font-weight: 600;
-        color: #0041a9;
-    }
+  strong {
+    font-family: "Lora", serif;
+    font-weight: 600;
+    color: #0041a9;
+  }
 
-    > img {
-        height: 55px;
-        width: auto;
-    }
+  > img {
+    height: 55px;
+    width: auto;
+  }
 
-    &:focus {
-        outline: none;
-        border: none;
-        box-shadow: none;
-    }
+  &:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+  }
 }

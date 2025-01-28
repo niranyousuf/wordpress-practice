@@ -12,7 +12,9 @@
     <nav class="navbar">
 
         <div class="container">
-            <a class="navbar-brand" href="<?php echo site_url(); ?>">Code<span>Monster</span></a>
+            <a class="navbar-brand" href="<?php echo site_url(); ?>">
+                <?php get_template_part('svgs/logo'); ?>
+            </a>
             
             <button class="navbar-toggler" type="button">
                 <span class="bar"></span>

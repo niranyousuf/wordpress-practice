@@ -11,15 +11,15 @@
             max-width: 650px;
             margin: 0 auto;
             text-align: center;
-            background-color: rgba($black, 0.6);
+            background-color: rgba( $color-black, 0.6);
             padding: 50px;
             
             h2 {
-                color: $white;
+                color:  $color-white;
                 margin-bottom: 15px;
             }
             p {
-                color: $white;
+                color:  $color-white;
                 margin-bottom: 15px;
             }
         }
@@ -39,7 +39,7 @@
             &.owl-dot {
                 height: 10px;
                 aspect-ratio: 1;
-                background-color: $white;
+                background-color:  $color-white;
                 border-radius: 50%;
 
                 &:hover,

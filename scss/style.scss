@@ -1,29 +1,15 @@
 /*
 * Author          : AHM Yousuf Niran
+* Author URL      : http://niranyousuf.me/
 * Version         : 1.1.1
-* Url             : http://niranyousuf.me/
 */
 
-// variables
-$black: #000000;
-$white: #ffffff;
-$base-color: #ee5913;
-$text-color: #141c3a;
-$primary-color: #1f6e8c;
-$secondary-color: #0041a9;
 
-$default-font: 'Inter', sans-serif;
-$title-font: 'Lora', serif;
 
 // pages
-@import "./_default.scss";
-@import "./_icon.scss";
-@import "./_nav.scss";
-@import "./_banner.scss";
-@import "./_latest.scss";
-@import "./_about.scss";
-@import "./_testimonials.scss";
-@import "./_content.scss";
-@import "./_footer.scss";
-@import "./_search.scss";
-@import "./_my-note.scss";
+@import "fonts";
+@import "variable";
+@import "mixins";
+@import "animations";
+@import "base";
+@import "navigation"

@@ -18,6 +18,11 @@
                 span {
                     font-weight: 300;
                 }
+
+                svg {
+                    height: 46px;
+                    width: 200px;
+                }
             }
         }
 
@@ -62,7 +67,7 @@
                     }
 
                     &:hover {
-                        color: $primary-color;
+                        color:  $color-gray;
                         padding-left: 7px;
                     }
                 }

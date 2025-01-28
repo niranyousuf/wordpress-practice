@@ -1,0 +1,18 @@
+// fonts variables
+
+$font-main: "Satoshi", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell,"Helvetica Neue", sans-serif;
+// $font-main: "Nunito Sans", serif;
+$font-title: "Oswald", serif;
+$font-alt: "Poppins", serif;
+
+// Color variables
+$color-black: #000000;
+$color-white: #ffffff;
+$color-gray: #141c3a;
+$color-royal-blue: #0041a9;
+$color-sky-blue: #33c2ec;
+$color-dark-blue: #1A237E;
+$color-navy-blue: #061934;
+body {
+	font-family: $font-main;
+}

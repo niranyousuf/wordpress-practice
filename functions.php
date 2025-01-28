@@ -4,7 +4,7 @@ require get_theme_file_path('/inc/search-route.php');
 require get_theme_file_path('/inc/custom-posts.php');
 require get_theme_file_path('/inc/like-route.php');
 // get author name por each post in rest api
-function ct_custom_rest_api() {
+function cmt_custom_rest_api() {
     register_rest_field( 'post', 'authorName', array(
         'get_callback' => function() {return get_the_author();}
     ) );
@@ -14,7 +14,7 @@ function ct_custom_rest_api() {
         'get_callback' => function() {return count_user_posts(get_current_user_id(), 'note');}
     ) );
 }
-add_action( 'rest_api_init', 'ct_custom_rest_api' );
+add_action( 'rest_api_init', 'cmt_custom_rest_api' );
 
 
 function pageBanner($args = NULL) {
@@ -48,29 +48,28 @@ function pageBanner($args = NULL) {
 
 <?php }
 
-function ct_assets() {
-    wp_enqueue_style('google-font', "//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@600&display=swap");
+function cmt_assets() {
     wp_enqueue_style('bootstrap_css', get_theme_file_uri("./css/bootstrap.min.css"), null, microtime());
     wp_enqueue_style('owl.carousel.min_css', get_theme_file_uri("./css/owl.carousel.min.css"), null, microtime());
-    wp_enqueue_style('ct_main_style_css', get_theme_file_uri("./css/style.css"), null, microtime());
-    wp_enqueue_style('ct_main_styles', get_stylesheet_uri());
+    wp_enqueue_style('cmt_main_style_css', get_theme_file_uri("./css/style.css"), null, microtime());
+    wp_enqueue_style('cmt_main_styles', get_stylesheet_uri());
 
     wp_enqueue_script( 'bootstrap.bundle.min_js', get_theme_file_uri("./js/bootstrap.bundle.min.js"), array('jquery'), '1.0', true );
     wp_enqueue_script( 'owl.carousel.min_js', get_theme_file_uri("./js/owl.carousel.min.js"), array('jquery'), '1.0', true );
-    wp_enqueue_script( 'ct_main_js', get_theme_file_uri("./js/script.js"), array('jquery'), '1.0', true );
+    wp_enqueue_script( 'cmt_main_js', get_theme_file_uri("./js/script.js"), array('jquery'), '1.0', true );
 
 
-    wp_localize_script('ct_main_js', 'ctData', array(
+    wp_localize_script('cmt_main_js', 'ctData', array(
         'root_url' => get_site_url(),
         'nonce' => wp_create_nonce('wp_rest')
       ));
 
 }
-add_action('wp_enqueue_scripts', 'ct_assets');
+add_action('wp_enqueue_scripts', 'cmt_assets');
 
 
 
-function ct_features() {
+function cmt_features() {
 
     // register_nav_menu( "header_menu", "Header Menu" );
 
@@ -81,12 +80,12 @@ function ct_features() {
     add_image_size( 'pageBanner', 1500, 350, true);
 
 }
-add_action( 'after_setup_theme', 'ct_features' );
+add_action( 'after_setup_theme', 'cmt_features' );
 
 
 
 // Events post filtering Query
-function ct_adjust_queries($query) {
+function cmt_adjust_queries($query) {
 
     if(!is_admin() && is_post_type_archive('program') && $query->is_main_query()){
         $query->set('orderby', 'title');
@@ -110,52 +109,52 @@ function ct_adjust_queries($query) {
     }
 
 }
-add_action('pre_get_posts', 'ct_adjust_queries');
+add_action('pre_get_posts', 'cmt_adjust_queries');
 
 
-// function ct_map_key($api) {
+// function cmt_map_key($api) {
 //     $api['key'] = 'AIzaSyBEv-3hQ-zHY3ZYhWAC9p7I1WhZHaGZzNY';
 //     return $api;
 // }
-// add_filter('acf/fields/google_map/api', 'ct_map_key');
+// add_filter('acf/fields/google_map/api', 'cmt_map_key');
 
 
 // Redirect subscriber accounts out of admin and onto homepage
-function ct_redirect_subs_frontend() {
+function cmt_redirecmt_subs_frontend() {
     $currentUser = wp_get_current_user();
     if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == 'subscriber') {
         wp_redirect( site_url('/') );
         exit;
     }
 }
-add_action('admin_init', 'ct_redirect_subs_frontend');
+add_action('admin_init', 'cmt_redirecmt_subs_frontend');
 
 // Disable admin bar for subscriber
-function ct_no_subs_adminbar() {
+function cmt_no_subs_adminbar() {
     $currentUser = wp_get_current_user();
     if(count($currentUser->roles) == 1 AND $currentUser->roles[0] == 'subscriber') {
         show_admin_bar( false );
     }
 }
-add_action('wp_loaded', 'ct_no_subs_adminbar');
+add_action('wp_loaded', 'cmt_no_subs_adminbar');
 
 
 // Customize login screen
-add_filter('login_headerurl', 'ct_login_header_url');
-function ct_login_header_url() {
+add_filter('login_headerurl', 'cmt_login_header_url');
+function cmt_login_header_url() {
     return esc_url(site_url('/'));
 }
-function ct_login_script() {
+function cmt_login_script() {
 	wp_enqueue_style( 'codemonstar-login',  get_template_directory_uri() . "/css/login.css" );
     wp_enqueue_style('google-font', "//fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:wght@600&display=swap");
 }
-add_action( 'login_enqueue_scripts', 'ct_login_script' );
+add_action( 'login_enqueue_scripts', 'cmt_login_script' );
 
 // Header title change 
-// function ct_header_title() {
+// function cmt_header_title() {
 //     return get_bloginfo( 'name' );
 // }
-// add_filter( 'login_headertitle', 'ct_header_title' );
+// add_filter( 'login_headertitle', 'cmt_header_title' );
 
 // login Form logo
 add_action( 'login_header', function ($a) {
@@ -165,7 +164,7 @@ add_action( 'login_header', function ($a) {
 
 
 // Force note posts to be private
-function ct_make_note_private($data, $postarr) {
+function cmt_make_note_private($data, $postarr) {
 
     if($data['post_type'] == 'note') {
 
@@ -182,4 +181,4 @@ function ct_make_note_private($data, $postarr) {
     }
     return $data;
 }
-add_filter('wp_insert_post_data', 'ct_make_note_private', 10, 2);
+add_filter('wp_insert_post_data', 'cmt_make_note_private', 10, 2);

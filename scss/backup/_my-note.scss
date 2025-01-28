@@ -3,7 +3,7 @@
 		transition: all 200ms ease;
 		&:not(:last-child) {
 			margin-bottom: 42px;
-			border-bottom: 1px solid rgba($black, 0.05);
+			border-bottom: 1px solid rgba( $color-black, 0.05);
 			padding-bottom: 32px;
 		}
 
@@ -11,7 +11,7 @@
 			width: 75%;
 			display: inline-block;
 
-			color: $text-color;
+			color:  $color-gray;
 			font-size: clamp(1.2rem, 2vw, 1.75rem);
 			font-weight: 500;
 			border: none;
@@ -23,13 +23,13 @@
 			}
 
 			&.active-field {
-				border: 1px solid rgba($black, 0.05);
+				border: 1px solid rgba( $color-black, 0.05);
 			}
 		}
 
 		.note-content {
 			width: 100%;
-			color: $black;
+			color:  $color-black;
 			font-size: 18px;
 			border: none;
 			resize: none;
@@ -44,23 +44,23 @@
 			padding: 10px 20px;
 
 			&.active-field {
-				border: 1px solid rgba($black, 0.05);
+				border: 1px solid rgba( $color-black, 0.05);
 			}
 		}
 
 		.update-note {
-			color: $white;
+			color:  $color-white;
 			font-size: 18px;
 			padding: 8px 20px;
 			border-radius: 3px;
 			margin-bottom: 20px;
 			transition: all 300ms ease;
-			border: 1px solid $text-color;
-			background-color: $text-color;
+			border: 1px solid  $color-gray;
+			background-color:  $color-gray;
 			display: none;
 
 			.icon {
-				color: $white;
+				color:  $color-white;
 			}
 		}
 
@@ -78,18 +78,18 @@
 	margin-bottom: 42px;
 	padding: 32px;
 	padding-top: 42px;
-	background-color: rgba($black, 0.05);
+	background-color: rgba( $color-black, 0.05);
 	border-radius: 8px;
 
 	.new-note-title {
 		display: inline-block;
 		
 		width: 100%;
-		color: $text-color;
+		color:  $color-gray;
 		font-size: clamp(1.2rem, 2vw, 1.75rem);
 		font-weight: 500;
 		padding: 10px 20px;
-		border: 1px solid rgba($black, 0.05);
+		border: 1px solid rgba( $color-black, 0.05);
 		border-bottom: 0;
 
 		&:focus {
@@ -101,7 +101,7 @@
 
 	.new-note-content {
 		width: 100%;
-		color: $black;
+		color:  $color-black;
 		font-size: 18px;
 		resize: none;
 		display: block;
@@ -114,26 +114,26 @@
 		position: relative;
 		padding: 10px 20px;
 
-		border: 1px solid rgba($black, 0.05);
+		border: 1px solid rgba( $color-black, 0.05);
 	}
 
 	.create-note {
-		color: $white;
+		color:  $color-white;
 		font-size: 18px;
 		padding: 8px 20px;
 		border-radius: 3px;
 		margin-bottom: 20px;
 		transition: all 300ms ease;
-		border: 1px solid $text-color;
-		background-color: $text-color;
+		border: 1px solid  $color-gray;
+		background-color:  $color-gray;
 
 		.icon {
-			color: $white;
+			color:  $color-white;
 		}
 	}
 
 	.note-limit {
-		color: $base-color;
+		color:  $color-gray;
 		display: none;
 	}
 }
