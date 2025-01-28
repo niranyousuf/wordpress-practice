@@ -123,7 +123,7 @@
 .icon-github-squared:before {
   content: "\f300";
 } /* '' */
-header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
+.footer_menu, .footer_wrapper, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -936,78 +936,98 @@ header .navbar_toggler span.bar {
 }
 
 /* 10. Footer styles */
-#footer {
-  background: #f6f8fc;
-  padding-top: 120px;
-  padding-bottom: 100px;
+.footer {
+  background: rgba(248, 249, 241, 0.6);
+  padding-top: 100px;
+  padding-bottom: 2.5rem;
   margin-top: auto;
 }
-#footer .product-info a {
+.footer_wrapper {
+  padding-bottom: 2.5rem;
+  flex-direction: column;
+}
+@media (min-width: 768.98px) {
+  .footer_wrapper {
+    gap: 4rem;
+    flex-direction: row;
+  }
+}
+@media (min-width: 768.98px) {
+  .footer .product-info {
+    flex: 1;
+  }
+}
+.footer .product-info a {
   margin-bottom: 32px;
   display: block;
 }
-#footer .product-info a.logo {
+.footer .product-info a.logo {
   font-size: 32px;
   font-weight: 600;
 }
-#footer .product-info a.logo img {
+.footer .product-info a.logo img {
   height: 33px;
   width: auto;
 }
-#footer .product-info a.logo span {
+.footer .product-info a.logo span {
   font-weight: 300;
 }
-#footer .product-info a.logo svg {
+.footer .product-info a.logo svg {
   height: 46px;
   width: 200px;
 }
-#footer .product-info p {
+.footer .product-info p {
   font-size: 14px;
-  color: #4d4d4d;
   max-width: 368px;
   margin-inline: 0;
   margin-bottom: 32px;
   line-height: 2;
 }
-@media (max-width: 992.98px) {
-  #footer .footer-links {
-    margin-bottom: 32px;
-    padding-top: 30px;
-    border-top: 1px solid #c5c6ca;
+.footer_menu {
+  gap: 4rem;
+}
+@media (max-width: 768px) {
+  .footer_menu {
+    border-top: 1px solid rgba(20, 28, 58, 0.12);
   }
 }
-#footer .footer-links h3 {
-  font-size: 18px;
-  color: #000;
-  font-weight: 600;
-  margin-bottom: 32px;
+@media (max-width: 992.98px) {
+  .footer_menu .footer-links {
+    padding-top: 30px;
+  }
 }
-#footer .footer-links ul {
+.footer_menu .footer-links h3 {
+  font-size: 1.125rem;
+  font-family: "Oswald", serif;
+  font-weight: 400;
+  margin-bottom: 1.125rem;
+}
+.footer_menu .footer-links ul {
   padding: 0;
   list-style: none;
 }
-#footer .footer-links ul li a {
+.footer_menu .footer-links ul li a {
   font-size: 14px;
-  color: #4d4d4d;
   display: block;
   padding: 10px 0;
   transition: all 300ms ease;
 }
-#footer .footer-links ul li a .icon {
-  color: #000;
+.footer_menu .footer-links ul li a .icon {
   font-size: 16px;
   margin-right: 5px;
 }
-#footer .footer-links ul li a:hover {
-  color: #141c3a;
-  padding-left: 7px;
+.footer_menu .footer-links ul li a:hover {
+  color: #ff4500;
 }
-#footer .copyright {
-  padding-top: 40px;
-  border-top: 1px solid #c5c6ca;
+.footer_menu .footer-links ul li a:hover .icon {
+  color: #ff4500;
+}
+.footer .copyright {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(20, 28, 58, 0.07);
   text-align: center;
 }
-#footer .copyright p {
-  font-size: 14px;
-  color: #4d4d4d;
+.footer .copyright p {
+  font-size: 0.75rem;
+  color: rgba(20, 28, 58, 0.6);
 }/*# sourceMappingURL=style.css.map */

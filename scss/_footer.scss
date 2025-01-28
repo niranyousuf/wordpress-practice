@@ -1,10 +1,26 @@
 /* 10. Footer styles */
-#footer {
-  background: #f6f8fc;
-  padding-top: 120px;
-  padding-bottom: 100px;
+.footer {
+  background: rgba($color-pale-parchment, 0.6);
+  padding-top: 100px;
+  padding-bottom: 2.5rem;
   margin-top: auto;
+
+  &_wrapper {
+    @extend %d-flex;
+    padding-bottom: 2.5rem;
+    flex-direction: column;
+    
+    @media (min-width: 768.98px) {
+      gap: 4rem;
+      flex-direction: row;
+    }
+  }
+
   .product-info {
+        
+    @media (min-width: 768.98px) {
+      flex: 1;
+    }
     a {
       margin-bottom: 32px;
       display: block;
@@ -29,7 +45,6 @@
 
     p {
       font-size: 14px;
-      color: #4d4d4d;
       max-width: 368px;
       margin-inline: 0;
       margin-bottom: 32px;
@@ -37,39 +52,46 @@
     }
   }
 
-  .footer-links {
-    @media (max-width: 992.98px) {
-      margin-bottom: 32px;
-      padding-top: 30px;
-      border-top: 1px solid #c5c6ca;
+  &_menu {
+    @extend %d-flex;
+    gap: 4rem;
+        
+    @media (max-width: 768px) {
+      border-top: 1px solid rgba($color-gray, 0.12);
     }
-    h3 {
-      font-size: 18px;
-      color: #000;
-      font-weight: 600;
-      margin-bottom: 32px;
-    }
-    ul {
-      padding: 0;
-      list-style: none;
+    .footer-links {
+      @media (max-width: 992.98px) {
+        padding-top: 30px;
+      }
+      h3 {
+        font-size: 1.125rem;
+        font-family: $font-title;
+        font-weight: 400;
+        margin-bottom: 1.125rem;
+      }
+      ul {
+        padding: 0;
+        list-style: none;
 
-      li {
-        a {
-          font-size: 14px;
-          color: #4d4d4d;
-          display: block;
-          padding: 10px 0;
-          transition: all 300ms ease;
+        li {
+          a {
+            font-size: 14px;
+            display: block;
+            padding: 10px 0;
+            transition: all 300ms ease;
 
-          .icon {
-            color: #000;
-            font-size: 16px;
-            margin-right: 5px;
-          }
+            .icon {
+              font-size: 16px;
+              margin-right: 5px;
+            }
 
-          &:hover {
-            color: $color-gray;
-            padding-left: 7px;
+            &:hover {
+              color: $color-orange-ember;
+
+              .icon {
+                color: $color-orange-ember;
+              }
+            }
           }
         }
       }
@@ -77,13 +99,13 @@
   }
 
   .copyright {
-    padding-top: 40px;
-    border-top: 1px solid #c5c6ca;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba($color-gray, 0.07);
     text-align: center;
 
     p {
-      font-size: 14px;
-      color: #4d4d4d;
+      font-size: 0.75rem;
+      color: rgba($color-gray, 0.6);
     }
   }
 }
