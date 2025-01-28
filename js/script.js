@@ -54,9 +54,9 @@
   class Search {
     // 1. Describe and create/initiate our object
     constructor() {
-      this.addSearchHTML();
+      // this.addSearchHTML();
       this.resultsDiv = $('#search__results');
-      this.openBtn = $('.search-btn');
+      this.openBtn = $('.search_btn');
       this.closeBtn = $('.search-hide');
       this.searchOverlay = $('.search_overlay');
       this.searchField = $('#search_input');
@@ -194,34 +194,34 @@
 
     }
 
-    addSearchHTML() {
-      $('body').append(`
-        <div class="search_overlay">
-          <div class="search_box">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="field_group">
-                    <span class="icon icon-search"></span>
-                    <input type="text" placeholder="What are you looking for?" id="search_input" class="search_input">
-                    <span class="icon icon-cancel search-hide"></span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="search_results">
-            <div class="container">
-              <div class="row">
-                <div class="col-12">
-                  <div id="search__results"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      `)
-    }
+    // addSearchHTML() {
+    //   $('body').append(`
+    //     <div class="search_overlay">
+    //       <div class="search_box">
+    //         <div class="container">
+    //           <div class="row">
+    //             <div class="col-md-12">
+    //               <div class="field_group">
+    //                 <span class="icon icon-search"></span>
+    //                 <input type="text" placeholder="What are you looking for?" id="search_input" class="search_input">
+    //                 <span class="icon icon-cancel search-hide"></span>
+    //               </div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       <div class="search_results">
+    //         <div class="container">
+    //           <div class="row">
+    //             <div class="col-12">
+    //               <div id="search__results"></div>
+    //             </div>
+    //           </div>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   `)
+    // }
   }
 
 

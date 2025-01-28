@@ -62,13 +62,14 @@
               <a class="btn light" href="<?php echo wp_login_url(); ?>">Login</a>
               <a class="btn" href="<?php echo wp_registration_url(); ?>">Sign Up</a>
             <?php endif; ?>
-            <a class="search-btn" href="<?php echo esc_url(site_url('/search')); ?>">
-              <span class="icon icon-search"></span>
-            </a>
-
           </div>
         </nav>
 
+
+
+        <a class="search_btn" href="<?php echo esc_url(site_url('/search')); ?>">
+          <?php get_template_part('svgs/search'); ?>
+        </a>
 
         <button class="navbar_toggler" type="button" aria-expanded="false">
           <span class="bar"></span>

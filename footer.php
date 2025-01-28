@@ -48,6 +48,9 @@
   </div>
 </footer>
 
+
+<?php  get_template_part('template-parts/content', 'search'); ?>
+
 <?php wp_footer(); ?>
 </body>
 

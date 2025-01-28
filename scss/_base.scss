@@ -39,6 +39,7 @@ ul,
 li,
 ol,
 div,
+nav,
 span,
 header,
 footer,
@@ -49,6 +50,7 @@ section {
   padding: 0;
   font-weight: 400;
   color: $color-gray;
+  box-sizing: border-box;
 }
 
 h2 {
