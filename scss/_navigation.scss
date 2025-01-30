@@ -5,6 +5,7 @@ header {
   width: 100%;
   position: fixed;
   padding: 1rem 0;
+  z-index: 99;
 
   &::after {
     top: 0;
@@ -86,21 +87,26 @@ header {
         @extend %align-center;
         gap: 0.75rem;
 
-        .btn {
+        .nav_btn {
           font-size: 1rem;
           padding: 0.375rem 0.875rem;
           border-radius: 0.25rem;
           text-transform: capitalize;
+          color: $color-white;
+          font-weight: 400;
+          line-height: 1.1;
+          background: $color-cosmic-blue;
+          border: 1px solid $color-cosmic-blue;
           &:hover {
-            background-color: $color-offwhite;
+            background: $color-offwhite;
             color: $color-dark-blue;
           }
           &.light {
-            background-color: $color-orange-ember;
-            border-color: $color-orange-ember;
+            background: $color-orange-ember;
+            border: 1px solid $color-orange-ember;
 
             &:hover {
-              background-color: $color-offwhite;
+              background: $color-offwhite;
               color: $color-orange-ember;
             }
           }
@@ -108,7 +114,8 @@ header {
           &_user {
             padding: 0;
             padding-right: 0.875rem;
-            background-color: $color-cosmic-blue;
+            background: $color-cosmic-blue;
+            border: 1px solid $color-cosmic-blue;
             color: $color-white;
             .user {
               &_avatar {
@@ -130,9 +137,6 @@ header {
                 color: $color-cosmic-blue;
               }
             }
-          }
-          &::after {
-            display: none;
           }
         }
       }
@@ -234,7 +238,7 @@ header {
               transform: translateY(0);
               @for $i from 1 through 15 {
                 &:nth-child(#{$i}n) {
-                  transition-delay: #{$i * 0.2}s;
+                  transition-delay: #{$i * 0.125}s;
                 }
               }
             }
@@ -243,7 +247,7 @@ header {
         .user_nav {
           margin-top: auto;
 
-          .btn {
+          .nav_btn {
             background-color: $color-blue;
             border-color: $color-blue;
           }

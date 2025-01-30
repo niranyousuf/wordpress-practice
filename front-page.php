@@ -5,25 +5,21 @@ get_header();
 ?>
 
 
-<section id="hero" class="hero-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg); display: none;">
+<section id="hero" class="hero-banner" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/hero.jpg);">
   <div class="container">
-    <div class="row">
-      <div class="col-12 ">
-        <div class="hero-content">
-          <h1>WordPress Experience in all new ways</h1>
-          <p>
-            Experience remarkable WordPress products with a new level of power, beauty, and
-            human-centered designs.
-            Think you know WordPress products? Think deeper!
-          </p>
-          <a class="btn btn-big" href="<?php echo get_post_type_archive_link('program') ?>">Take a look</a>
-        </div>
-      </div>
+    <div class="hero-content">
+      <h1>WordPress Experience in all new ways</h1>
+      <p>
+        Experience remarkable WordPress products with a new level of power, beauty, and
+        human-centered designs.
+        Think you know WordPress products? Think deeper!
+      </p>
+      <a class="btn btn-big" href="<?php echo get_post_type_archive_link('program') ?>">Take a look</a>
     </div>
   </div>
 </section>
 
-<section class="section-padding news-and-events" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/feature-bg.svg); display:none;">
+<section class="section-padding news-and-events" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/feature-bg.svg);">
   <div class="container">
     <div class="row">
       <div class="col-12">

@@ -36,26 +36,55 @@
 	justify-content: center;
 
 	line-height: 1.1;
-	font-weight: 400;
+	font-weight: 600;
 	font-style: normal;
 	font-size: 1.125rem;
 	text-decoration: none;
 	letter-spacing: 0.0122rem;
 
-	color: $color-white;
-	border: 1px solid $color-dark-blue;
-	background-color: $color-dark-blue;
-	padding: 0.75rem 2rem;
-	transition: all 0.3s ease-in-out;
+	color: $color-dark-blue;
+	padding: 0.875rem 2.125rem;
+	transition: all 0.3s ease;
 
-	border-radius: 0;
 	position: relative;
 	text-transform: uppercase;
+	border-top: 2px solid $color-dark-blue;
+	border-bottom: 2px solid $color-dark-blue;
+
+	&::after,
+	&::before {
+		position: absolute;
+		content: "";
+		background-color: transparent;
+		border: solid $color-orange-ember;
+		border-width: 0;
+	}
+
+	&::after {
+		top: -2px;
+		left: -1px;
+		border-bottom: transparent;
+		border-left: transparent;
+	}
+	&::before {
+		bottom: -2px;
+		right: -1px;
+		border-top: transparent;
+		border-right: transparent;
+	}
 
 	&:hover,
 	&:focus,
 	&:active {
 		outline: none;
+		background-color: rgba($color-black, 0.02);
+		backdrop-filter: saturate(180%) blur(20px);
+		color: $color-orange-ember;
+		&::after,
+		&::before {
+			border-width: 2px;
+			animation: drawBorder 600ms ease forwards;
+		}
 	}
 }
 
@@ -143,7 +172,8 @@
 	content: "";
 	position: absolute;
 	animation-duration: 1000ms;
-	border: 1px solid $color-dark-blue;
+	border: 1px solid $color-royal-blue;
+	border-radius: 3px;
 }
 
 @mixin ripple-out-hover {

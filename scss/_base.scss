@@ -131,16 +131,6 @@ a {
 
 .btn {
   @extend %button;
-  &:after {
-    @include ripple-out;
-  }
-
-  &:hover {
-    &::after {
-      @include ripple-out-hover;
-    }
-  }
-
   &_group {
     margin-top: 1.5rem;
   }

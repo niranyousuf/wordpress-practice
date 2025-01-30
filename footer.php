@@ -30,7 +30,7 @@
     </div>
 
     <div class="copyright">
-      <p>&copy; <?php echo date('Y') ?> <?php bloginfo(); ?> | All Rights Reserved</p>
+      <p>&copy; <?php echo date('Y') ?> <a href="<?php echo site_url('/'); ?>"><?php bloginfo(); ?></a> | All Rights Reserved</p>
     </div>
   </div>
 </footer>

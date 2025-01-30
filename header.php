@@ -53,14 +53,14 @@
 
           <div class="user_nav">
             <?php if (is_user_logged_in()) : ?>
-              <a class="btn light" href="<?php echo esc_url(site_url('/my-notes')); ?>">My Notes</a>
-              <a class="btn btn_user" href="<?php echo wp_logout_url(); ?>">
+              <a class="nav_btn light" href="<?php echo esc_url(site_url('/my-notes')); ?>">My Notes</a>
+              <a class="nav_btn btn_user" href="<?php echo wp_logout_url(); ?>">
                 <span class="user_avatar"><?php echo get_avatar(get_current_user_id(), 60); ?></span>
                 <span class="user_name">Log Out</span>
               </a>
             <?php else: ?>
-              <a class="btn light" href="<?php echo wp_login_url(); ?>">Login</a>
-              <a class="btn" href="<?php echo wp_registration_url(); ?>">Sign Up</a>
+              <a class="nav_btn light" href="<?php echo wp_login_url(); ?>">Login</a>
+              <a class="nav_btn" href="<?php echo wp_registration_url(); ?>">Sign Up</a>
             <?php endif; ?>
           </div>
         </nav>
