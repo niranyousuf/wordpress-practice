@@ -123,7 +123,7 @@
 .icon-github-squared:before {
   content: "\f300";
 } /* '' */
-.footer_menu, .footer_wrapper, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
+.footer_menu, .footer_wrapper, .events_wrapper .latest_events, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -198,6 +198,7 @@ header .navbar_menu .main_menu {
 
 .container {
   margin: 0 auto;
+  width: 100%;
   max-width: 86rem;
   padding: 0 1.5rem;
 }
@@ -209,22 +210,12 @@ header .navbar_menu .main_menu {
 @media (min-width: 1024.98px) {
   .container {
     padding: 0 4rem;
-    max-width: 64rem;
-    margin: 0 auto;
-  }
-}
-@media (min-width: 1200.98px) {
-  .container {
-    padding: 0 5rem;
-    margin: 0 auto;
-    max-width: 75rem;
   }
 }
 @media (min-width: 1536.98px) {
   .container {
-    padding: 0 5rem;
     margin: 0 auto;
-    max-width: 86rem;
+    max-width: 90rem;
   }
 }
 @media (min-width: 1680.98px) {
@@ -1069,6 +1060,108 @@ header .navbar_toggler span.bar {
 }
 .error404 #footer {
   display: none;
+}
+
+.events_wrapper {
+  text-align: center;
+}
+.events_wrapper .latest_events {
+  gap: 30px;
+  margin-bottom: 2.5rem;
+}
+.events_wrapper .latest_events .event-details {
+  width: 100%;
+  min-height: 20rem;
+  transition: all ease 300ms;
+  position: relative;
+  padding: 1.25rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  z-index: 1;
+  padding-top: 86px;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 668.98px) {
+  .events_wrapper .latest_events .event-details {
+    max-width: calc(50% - 15px);
+  }
+}
+@media (min-width: 1024.98px) {
+  .events_wrapper .latest_events .event-details {
+    max-width: calc(33.33333% - 20px);
+  }
+}
+.events_wrapper .latest_events .event-details:after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  content: "";
+  background-color: #001f3f;
+  z-index: -1;
+  opacity: 0.75;
+  transition: all ease 300ms;
+}
+.events_wrapper .latest_events .event-details:hover {
+  box-shadow: 0 0 16px 0 rgba(8, 19, 54, 0.25);
+}
+.events_wrapper .latest_events .event-details:hover::after {
+  opacity: 0.85;
+}
+.events_wrapper .latest_events .event-banner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+.events_wrapper .latest_events .event-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.events_wrapper .latest_events .event-date {
+  background-color: #fff5ee;
+  gap: 0.25rem;
+  padding: 0.5rem 0.875rem;
+  position: absolute;
+  left: 1.125rem;
+  top: 0;
+}
+.events_wrapper .latest_events .event-date .event-month {
+  font-size: 1.375rem;
+  font-family: "Poppins", serif;
+}
+.events_wrapper .latest_events .event-date .event-day {
+  font-size: 3rem;
+  font-family: "Oswald", serif;
+  line-height: 1.1;
+}
+.events_wrapper .latest_events .event-content .event-title {
+  color: #ffffff;
+  font-family: "Oswald", serif;
+  letter-spacing: 0.05rem;
+  font-size: 1.75rem;
+}
+.events_wrapper .latest_events .event-content p {
+  color: #fdfdfd;
+  padding-bottom: 0;
+  padding-top: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 4;
+}
+@media (min-width: 1024.98px) {
+  .events_wrapper .latest_events .event-content p {
+    padding: 1rem 2rem;
+    padding-bottom: 0;
+  }
 }
 
 /* 10. Footer styles */

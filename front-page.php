@@ -19,67 +19,47 @@ get_header();
   </div>
 </section>
 
-<section class="section-padding news-and-events" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/feature-bg.svg);">
+<section class="section-padding events_wrapper" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/feature-bg.svg);">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title">
-          <h2>Upcoming Events</h2>
-        </div>
-      </div>
+    <div class="section-title">
+      <h2>Upcoming Events</h2>
     </div>
-    <div class="row">
+    <div class="latest_events">
+      <?php
+      $today = date('Ymd');
+      $homepageEvents = new WP_Query(array(
+        'posts_per_page' => 3,
+        'post_type' => 'event',
+        'meta_key' => 'event_date',
+        'orderby' => 'meta_value_num',
+        'order' => 'ASC',
+        'meta_query' => array(
+          array(
+            'key' => 'event_date',
+            'compare' => '>=',
+            'value' => $today,
+            'type' => 'numeric'
+          )
+        )
+      ));
 
-      <div class="col-lg-6">
-        <div class="section-media">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/event.svg" alt="">
-        </div>
-      </div>
+      while ($homepageEvents->have_posts()) {
+        $homepageEvents->the_post();
+        get_template_part('template-parts/content', 'event');
+      }
 
-      <div class="col-lg-6">
-        <div class="latest-events latest">
+      wp_reset_postdata();
 
-          <?php
+      ?>
 
-          $today = date('Ymd');
-          $homepageEvents = new WP_Query(array(
-            'posts_per_page' => 3,
-            'post_type' => 'event',
-            'meta_key' => 'event_date',
-            'orderby' => 'meta_value_num',
-            'order' => 'ASC',
-            'meta_query' => array(
-              array(
-                'key' => 'event_date',
-                'compare' => '>=',
-                'value' => $today,
-                'type' => 'numeric'
-              )
-            )
-          ));
-
-          while ($homepageEvents->have_posts()) {
-            $homepageEvents->the_post();
-
-            get_template_part('template-parts/content', 'event');
-          }
-
-          wp_reset_postdata();
-
-          ?>
-
-          <div class="text-center">
-            <a class="btn big-btn event-cta-btn" href="<?php echo site_url('/events'); ?>">View all Event </a>
-          </div>
-        </div>
-      </div>
-
-
+    </div>
+    <div class="btn-group">
+      <a class="btn" href="<?php echo site_url('/events'); ?>">View all Events </a>
     </div>
   </div>
 </section>
 
-<section class="section-padding news-and-events" style="display: none;">
+<section class="section-padding news-and-events">
   <div class="container">
     <div class="row">
       <div class="col-12">

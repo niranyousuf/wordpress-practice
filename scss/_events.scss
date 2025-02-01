@@ -1,0 +1,101 @@
+.events {
+	&_wrapper {
+		text-align: center;
+		.latest_events {
+			@extend %d-flex;
+			gap: 30px;
+			margin-bottom: 2.5rem;
+
+			.event {
+				&-details {
+					width: 100%;
+					min-height: 20rem;
+					transition: all ease 300ms;
+					position: relative;
+					padding: 1.25rem;
+					border-radius: 0.25rem;
+					overflow: hidden;
+					z-index: 1;
+					padding-top: 86px;
+					padding-bottom: 30px;
+					display: flex;
+					align-items: center;
+
+					@media (min-width: 668.98px) {
+						max-width: calc(50% - 15px);
+					}
+					@media (min-width: 1024.98px) {
+						max-width: calc(33.33333% - 20px);
+					}
+
+					&:after {
+						@include position-center-cover;
+						content: "";
+						background-color: $color-cosmic-blue;
+						z-index: -1;
+						opacity: 0.75;
+						transition: all ease 300ms;
+					}
+
+					&:hover {
+						box-shadow: 0 0 16px 0 rgba($color-dark-blue, 0.25);
+						&::after {
+							opacity: 0.85;
+						}
+					}
+				}
+
+				&-banner {
+					@include position-center-cover;
+					z-index: -1;
+					img {
+						@include image-cover;
+					}
+				}
+
+				&-date {
+					background-color: $color-peach-cream;
+					gap: 0.25rem;
+					padding: 0.5rem 0.875rem;
+					position: absolute;
+					left: 1.125rem;
+					top: 0;
+
+					.event-month {
+						font-size: 1.375rem;
+						font-family: $font-alt;
+					}
+
+					.event-day {
+						font-size: 3rem;
+						font-family: $font-title;
+						line-height: 1.1;
+					}
+				}
+
+				&-content {
+					.event-title {
+						color: $color-white;
+						font-family: $font-title;
+						letter-spacing: 0.05rem;
+						font-size: 1.75rem;
+					}
+					p {
+						color: $color-offwhite;
+						padding-bottom: 0;
+						padding-top: 1rem;
+
+						display: -webkit-box;
+						-webkit-box-orient: vertical;
+						overflow: hidden;
+						-webkit-line-clamp: 4;
+						@media (min-width: 1024.98px) {
+							padding: 1rem 2rem;
+							padding-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

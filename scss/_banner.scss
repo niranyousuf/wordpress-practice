@@ -1,6 +1,6 @@
 /* 03. Hero section style */
 .hero-banner {
-  @extend %align-center;
+  @extend %flex-center;
 
   overflow: hidden;
   position: relative;

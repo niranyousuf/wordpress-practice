@@ -5,17 +5,18 @@
 	gap: 1rem;
 }
 
-%align-center {
+%flex-center {
 	@extend %d-flex;
 	align-items: center;
 	justify-content: center;
 }
-%column-center {
+%flex-col-center {
 	@extend %d-flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center
 }
-%row-center {
+%flex-row-center {
 	@extend %d-flex;
 	align-items: center;
 }
@@ -106,6 +107,7 @@
 
 .container {
 	margin: 0 auto;
+	width: 100%;
 	max-width: 86rem;
 	padding: 0 1.5rem;
 
@@ -114,18 +116,11 @@
 	}
 	@media (min-width: 1024.98px) {
 		padding: 0 4rem;
-		max-width: 64rem;
-		margin: 0 auto;
 	}
-	@media (min-width: 1200.98px) {
-		padding: 0 5rem;
-		margin: 0 auto;
-		max-width: 75rem;
-	}
+
 	@media (min-width: 1536.98px) {
-		padding: 0 5rem;
 		margin: 0 auto;
-		max-width: 86rem;
+		max-width: 90rem;
 	}
 	@media (min-width: 1680.98px) {
 		padding: 0 5rem;
@@ -178,4 +173,18 @@
 
 @mixin ripple-out-hover {
 	animation-name: rippleOut;
+}
+
+@mixin position-center-cover {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+
+@mixin image-cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
