@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background-color: $color-white;
+  overscroll-behavior: none; // stop scroll on mac
 
   @media (min-width: 768px) {
     &.admin-bar {
@@ -57,9 +58,6 @@ h2 {
   font-size: clamp(2rem, 8vw, 2.75rem);
   text-transform: uppercase;
   font-family: $font-title;
-  &.block_title {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
 }
 
 h3 {
@@ -103,6 +101,10 @@ img {
   &:nth-of-type(odd) {
     background-color: $color-offwhite;
   }
+
+  .btn_group {
+    text-align: center;
+  }
 }
 
 .section-title {
@@ -115,7 +117,9 @@ img {
     margin-top: 1rem;
   }
 }
-
+.icon {
+  transition: all 300ms ease;
+}
 /* all anchor tag with button link */
 a {
   transition: all 300ms ease;
@@ -133,5 +137,71 @@ a {
   @extend %button;
   &_group {
     margin-top: 1.5rem;
+  }
+}
+
+.generic-content {
+  h2 {
+    font-family: $font-alt;
+    font-weight: 500;
+    text-transform: none;
+  }
+  h2,
+  h3 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  h4,
+  h5,
+  h6 {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  p {
+    + h2,
+    + h3,
+    + h4,
+    + h5,
+    + h6 {
+      margin-top: 1.75rem;
+    }
+    + ul,
+    + ol {
+      margin-top: 1rem;
+    }
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    + ul,
+    + ol,
+    + p {
+      margin-top: 1rem;
+    }
+  }
+  ul,
+  ol {
+    padding-left: 1.25rem;
+    li {
+      font-size: 1.125rem;
+      + li {
+        margin-top: 0.675rem;
+      }
+    }
+
+    + ol,
+    + ul,
+    + p {
+      margin-top: 1rem;
+    }
+  }
+  a {
+    color: $color-blue;
+    &:hover {
+      color: $color-orange-ember;
+    }
   }
 }

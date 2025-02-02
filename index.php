@@ -14,6 +14,7 @@ pageBanner(array(
     <section class="post-page">
         <div class="container">
             <div class="row">
+
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="col-md-12">
                         <div class="single__post max_container">
@@ -26,6 +27,8 @@ pageBanner(array(
                                 in 
                                 <?php echo get_the_category_list( ", " ) ?>
                                 </p>
+                                <span class="post-views"><?php echo get_post_views(get_the_ID()); ?></span>
+
                             </div>
                             <div class="post__content">
                                 <?php the_excerpt() ?>

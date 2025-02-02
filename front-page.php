@@ -47,77 +47,71 @@ get_header();
         $homepageEvents->the_post();
         get_template_part('template-parts/content', 'event');
       }
-
       wp_reset_postdata();
-
       ?>
 
     </div>
-    <div class="btn-group">
-      <a class="btn" href="<?php echo site_url('/events'); ?>">View all Events </a>
+    <div class="btn_group">
+      <a class="btn" href="<?php echo get_post_type_archive_link('event') ?>">View all Events </a>
     </div>
   </div>
 </section>
 
-<section class="section-padding news-and-events">
+<section class="section-padding news_wrapper">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="section-title">
-          <h2>Latest News</h2>
-        </div>
-      </div>
+    <div class="section-title">
+      <h2>Latest News</h2>
     </div>
 
-    <div class="row">
+    <div class="latest_news">
 
-      <div class="col-lg-6 order-last order-lg-first">
-        <div class="latest-news latest">
+      <?php
+      $homepagePost = new WP_Query(array(
+        'posts_per_page' => 4
+      ));
+      while ($homepagePost->have_posts()) :
+        $homepagePost->the_post();
+      ?>
 
-          <?php
-          $homepagePost = new WP_Query(array(
-            'posts_per_page' => 3
-          ));
-          while ($homepagePost->have_posts()) :
-            $homepagePost->the_post();
-          ?>
+        <div class="news-details">
+          <a href="<?php the_permalink(); ?>" class="news-banner">
+            <?php
+            echo has_post_thumbnail() ? get_the_post_thumbnail() : '<img src="' . get_template_directory_uri() . '/images/news-banner.jpg" alt="Default Image">';
+            ?>
+          </a>
+          <div class="news-date">
+            <span class="calender"> <?php get_template_part('svgs/calender'); ?></span>
+            <span class="month"><?php the_time('M') ?></span>
+            <span class="day"><?php the_time('d') ?></span>
+            <span class="author"><?php the_author(); ?></span>
+          </div>
+          <div class="news-content">
+            <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+            <p>
+              <?php
+              $content = get_the_content();
+              $trimmed_content = wp_trim_words($content, 36, '...');
+              echo $trimmed_content;
 
-            <div class="latest-details">
-              <a class="latest-date" href="<?php the_permalink(); ?>">
-                <span class="latest-month"><?php the_time('M') ?></span>
-                <span class="latest-day"><?php the_time('d') ?></span>
-              </a>
-              <div class="latest-content">
-                <h5 class="latest-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                <p><?php
-                    $content = get_the_content();
-                    $trimmed_content = wp_trim_words($content, 12, '...');
-                    echo $trimmed_content;
-
-                    // if(has_excerpt()) {
-                    //     echo get_the_excerpt();
-                    // } else {
-                    //     echo $trimmed_content; 
-                    // }
-                    ?>
-                  <a href="<?php the_permalink(); ?>">Read more</a>
-                </p>
-              </div>
-            </div>
-          <?php endwhile;
-          wp_reset_postdata(); ?>
-
-          <div class="text-center">
-            <a class="btn big-btn latest-cta-btn" href="<?php echo get_post_type_archive_link('event') ?>">View all blog posts </a>
+              // if(has_excerpt()) {
+              //     echo get_the_excerpt();
+              // } else {
+              //     echo $trimmed_content; 
+              // }
+              ?>
+              <a href="<?php the_permalink(); ?>">Read more</a>
+            </p>
           </div>
         </div>
-      </div>
+      <?php endwhile;
+      wp_reset_postdata(); ?>
 
-      <div class="col-lg-6 order-first order-lg-last">
-        <div class="section-media">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/news-2.svg" alt="">
-        </div>
-      </div>
+    </div>
+
+    <div class="btn_group">
+      <a class="btn" href="<?php echo get_post_type_archive_link('event') ?>">
+        View all blog posts
+      </a>
     </div>
   </div>
 </section>

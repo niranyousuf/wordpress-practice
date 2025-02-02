@@ -9,7 +9,7 @@
     @extend %d-flex;
     padding-bottom: 2.5rem;
     flex-direction: column;
-    
+
     @media (min-width: 768.98px) {
       gap: 4rem;
       flex-direction: row;
@@ -17,7 +17,6 @@
   }
 
   .product-info {
-        
     @media (min-width: 768.98px) {
       flex: 1;
     }
@@ -55,7 +54,7 @@
   &_menu {
     @extend %d-flex;
     gap: 4rem;
-        
+
     @media (max-width: 768px) {
       border-top: 1px solid rgba($color-gray, 0.12);
     }
@@ -95,6 +94,16 @@
           }
         }
       }
+
+      &.social-media {
+        ul {
+          li {
+            a {
+              padding: 9px 0;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -106,6 +115,12 @@
     p {
       font-size: 0.75rem;
       color: rgba($color-gray, 0.6);
+
+      a {
+        &:hover {
+          color: $color-orange-ember;
+        }
+      }
     }
   }
 }

@@ -1,0 +1,25 @@
+.related {
+	margin-top: 2.5rem;
+	padding-top: 2.5rem;
+	border-top: 1px solid rgba($color-gray, 0.15);
+
+	&-program {
+		margin-top: 1.5rem;
+		h2 {
+			font-size: clamp(1.5rem, 3vw, 2rem);
+			font-family: $font-alt;
+			line-height: 1.1;
+			text-transform: none;
+			a {
+				font-weight: 500;
+				color: $color-ocean-depths;
+				&:hover {
+					color: $color-orange-ember;
+				}
+			}
+		}
+		p {
+			margin-top: 1rem;
+		}
+	}
+}

@@ -6,6 +6,17 @@ header {
   position: fixed;
   padding: 1rem 0;
   z-index: 99;
+  transition: all 300ms ease;
+
+  &.on_top {
+    top: -100%;
+
+    &.fix_top {
+      top: 0;
+      backdrop-filter: saturate(180%) blur(20px);
+      background: rgba($color-white, $alpha: 0.8);
+    }
+  }
 
   &::after {
     top: 0;

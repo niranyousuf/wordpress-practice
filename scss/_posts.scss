@@ -1,0 +1,122 @@
+.single {
+	.banner-content {
+		@extend %content-block;
+	}
+}
+
+.post {
+	&-wrapper {
+		position: relative;
+		padding: 4rem 0;
+
+		.bradcumb {
+			position: absolute;
+			overflow: hidden;
+			@extend %d-flex;
+			gap: 0;
+			top: 0;
+			border-radius: 3px;
+			transform: translateY(-50%);
+			background-color: $color-peach-cream;
+
+			a,
+			> span {
+				display: inline-block;
+				padding: 0.5rem 1rem;
+				font-family: $font-alt;
+				font-weight: 500;
+			}
+
+			> span {
+				padding-left: 2rem;
+				background-color: rgba($color-dark-blue, 0.15);
+				opacity: 0.7;
+			}
+
+			a {
+				color: $color-white;
+				position: relative;
+				background-color: $color-dark-blue;
+
+				&::after {
+					transition: all ease-in-out 0.2s;
+					content: "";
+					position: absolute;
+					right: -13px;
+					top: 50%;
+					z-index: 1;
+					width: 0;
+					height: 0;
+					border: 13px solid $color-dark-blue;
+					border-left-color: transparent;
+					border-bottom-color: transparent;
+					box-shadow:
+						0px 0px 0 0px #d9d9d9,
+						5px -5px 10px -4px #d9d9d9;
+					transform: translateY(-50%) rotate(45deg);
+				}
+
+				.icon {
+					color: $color-white;
+				}
+				&:hover {
+					color: $color-orange-ember;
+					.icon {
+						color: $color-orange-ember;
+					}
+				}
+			}
+		}
+	}
+	&-content {
+		@extend %content-block;
+	}
+}
+
+.pagination {
+	@extend %d-flex;
+	gap: 0.5rem;
+	padding: 0.75rem 0;
+
+	a,
+	span {
+		padding: 0.25rem;
+		padding-bottom: 0;
+		position: relative;
+
+		font-weight: 500;
+		color: $color-ocean-depths;
+		&::after {
+			@include animate-line;
+			height: 2px;
+			background: $color-ocean-depths;
+		}
+
+		&:hover,
+		&[aria-current="page"] {
+			color: $color-orange-ember;
+			&::after {
+				@include animate-line-hover;
+				background-color: $color-orange-ember;
+			}
+		}
+	}
+}
+
+.page_info {
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+
+	p {
+		font-family: $font-alt;
+		font-size: 1.25rem;
+
+		a {
+			font-weight: 500;
+			color: $color-ocean-depths;
+			&:hover {
+				color: $color-orange-ember;
+			}
+		}
+	}
+}

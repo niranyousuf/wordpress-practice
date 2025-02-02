@@ -2,12 +2,43 @@
 (function ($) {
   "user strict";
   $(document).ready(function () {
-    // mobile menu
-    // $(".main_menu").prepend(`
-    // <div class="mobile_logo_closeButton">
-    //     <div class="logo"><a href="#">Coding <span>Tutor</span></a></div>
-    //     <button id="close_menu" class="close_menu"></button>
-    // </div>`);
+    var previousScrollPosition = 0;
+    var $topBar = $('header');
+    var $topBarHeight = $topBar.height();
+    var $goTop = $('.goTop');
+
+    $(window).on('scroll', function () {
+        var currentScrollPosition = $(window).scrollTop();
+
+        // Navbar position on scroll
+        if (currentScrollPosition >= $topBarHeight) {
+            $topBar.addClass('on_top');
+        } else {
+            $topBar.removeClass('fix_top on_top');
+        }
+        // Add on_top class when scrolling up
+        if ($topBar.hasClass("on_top")) {
+          if (currentScrollPosition < previousScrollPosition) {
+            $topBar.addClass("fix_top");
+          } else {
+            $topBar.removeClass("fix_top");
+          }
+        }
+        previousScrollPosition = currentScrollPosition;
+
+        // Show "Go to Top" button after scrolling down 500px
+        if (currentScrollPosition > 500) {
+          $goTop.addClass('show');
+      } else {
+          $goTop.removeClass('show');
+      }
+    });
+
+    // Go to top on "Go to Top" button click
+    $goTop.on('click', function () {
+        $('html, body').animate({ scrollTop: 0 }, 'fast');
+    });
+
 
     // Navigation toggle
     $('.navbar_toggler').on('click', function () {
@@ -26,27 +57,6 @@
 
   });
 
-  $(window).on("load", function () {
-    function reSizeArea(e) {
-      var arr = $.makeArray(e);
-      var ah = $.map(arr, function (h) {
-        return $(h).height();
-      });
-      var mh = Math.max.apply($(this).height(), ah);
-      e.height(mh);
-    }
-    if ($(window).width() > 575) {
-      reSizeArea($(".service-block"));
-    }
-  });
-
-  // $(window).on('scroll', function () {
-  //   if ($(this).scrollTop() > 36) {
-  //     $('.navbar').addClass('sticky');
-  //   } else {
-  //     $('.navbar').removeClass('sticky');
-  //   }
-  // });
 
   // ***************************************************************************************************
   // Custom search script

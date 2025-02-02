@@ -35,6 +35,7 @@
   </div>
 </footer>
 
+<span class="goTop"></span>
 
 <?php get_template_part('template-parts/content', 'search'); ?>
 

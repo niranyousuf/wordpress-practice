@@ -123,7 +123,7 @@
 .icon-github-squared:before {
   content: "\f300";
 } /* '' */
-.footer_menu, .footer_wrapper, .events_wrapper .latest_events, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
+.footer_menu, .footer_wrapper, .pagination, .post-wrapper .bradcumb, .news_wrapper .latest_news, .events_page, .events_wrapper .latest_events, .news_wrapper .latest_news .news-date, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -132,6 +132,16 @@
 .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
   align-items: center;
   justify-content: center;
+}
+
+.news_wrapper .latest_news .news-date {
+  align-items: center;
+}
+
+.post-content, .single .banner-content {
+  max-width: 820px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .btn {
@@ -375,6 +385,7 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   background-color: #ffffff;
+  overscroll-behavior: none;
 }
 @media (min-width: 768px) {
   body.admin-bar header {
@@ -415,9 +426,6 @@ h2 {
   font-size: clamp(2rem, 8vw, 2.75rem);
   text-transform: uppercase;
   font-family: "Oswald", serif;
-}
-h2.block_title {
-  font-size: clamp(2rem, 8vw, 3rem);
 }
 
 h3 {
@@ -461,6 +469,9 @@ img {
 .section-padding:nth-of-type(odd) {
   background-color: #fdfdfd;
 }
+.section-padding .btn_group {
+  text-align: center;
+}
 
 .section-title {
   max-width: 750px;
@@ -470,6 +481,10 @@ img {
 }
 .section-title p {
   margin-top: 1rem;
+}
+
+.icon {
+  transition: all 300ms ease;
 }
 
 /* all anchor tag with button link */
@@ -486,6 +501,77 @@ a.active, a:hover, a:focus {
   margin-top: 1.5rem;
 }
 
+.generic-content h2 {
+  font-family: "Poppins", serif;
+  font-weight: 500;
+  text-transform: none;
+}
+.generic-content h2,
+.generic-content h3 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+.generic-content h4,
+.generic-content h5,
+.generic-content h6 {
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+.generic-content p + h2,
+.generic-content p + h3,
+.generic-content p + h4,
+.generic-content p + h5,
+.generic-content p + h6 {
+  margin-top: 1.75rem;
+}
+.generic-content p + ul,
+.generic-content p + ol {
+  margin-top: 1rem;
+}
+.generic-content h2 + ul,
+.generic-content h2 + ol,
+.generic-content h2 + p,
+.generic-content h3 + ul,
+.generic-content h3 + ol,
+.generic-content h3 + p,
+.generic-content h4 + ul,
+.generic-content h4 + ol,
+.generic-content h4 + p,
+.generic-content h5 + ul,
+.generic-content h5 + ol,
+.generic-content h5 + p,
+.generic-content h6 + ul,
+.generic-content h6 + ol,
+.generic-content h6 + p {
+  margin-top: 1rem;
+}
+.generic-content ul,
+.generic-content ol {
+  padding-left: 1.25rem;
+}
+.generic-content ul li,
+.generic-content ol li {
+  font-size: 1.125rem;
+}
+.generic-content ul li + li,
+.generic-content ol li + li {
+  margin-top: 0.675rem;
+}
+.generic-content ul + ol,
+.generic-content ul + ul,
+.generic-content ul + p,
+.generic-content ol + ol,
+.generic-content ol + ul,
+.generic-content ol + p {
+  margin-top: 1rem;
+}
+.generic-content a {
+  color: #05b2fc;
+}
+.generic-content a:hover {
+  color: #ff4500;
+}
+
 /* 02. Navigation var styles */
 header {
   top: 0;
@@ -494,6 +580,16 @@ header {
   position: fixed;
   padding: 1rem 0;
   z-index: 99;
+  transition: all 300ms ease;
+}
+header.on_top {
+  top: -100%;
+}
+header.on_top.fix_top {
+  top: 0;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(255, 255, 255, 0.8);
 }
 header::after {
   top: 0;
@@ -981,8 +1077,8 @@ header .navbar_toggler span.bar {
 .hero-banner .hero-content {
   text-align: center;
   max-width: 880px;
+  padding-top: 5rem;
   margin: 0 auto;
-  padding: 50px 0;
   position: relative;
   z-index: 1;
 }
@@ -1036,7 +1132,7 @@ header .navbar_toggler span.bar {
   margin-top: 80px;
 }
 .page-banner .banner-content h2 {
-  margin-bottom: 24px;
+  margin-bottom: 1.25rem;
   font-size: clamp(2.25rem, 8vw, 3.5rem);
 }
 .page-banner .banner-content p {
@@ -1069,7 +1165,14 @@ header .navbar_toggler span.bar {
   gap: 30px;
   margin-bottom: 2.5rem;
 }
-.events_wrapper .latest_events .event-details {
+
+.events_page {
+  gap: 30px;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.event-details {
   width: 100%;
   min-height: 20rem;
   transition: all ease 300ms;
@@ -1084,48 +1187,49 @@ header .navbar_toggler span.bar {
   align-items: center;
 }
 @media (min-width: 668.98px) {
-  .events_wrapper .latest_events .event-details {
+  .event-details {
     max-width: calc(50% - 15px);
   }
 }
 @media (min-width: 1024.98px) {
-  .events_wrapper .latest_events .event-details {
+  .event-details {
     max-width: calc(33.33333% - 20px);
   }
 }
-.events_wrapper .latest_events .event-details:after {
-  position: absolute;
+.event-details:after {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+  position: absolute;
+  transition: all ease 300ms;
   content: "";
-  background-color: #001f3f;
+  background: linear-gradient(0deg, #001f3f, rgba(0, 31, 63, 0.5));
   z-index: -1;
   opacity: 0.75;
-  transition: all ease 300ms;
 }
-.events_wrapper .latest_events .event-details:hover {
+.event-details:hover {
   box-shadow: 0 0 16px 0 rgba(8, 19, 54, 0.25);
 }
-.events_wrapper .latest_events .event-details:hover::after {
+.event-details:hover::after {
   opacity: 0.85;
 }
-.events_wrapper .latest_events .event-banner {
-  position: absolute;
+.event-banner {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+  position: absolute;
+  transition: all ease 300ms;
   z-index: -1;
 }
-.events_wrapper .latest_events .event-banner img {
+.event-banner img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.events_wrapper .latest_events .event-date {
+.event-date {
   background-color: #fff5ee;
   gap: 0.25rem;
   padding: 0.5rem 0.875rem;
@@ -1133,22 +1237,22 @@ header .navbar_toggler span.bar {
   left: 1.125rem;
   top: 0;
 }
-.events_wrapper .latest_events .event-date .event-month {
+.event-date .event-month {
   font-size: 1.375rem;
   font-family: "Poppins", serif;
 }
-.events_wrapper .latest_events .event-date .event-day {
+.event-date .event-day {
   font-size: 3rem;
   font-family: "Oswald", serif;
   line-height: 1.1;
 }
-.events_wrapper .latest_events .event-content .event-title {
+.event-content .event-title {
   color: #ffffff;
   font-family: "Oswald", serif;
   letter-spacing: 0.05rem;
   font-size: 1.75rem;
 }
-.events_wrapper .latest_events .event-content p {
+.event-content p {
   color: #fdfdfd;
   padding-bottom: 0;
   padding-top: 1rem;
@@ -1158,10 +1262,252 @@ header .navbar_toggler span.bar {
   -webkit-line-clamp: 4;
 }
 @media (min-width: 1024.98px) {
-  .events_wrapper .latest_events .event-content p {
+  .event-content p {
     padding: 1rem 2rem;
     padding-bottom: 0;
   }
+}
+
+.news_wrapper {
+  position: relative;
+  padding-bottom: 100px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+@media (min-width: 1920px) {
+  .news_wrapper {
+    background-size: cover;
+  }
+}
+.news_wrapper .latest_news {
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768.98px) {
+  .news_wrapper .latest_news {
+    margin-bottom: 60px;
+  }
+}
+.news_wrapper .latest_news .news-details {
+  width: -100%;
+}
+@media (min-width: 660.98px) {
+  .news_wrapper .latest_news .news-details {
+    max-width: calc(50% - 10px);
+  }
+}
+@media (min-width: 1024.98px) {
+  .news_wrapper .latest_news .news-details {
+    max-width: calc(25% - 20px);
+  }
+}
+.news_wrapper .latest_news .news-details:hover .news-banner {
+  transition: all 200ms ease;
+  border-radius: 0;
+}
+.news_wrapper .latest_news .news-details:hover .news-banner::after {
+  opacity: 0.75;
+}
+.news_wrapper .latest_news .news-banner {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  position: relative;
+  display: block;
+}
+.news_wrapper .latest_news .news-banner::after {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all ease 300ms;
+  content: "";
+  background: linear-gradient(0deg, #001f3f, rgba(0, 31, 63, 0.5));
+  z-index: 0;
+  opacity: 0.65;
+}
+.news_wrapper .latest_news .news-banner img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.news_wrapper .latest_news .news-date {
+  gap: 0.25rem;
+  padding: 0.5rem 0;
+}
+.news_wrapper .latest_news .news-date > span {
+  line-height: 1;
+}
+.news_wrapper .latest_news .news-date > span.month {
+  font-weight: 300;
+}
+.news_wrapper .latest_news .news-date > span.day {
+  font-weight: 500;
+}
+.news_wrapper .latest_news .news-date > span.calender svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.news_wrapper .latest_news .news-date > span.author {
+  margin-left: 0.375rem;
+}
+.news_wrapper .latest_news .news-content h4 {
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+.news_wrapper .latest_news .news-content h4 a {
+  font-size: 1.375rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+}
+.news_wrapper .latest_news .news-content h4 a:hover {
+  color: #ff4500;
+}
+.news_wrapper .latest_news .news-content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+}
+
+.post-wrapper {
+  position: relative;
+  padding: 4rem 0;
+}
+.post-wrapper .bradcumb {
+  position: absolute;
+  overflow: hidden;
+  gap: 0;
+  top: 0;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  background-color: #fff5ee;
+}
+.post-wrapper .bradcumb a,
+.post-wrapper .bradcumb > span {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-family: "Poppins", serif;
+  font-weight: 500;
+}
+.post-wrapper .bradcumb > span {
+  padding-left: 2rem;
+  background-color: rgba(8, 19, 54, 0.15);
+  opacity: 0.7;
+}
+.post-wrapper .bradcumb a {
+  color: #ffffff;
+  position: relative;
+  background-color: #081336;
+}
+.post-wrapper .bradcumb a::after {
+  transition: all ease-in-out 0.2s;
+  content: "";
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border: 13px solid #081336;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  box-shadow: 0px 0px 0 0px #d9d9d9, 5px -5px 10px -4px #d9d9d9;
+  transform: translateY(-50%) rotate(45deg);
+}
+.post-wrapper .bradcumb a .icon {
+  color: #ffffff;
+}
+.post-wrapper .bradcumb a:hover {
+  color: #ff4500;
+}
+.post-wrapper .bradcumb a:hover .icon {
+  color: #ff4500;
+}
+.pagination {
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+}
+.pagination a,
+.pagination span {
+  padding: 0.25rem;
+  padding-bottom: 0;
+  position: relative;
+  font-weight: 500;
+  color: #005b99;
+}
+.pagination a::after,
+.pagination span::after {
+  right: 0;
+  width: 0;
+  bottom: 0;
+  content: "";
+  height: 1px;
+  position: absolute;
+  transition: all 300ms ease;
+  background-color: #001f3f;
+  height: 2px;
+  background: #005b99;
+}
+.pagination a:hover, .pagination a[aria-current=page],
+.pagination span:hover,
+.pagination span[aria-current=page] {
+  color: #ff4500;
+}
+.pagination a:hover::after, .pagination a[aria-current=page]::after,
+.pagination span:hover::after,
+.pagination span[aria-current=page]::after {
+  left: 0;
+  width: 100%;
+  background-color: #ff4500;
+}
+
+.page_info {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+.page_info p {
+  font-family: "Poppins", serif;
+  font-size: 1.25rem;
+}
+.page_info p a {
+  font-weight: 500;
+  color: #005b99;
+}
+.page_info p a:hover {
+  color: #ff4500;
+}
+
+.related {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(20, 28, 58, 0.15);
+}
+.related-program {
+  margin-top: 1.5rem;
+}
+.related-program h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-family: "Poppins", serif;
+  line-height: 1.1;
+  text-transform: none;
+}
+.related-program h2 a {
+  font-weight: 500;
+  color: #005b99;
+}
+.related-program h2 a:hover {
+  color: #ff4500;
+}
+.related-program p {
+  margin-top: 1rem;
 }
 
 /* 10. Footer styles */
@@ -1251,6 +1597,9 @@ header .navbar_toggler span.bar {
 .footer_menu .footer-links ul li a:hover .icon {
   color: #ff4500;
 }
+.footer_menu .footer-links.social-media ul li a {
+  padding: 9px 0;
+}
 .footer .copyright {
   padding-top: 2.5rem;
   border-top: 1px solid rgba(20, 28, 58, 0.07);
@@ -1259,4 +1608,7 @@ header .navbar_toggler span.bar {
 .footer .copyright p {
   font-size: 0.75rem;
   color: rgba(20, 28, 58, 0.6);
+}
+.footer .copyright p a:hover {
+  color: #ff4500;
 }/*# sourceMappingURL=style.css.map */
