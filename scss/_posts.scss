@@ -8,65 +8,6 @@
 	&-wrapper {
 		position: relative;
 		padding: 4rem 0;
-
-		.bradcumb {
-			position: absolute;
-			overflow: hidden;
-			@extend %d-flex;
-			gap: 0;
-			top: 0;
-			border-radius: 3px;
-			transform: translateY(-50%);
-			background-color: $color-peach-cream;
-
-			a,
-			> span {
-				display: inline-block;
-				padding: 0.5rem 1rem;
-				font-family: $font-alt;
-				font-weight: 500;
-			}
-
-			> span {
-				padding-left: 2rem;
-				background-color: rgba($color-dark-blue, 0.15);
-				opacity: 0.7;
-			}
-
-			a {
-				color: $color-white;
-				position: relative;
-				background-color: $color-dark-blue;
-
-				&::after {
-					transition: all ease-in-out 0.2s;
-					content: "";
-					position: absolute;
-					right: -13px;
-					top: 50%;
-					z-index: 1;
-					width: 0;
-					height: 0;
-					border: 13px solid $color-dark-blue;
-					border-left-color: transparent;
-					border-bottom-color: transparent;
-					box-shadow:
-						0px 0px 0 0px #d9d9d9,
-						5px -5px 10px -4px #d9d9d9;
-					transform: translateY(-50%) rotate(45deg);
-				}
-
-				.icon {
-					color: $color-white;
-				}
-				&:hover {
-					color: $color-orange-ember;
-					.icon {
-						color: $color-orange-ember;
-					}
-				}
-			}
-		}
 	}
 	&-content {
 		@extend %content-block;
@@ -85,11 +26,11 @@
 		position: relative;
 
 		font-weight: 500;
-		color: $color-ocean-depths;
+		color: $color-ocean-blue;
 		&::after {
 			@include animate-line;
 			height: 2px;
-			background: $color-ocean-depths;
+			background: $color-ocean-blue;
 		}
 
 		&:hover,
@@ -113,10 +54,63 @@
 
 		a {
 			font-weight: 500;
-			color: $color-ocean-depths;
+			color: rgba($color-cosmic-blue, 0.65);
 			&:hover {
 				color: $color-orange-ember;
 			}
 		}
+	}
+}
+
+/*
+* 04. Professor post type
+*/
+.profile-img {
+	max-width: 22rem;
+	float: left;
+	margin-bottom: 1.5rem;
+	@media (min-width: 575.98px) {
+		max-width: 22rem;
+		width: 100%;
+		float: left;
+		margin-right: 3rem;
+		margin-bottom: 1.5rem;
+	}
+}
+.like-box {
+	display: inline-block;
+	padding: 6px 16px;
+	background-color: #f6f6f7;
+	border-radius: 4px;
+	margin-top: 10px;
+	margin-left: 10px;
+	font-size: 20px;
+	box-shadow: -4px 4px 14px 0px rgba($color-black, 0.014);
+	cursor: pointer;
+
+	&[data-exists="yes"] {
+		.icon {
+			&.icon-thumbs-up-alt {
+				display: inline-flex;
+				align-items: center;
+				justify-content: center;
+			}
+			&.icon-thumbs-up {
+				display: none;
+			}
+		}
+	}
+
+	.icon {
+		color: $color-cosmic-blue;
+		&.icon-thumbs-up-alt {
+			display: none;
+		}
+	}
+
+	.like-count {
+		color: $color-cosmic-blue;
+		margin-left: 4px;
+		font-weight: 600;
 	}
 }

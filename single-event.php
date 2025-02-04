@@ -46,10 +46,9 @@ while (have_posts()) : the_post();
                   ?>
                 </p>
               </div>
-          <?php endforeach;
-          endif; ?>
-
+            <?php endforeach; ?>
           </div>
+        <?php endif; ?>
 
       </div>
     </div>

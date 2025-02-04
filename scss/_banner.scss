@@ -116,3 +116,10 @@
     display: none;
   }
 }
+
+.archive {
+  .content-block,
+  .banner-content {
+    @extend %content-block;
+  }
+}

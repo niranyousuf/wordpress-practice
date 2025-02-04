@@ -11,7 +11,7 @@
 			width: 75%;
 			display: inline-block;
 
-			color:  $color-gray;
+			color:  $color-cosmic-blue;
 			font-size: clamp(1.2rem, 2vw, 1.75rem);
 			font-weight: 500;
 			border: none;
@@ -55,8 +55,8 @@
 			border-radius: 3px;
 			margin-bottom: 20px;
 			transition: all 300ms ease;
-			border: 1px solid  $color-gray;
-			background-color:  $color-gray;
+			border: 1px solid  $color-cosmic-blue;
+			background-color:  $color-cosmic-blue;
 			display: none;
 
 			.icon {
@@ -85,7 +85,7 @@
 		display: inline-block;
 		
 		width: 100%;
-		color:  $color-gray;
+		color:  $color-cosmic-blue;
 		font-size: clamp(1.2rem, 2vw, 1.75rem);
 		font-weight: 500;
 		padding: 10px 20px;
@@ -124,8 +124,8 @@
 		border-radius: 3px;
 		margin-bottom: 20px;
 		transition: all 300ms ease;
-		border: 1px solid  $color-gray;
-		background-color:  $color-gray;
+		border: 1px solid  $color-cosmic-blue;
+		background-color:  $color-cosmic-blue;
 
 		.icon {
 			color:  $color-white;
@@ -133,7 +133,7 @@
 	}
 
 	.note-limit {
-		color:  $color-gray;
+		color:  $color-cosmic-blue;
 		display: none;
 	}
 }

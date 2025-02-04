@@ -1,6 +1,6 @@
 /* 10. Footer styles */
 .footer {
-  background: rgba($color-pale-parchment, 0.6);
+  background: rgba($color-peach-cream, 0.6);
   padding-top: 100px;
   padding-bottom: 2.5rem;
   margin-top: auto;
@@ -56,7 +56,7 @@
     gap: 4rem;
 
     @media (max-width: 768px) {
-      border-top: 1px solid rgba($color-gray, 0.12);
+      border-top: 1px solid rgba($color-cosmic-blue, 0.12);
     }
     .footer-links {
       @media (max-width: 992.98px) {
@@ -109,12 +109,12 @@
 
   .copyright {
     padding-top: 2.5rem;
-    border-top: 1px solid rgba($color-gray, 0.07);
+    border-top: 1px solid rgba($color-cosmic-blue, 0.07);
     text-align: center;
 
     p {
       font-size: 0.75rem;
-      color: rgba($color-gray, 0.6);
+      color: rgba($color-cosmic-blue, 0.6);
 
       a {
         &:hover {

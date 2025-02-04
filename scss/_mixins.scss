@@ -48,14 +48,14 @@
 	text-decoration: none;
 	letter-spacing: 0.0122rem;
 
-	color: $color-dark-blue;
+	color: $color-cosmic-blue;
 	padding: 0.875rem 2.125rem;
 	transition: all 0.3s ease;
 
 	position: relative;
 	text-transform: uppercase;
-	border-top: 2px solid $color-dark-blue;
-	border-bottom: 2px solid $color-dark-blue;
+	border-top: 2px solid $color-cosmic-blue;
+	border-bottom: 2px solid $color-cosmic-blue;
 
 	&::after,
 	&::before {
