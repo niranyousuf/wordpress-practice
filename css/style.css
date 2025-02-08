@@ -400,9 +400,6 @@ body {
     margin-top: 32px;
   }
 }
-body.menu-extended {
-  overflow: hidden;
-}
 
 a,
 p,
@@ -767,27 +764,35 @@ header .navbar_wrapper .user_nav .nav_btn.light:hover {
   background: #fff5ee;
   color: #ff4500;
 }
-header .navbar_wrapper .user_nav .nav_btn_user {
-  padding: 0;
-  padding-right: 0.875rem;
+header .navbar_wrapper .user_nav .nav_btn.btn_user {
+  padding: 0.375rem 0.875rem;
+  padding-left: 2.25rem;
   background: #001f3f;
   border: 1px solid #001f3f;
   color: #ffffff;
+  position: relative;
+  line-height: 1.1;
 }
-header .navbar_wrapper .user_nav .nav_btn_user .user_avatar {
+header .navbar_wrapper .user_nav .nav_btn.btn_user .user_avatar {
   height: 100%;
-  display: flex;
+  width: 29px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-header .navbar_wrapper .user_nav .nav_btn_user .user_avatar img {
+header .navbar_wrapper .user_nav .nav_btn.btn_user .user_avatar img {
   width: 29px;
   height: 29px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-header .navbar_wrapper .user_nav .nav_btn_user .user_name {
+header .navbar_wrapper .user_nav .nav_btn.btn_user .user_name {
   color: #ffffff;
 }
-header .navbar_wrapper .user_nav .nav_btn_user:hover .user_name {
+header .navbar_wrapper .user_nav .nav_btn.btn_user:hover {
+  background: #ffffff;
+}
+header .navbar_wrapper .user_nav .nav_btn.btn_user:hover .user_name {
   color: #001f3f;
 }
 header .navbar_wrapper .search_btn {
@@ -817,26 +822,88 @@ header .navbar_toggler span.bar {
 
 /* Medium devices (tablets, 992px and up) */
 @media (max-width: 992px) {
-  header .navbar_brand svg {
-    width: 8rem;
-    aspect-ratio: 100/23;
-  }
-  header .navbar_menu {
+  header .navbar {
     position: fixed;
     width: 100%;
     height: 100svh;
+    overflow-y: auto;
     left: 0;
     top: 0;
     background-color: #001f3f;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
     padding: 2rem;
     transition: height 200ms, visibility 200ms, opacity 200ms, transform 350ms ease-out;
     transform-origin: 0 0;
     transform: scale3d(1, 0, 0);
     visibility: hidden;
     opacity: 0;
+  }
+  header .navbar[data-visible=true] {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+    visibility: visible;
+  }
+  header .navbar[data-visible=true] .main_menu li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(1n) {
+    transition-delay: 0.125s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(2n) {
+    transition-delay: 0.25s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(3n) {
+    transition-delay: 0.375s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(4n) {
+    transition-delay: 0.5s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(5n) {
+    transition-delay: 0.625s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(6n) {
+    transition-delay: 0.75s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(7n) {
+    transition-delay: 0.875s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(8n) {
+    transition-delay: 1s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(9n) {
+    transition-delay: 1.125s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(10n) {
+    transition-delay: 1.25s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(11n) {
+    transition-delay: 1.375s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(12n) {
+    transition-delay: 1.5s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(13n) {
+    transition-delay: 1.625s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(14n) {
+    transition-delay: 1.75s;
+  }
+  header .navbar[data-visible=true] .main_menu li:nth-child(15n) {
+    transition-delay: 1.875s;
+  }
+  header .navbar[data-visible=true] .user_nav {
+    opacity: 1;
+    transition-delay: 800ms;
+  }
+  header .navbar_brand svg {
+    width: 7rem;
+    aspect-ratio: 100/23;
+  }
+  header .navbar_menu {
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    min-height: 100%;
   }
   header .navbar_menu .menu_logo {
     display: block;
@@ -857,62 +924,9 @@ header .navbar_toggler span.bar {
     font-size: 1.375rem;
     font-weight: 400;
   }
-  header .navbar_menu[data-visible=true] {
-    transform: scale3d(1, 1, 1);
-    opacity: 1;
-    visibility: visible;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(1n) {
-    transition-delay: 0.125s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(2n) {
-    transition-delay: 0.25s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(3n) {
-    transition-delay: 0.375s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(4n) {
-    transition-delay: 0.5s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(5n) {
-    transition-delay: 0.625s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(6n) {
-    transition-delay: 0.75s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(7n) {
-    transition-delay: 0.875s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(8n) {
-    transition-delay: 1s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(9n) {
-    transition-delay: 1.125s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(10n) {
-    transition-delay: 1.25s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(11n) {
-    transition-delay: 1.375s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(12n) {
-    transition-delay: 1.5s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(13n) {
-    transition-delay: 1.625s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(14n) {
-    transition-delay: 1.75s;
-  }
-  header .navbar_menu[data-visible=true] .main_menu li:nth-child(15n) {
-    transition-delay: 1.875s;
-  }
   header .navbar_menu .user_nav {
     margin-top: auto;
+    transition: all ease-out 300ms;
   }
   header .navbar_menu .user_nav .nav_btn {
     background-color: #05b2fc;
@@ -946,22 +960,25 @@ header .navbar_toggler span.bar {
   header .navbar_toggler[aria-expanded=true] span.bar:nth-child(3) {
     transform: translateY(-50%) rotate(-45deg);
   }
-  .main_menu {
+  .navbar {
     scrollbar-width: thin !important;
     scrollbar-color: #4e4e4e transparent !important;
   }
-  .main_menu::-webkit-scrollbar {
-    width: 7px !important;
+  .navbar::-webkit-scrollbar {
+    width: 17px !important;
     height: 45px !important;
   }
-  .main_menu::-webkit-scrollbar-track {
+  .navbar::-webkit-scrollbar-track {
     background-color: transparent !important;
   }
-  .main_menu::-webkit-scrollbar-thumb {
+  .navbar::-webkit-scrollbar-thumb {
     background-color: #4e4e4e !important;
   }
-  .main_menu::-webkit-scrollbar-track, .main_menu::-webkit-scrollbar-thumb {
+  .navbar::-webkit-scrollbar-track, .navbar::-webkit-scrollbar-thumb {
     border-radius: 12px !important;
+  }
+  body.menu-extended {
+    overflow: hidden;
   }
 }
 /* 09. Contact style */
@@ -1578,17 +1595,22 @@ header .navbar_toggler span.bar {
 * 04. Professor post type
 */
 .profile-img {
-  max-width: 22rem;
+  width: 100%;
   float: left;
   margin-bottom: 1.5rem;
 }
 @media (min-width: 575.98px) {
   .profile-img {
-    max-width: 22rem;
+    max-width: 14rem;
     width: 100%;
     float: left;
     margin-right: 3rem;
     margin-bottom: 1.5rem;
+  }
+}
+@media (min-width: 768.98px) {
+  .profile-img {
+    max-width: 22rem;
   }
 }
 
@@ -1646,13 +1668,13 @@ header .navbar_toggler span.bar {
 .page_links .page_title {
   font-family: "Satoshi", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-size: 1.125rem;
-  background-color: #05b2fc;
+  background-color: rgba(0, 31, 63, 0.85);
   text-transform: none;
   margin: 0;
   padding: 0;
 }
 .page_links .page_title:hover {
-  background-color: #0041a9;
+  background-color: #001f3f;
 }
 .page_links .page_title a {
   color: #ffffff;

@@ -30,7 +30,7 @@
     </div>
 
     <div class="copyright">
-      <p>&copy; <?php echo date('Y') ?> <a href="<?php echo site_url('/'); ?>"><?php bloginfo(); ?></a> | All Rights Reserved</p>
+      <p>&copy; <?php echo date('Y') ?> <a href="<?php echo site_url('/'); ?>"><?php bloginfo(); ?></a> | All Rights Reserved. Developed by <a href="https://niranyousuf.me/" target="_blank">Niran Yousuf</a></p>
     </div>
   </div>
 </footer>

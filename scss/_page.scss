@@ -25,13 +25,13 @@
 	.page_title {
 		font-family: $font-main;
 		font-size: 1.125rem;
-		background-color: $color-ocean-blue;
+		background-color: rgba($color-cosmic-blue, 0.85);
 		text-transform: none;
 		margin: 0;
 		padding: 0;
 
 		&:hover {
-			background-color: $color-royal-blue;
+			background-color: $color-cosmic-blue;
 		}
 		a {
 			color: $color-white;

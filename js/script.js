@@ -42,7 +42,7 @@
 
     // Navigation toggle
     $('.navbar_toggler').on('click', function () {
-      const $primaryNav = $('.navbar_menu');
+      const $primaryNav = $('.navbar');
       const visibility = $primaryNav.attr('data-visible');
       if (visibility === 'false') {
         $primaryNav.attr('data-visible', true);

@@ -66,15 +66,18 @@
 * 04. Professor post type
 */
 .profile-img {
-	max-width: 22rem;
+	width: 100%;
 	float: left;
 	margin-bottom: 1.5rem;
 	@media (min-width: 575.98px) {
-		max-width: 22rem;
+		max-width: 14rem;
 		width: 100%;
 		float: left;
 		margin-right: 3rem;
 		margin-bottom: 1.5rem;
+	}
+	@media (min-width: 768.98px) {
+		max-width: 22rem;
 	}
 }
 .like-box {
