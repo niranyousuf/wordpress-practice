@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
 
-  font-size: 100%;
+  font-size: 1.125rem;
   line-height: 1.4;
   font-family: $font-main;
 
@@ -105,7 +105,7 @@ img {
   padding-bottom: 6.25rem;
 
   &:nth-of-type(odd) {
-    background-color: $color-peach-cream;
+    background-color: rgba($color-cosmic-blue, 0.01);
   }
 
   .btn_group {
@@ -224,7 +224,7 @@ a {
   transform: translateY(-50%);
   background-color: $color-peach-cream;
 
-  a,
+  > a,
   > span {
     display: inline-block;
     padding: 0.5rem 1rem;
@@ -236,9 +236,14 @@ a {
     padding-left: 2rem;
     background-color: rgba($color-cosmic-blue, 0.15);
     opacity: 0.7;
+    a {
+      &:hover {
+        color: $color-orange-ember;
+      }
+    }
   }
 
-  a {
+  > a {
     color: $color-white;
     position: relative;
     background-color: $color-cosmic-blue;
@@ -271,4 +276,10 @@ a {
       }
     }
   }
+}
+
+.sticky-top {
+  position: sticky;
+  top: 100px;
+  z-index: 9;
 }

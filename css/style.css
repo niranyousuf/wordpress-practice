@@ -93,9 +93,6 @@
 .icon-spin6:before {
   content: "\e839";
 } /* '' */
-.icon-twitter:before {
-  content: "\f099";
-} /* '' */
 .icon-facebook:before {
   content: "\f09a";
 } /* '' */
@@ -108,22 +105,16 @@
 .icon-angle-double-right:before {
   content: "\f101";
 } /* '' */
-.icon-unlink:before {
-  content: "\f127";
-} /* '' */
+.icon-folder-open-empty:before {
+  content: "\f115";
+} /* '' */
 .icon-thumbs-up-alt:before {
   content: "\f164";
 } /* '' */
 .icon-instagram:before {
   content: "\f16d";
 } /* '' */
-.icon-wordpress:before {
-  content: "\f19a";
-} /* '' */
-.icon-github-squared:before {
-  content: "\f300";
-} /* '' */
-.footer_menu, .footer_wrapper, .related .event-details, .related .profile-lists, .pagination, .news_wrapper .latest_news, .content-block .event-details, .events_wrapper .latest_events, .bradcumb, .news_wrapper .latest_news .news-date, .related .event-date, .content-block .event-date, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
+.footer_menu, .footer_wrapper, .related .event-details, .related .profile-lists, .sidebar-wrapper .sidebar ul li a, .posts-wrapper, .pagination, .news_wrapper .latest_news, .content-block .event-details, .events_wrapper .latest_events, .bradcumb, .news_wrapper .latest_news .news-date, .related .event-date, .content-block .event-date, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -204,7 +195,7 @@
   animation: drawBorder 600ms ease forwards;
 }
 
-.page_links .min_list, header .navbar_menu .main_menu {
+.page_links .min_list, .sidebar-wrapper .sidebar ul, header .navbar_menu .main_menu {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -383,7 +374,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 100%;
+  font-size: 1.125rem;
   line-height: 1.4;
   font-family: "Satoshi", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   display: flex;
@@ -480,7 +471,7 @@ img {
   padding-bottom: 6.25rem;
 }
 .section-padding:nth-of-type(odd) {
-  background-color: #fff5ee;
+  background-color: rgba(0, 31, 63, 0.01);
 }
 .section-padding .btn_group {
   text-align: center;
@@ -596,7 +587,7 @@ a.active, a:hover, a:focus {
   transform: translateY(-50%);
   background-color: #fff5ee;
 }
-.bradcumb a,
+.bradcumb > a,
 .bradcumb > span {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -608,12 +599,15 @@ a.active, a:hover, a:focus {
   background-color: rgba(0, 31, 63, 0.15);
   opacity: 0.7;
 }
-.bradcumb a {
+.bradcumb > span a:hover {
+  color: #ff4500;
+}
+.bradcumb > a {
   color: #ffffff;
   position: relative;
   background-color: #001f3f;
 }
-.bradcumb a::after {
+.bradcumb > a::after {
   transition: all ease-in-out 0.2s;
   content: "";
   position: absolute;
@@ -628,14 +622,20 @@ a.active, a:hover, a:focus {
   box-shadow: 0px 0px 0 0px #d9d9d9, 5px -5px 10px -4px #d9d9d9;
   transform: translateY(-50%) rotate(45deg);
 }
-.bradcumb a .icon {
+.bradcumb > a .icon {
   color: #ffffff;
 }
-.bradcumb a:hover {
+.bradcumb > a:hover {
   color: #ff4500;
 }
-.bradcumb a:hover .icon {
+.bradcumb > a:hover .icon {
   color: #ff4500;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 100px;
+  z-index: 9;
 }
 
 /* 02. Navigation var styles */
@@ -1533,15 +1533,21 @@ header .navbar_toggler span.bar {
   -webkit-line-clamp: 3;
 }
 
+/* ****************************************************
+* 04. Single post type
+**************************************************** */
 .post-wrapper {
   position: relative;
   padding: 4rem 0;
 }
+/* ****************************************************
+* 03. Pagination
+**************************************************** */
 .pagination {
   gap: 0.5rem;
   padding: 0.75rem 0;
 }
-.pagination a,
+.pagination > a,
 .pagination span {
   padding: 0.25rem;
   padding-bottom: 0;
@@ -1549,7 +1555,7 @@ header .navbar_toggler span.bar {
   font-weight: 500;
   color: #05b2fc;
 }
-.pagination a::after,
+.pagination > a::after,
 .pagination span::after {
   right: 0;
   width: 0;
@@ -1562,12 +1568,12 @@ header .navbar_toggler span.bar {
   height: 2px;
   background: #05b2fc;
 }
-.pagination a:hover, .pagination a[aria-current=page],
+.pagination > a:hover, .pagination > a[aria-current=page],
 .pagination span:hover,
 .pagination span[aria-current=page] {
   color: #ff4500;
 }
-.pagination a:hover::after, .pagination a[aria-current=page]::after,
+.pagination > a:hover::after, .pagination > a[aria-current=page]::after,
 .pagination span:hover::after,
 .pagination span[aria-current=page]::after {
   left: 0;
@@ -1575,6 +1581,9 @@ header .navbar_toggler span.bar {
   background-color: #ff4500;
 }
 
+/* ****************************************************
+* 04 .Page info section
+**************************************************** */
 .page_info {
   padding-top: 2rem;
   padding-bottom: 4rem;
@@ -1591,9 +1600,9 @@ header .navbar_toggler span.bar {
   color: #ff4500;
 }
 
-/*
+/* ****************************************************
 * 04. Professor post type
-*/
+**************************************************** */
 .profile-img {
   width: 100%;
   float: left;
@@ -1645,11 +1654,113 @@ header .navbar_toggler span.bar {
   font-weight: 600;
 }
 
+/* ****************************************************
+* 01. Blog page style
+**************************************************** */
+.posts-wrapper {
+  justify-content: space-between;
+  padding: 4rem 0;
+}
+.posts-wrapper .main-content {
+  max-width: 820px;
+  flex: 1;
+}
+
+.single__post h2 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+.single__post h2:hover a {
+  color: #ff4500;
+}
+.single__post + .single__post {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 31, 63, 0.05);
+}
+.single__post .metabox {
+  display: inline-flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  background-color: rgba(5, 178, 252, 0.09);
+  padding: 3px 10px;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
+}
+.single__post .metabox a {
+  font-weight: 600;
+}
+.single__post .metabox a:hover {
+  color: #ff4500;
+}
+.single__post .post__content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  line-height: 1.6;
+}
+.single__post .post__content > a {
+  margin-top: 0.25rem;
+  display: inline-block;
+  font-weight: 500;
+}
+.single__post .post__content > a:hover {
+  color: #ff4500;
+}
+
+.sidebar-wrapper {
+  width: 100%;
+}
+@media (min-width: 768.98px) {
+  .sidebar-wrapper {
+    max-width: 350px;
+    padding-left: 1.5rem;
+  }
+}
+.sidebar-wrapper .sidebar > h5 {
+  font-family: "Oswald", serif;
+  margin-bottom: 1rem;
+}
+.sidebar-wrapper .sidebar ul li + li {
+  margin-top: 0.25rem;
+}
+.sidebar-wrapper .sidebar ul li + li a {
+  border-top: 1px solid rgba(0, 31, 63, 0.05);
+}
+.sidebar-wrapper .sidebar ul li a {
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.125rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.sidebar-wrapper .sidebar ul li a:hover {
+  color: #05b2fc;
+}
+.sidebar-wrapper .sidebar ul li a:hover .icon {
+  color: #ff4500;
+}
+.sidebar-wrapper .sidebar ul li a .badge {
+  margin-left: auto;
+  font-size: 0.675rem;
+  padding: 0.125rem 0.5rem;
+  background-color: rgba(0, 31, 63, 0.05);
+  border-radius: 9px;
+}
+.sidebar-wrapper .sidebar + .sidebar {
+  margin-top: 2rem;
+}
+
 .page-wrapper {
   position: relative;
   padding: 4rem 0;
 }
 
+/* ****************************************************
+* 01. Sub page style
+**************************************************** */
 .page_links {
   position: relative;
   z-index: 1;
@@ -1698,6 +1809,9 @@ header .navbar_toggler span.bar {
   background-color: rgba(0, 65, 169, 0.2);
 }
 
+/* ****************************************************
+* 01. Programs page style
+**************************************************** */
 .programs .program h2 {
   font-size: clamp(1.75rem, 3vw, 2.5rem);
   margin-bottom: 1rem;

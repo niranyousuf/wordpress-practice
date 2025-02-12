@@ -4,49 +4,58 @@ get_header();
 
 
 pageBanner(array(
-    'title' => 'Welcome to our blog',
-    'subtitle' => 'Keep up with our latest news'
+  'title' => 'Welcome to our blog',
+  'subtitle' => 'Keep up with our latest news'
 ));
 
 
 ?>
 
-    <section class="post-page">
-        <div class="container">
-            <div class="row">
+<section class="posts-page">
+  <div class="container">
+    <div class="posts-wrapper">
+      <div class="main-content">
+        <?php get_template_part('template-parts/content', 'post'); ?>
+      </div>
 
-                <?php while (have_posts()) : the_post(); ?>
-                    <div class="col-md-12">
-                        <div class="single__post max_container">
-                            <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-                            <div class="metabox">
-                                <p>Posted By: 
-                                <?php the_author_posts_link() ?>    
-                                on 
-                                <?php the_time('j. M, y') ?>
-                                in 
-                                <?php echo get_the_category_list( ", " ) ?>
-                                </p>
-                                <span class="post-views"><?php echo get_post_views(get_the_ID()); ?></span>
+      <div class="sidebar-wrapper">
+        <div class="sticky-top">
+          <!-- Categories Widget -->
+          <div class="sidebar">
+            <h5 class="sidebar-header">Categories</h5>
 
-                            </div>
-                            <div class="post__content">
-                                <?php the_excerpt() ?>
-                                <p><a class="btn big-btn" href="<?php the_permalink(); ?>">Continue reading &raquo; </a></p>
-                            </div>
+            <ul class="sidebar-category">
+              <?php
+              // Get the categories with post count
+              $categories = get_categories(array(
+                'orderby' => 'name',
+                'order' => 'ASC',
+                'hide_empty' => false,
+              ));
 
-                        </div>
-                    </div>
-                <?php endwhile; ?>
+              // Loop through each category
+              foreach ($categories as $category) :
+                // Get the category link and post count
+                $category_link = get_category_link($category->term_id);
+                $post_count = $category->count;
 
-                <div class="col-md-12">
-                    <div class="pagination max_container">
-                        <?php echo paginate_links(); ?>
-                    </div>
-                </div>
-            </div>
+                if ($category->slug != 'uncategorized'): ?>
+                  <li>
+                    <a href="<?php echo esc_url($category_link); ?>">
+                      <span class="icon icon-folder-open-empty"></span>
+                      <?php echo $category->name; ?> <span class="badge"><?php echo $post_count;  ?></span></a>
+                  </li>
+
+              <?php endif;
+              endforeach; ?>
+            </ul>
+
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
 <?php
 get_footer();

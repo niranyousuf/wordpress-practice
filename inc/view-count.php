@@ -11,7 +11,7 @@ function get_post_views($post_id) {
         return '0 Views';
     }
 
-    return $count . ' Views';
+    return '<strong>' . $count . '</strong> views';
 }
 
 // Function to increment the post views (update count)

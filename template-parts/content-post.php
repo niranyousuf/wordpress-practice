@@ -1,23 +1,18 @@
-<div class="col-md-12">
-    <div class="single__post max_container">
-        <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-        <div class="metabox">
-            <p>Posted By: 
-            <?php the_author_posts_link() ?>    
-            on 
-            <?php the_time('j. M, y') ?>
-            in 
-            <?php echo get_the_category_list( ", " ) ?>
-            </p>
-        </div>
-        <div class="post__content">
-            <p><?php
-                $content = get_the_content();
-                $trimmed_content = wp_trim_words($content, 36, '...');
-                echo $trimmed_content; 
-            ?></p>
-            <p><a class="btn big-btn" href="<?php the_permalink(); ?>">Continue reading &raquo; </a></p>
-        </div>
-
-    </div>
+<?php while (have_posts()) : the_post(); ?>
+	<div class="single__post">
+		<h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+		<div class="metabox">
+			<span>Posted By: <?php the_author_posts_link() ?></span>
+			<span>on <?php the_time('j. M, y') ?></span>
+			<span>in <?php echo get_the_category_list(", ") ?></span>
+			<span class="post-views"><?php echo get_post_views(get_the_ID()); ?></span>
+		</div>
+		<div class="post__content">
+			<?php the_excerpt() ?>
+			<a class="" href="<?php the_permalink(); ?>">Continue reading </a>
+		</div>
+	</div>
+<?php endwhile; ?>
+<div class="pagination ">
+	<?php echo paginate_links(); ?>
 </div>

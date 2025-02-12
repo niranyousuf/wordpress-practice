@@ -1,3 +1,123 @@
+/* ****************************************************
+* 01. Blog page style
+**************************************************** */
+.posts {
+	&-wrapper {
+		@extend %d-flex;
+		justify-content: space-between;
+		padding: 4rem 0;
+
+		.main-content {
+			max-width: 820px;
+			flex: 1;
+		}
+	}
+}
+.single__post {
+	h2 {
+		font-size: clamp(1.75rem, 3vw, 2.5rem);
+		margin-bottom: 0.5rem;
+		&:hover {
+			a {
+				color: $color-orange-ember;
+			}
+		}
+	}
+
+	+ .single__post {
+		margin-top: 2.5rem;
+		padding-top: 2rem;
+		border-top: 1px solid rgba($color-cosmic-blue, 0.05);
+	}
+
+	.metabox {
+		display: inline-flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		background-color: rgba($color-ocean-blue, 0.09);
+		padding: 3px 10px;
+		margin-bottom: 0.5rem;
+		font-size: 14px;
+		a {
+			font-weight: 600;
+			&:hover {
+				color: $color-orange-ember;
+			}
+		}
+	}
+
+	.post__content {
+		p {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			line-clamp: 3;
+			-webkit-line-clamp: 3;
+			line-height: 1.6;
+		}
+		> a {
+			margin-top: 0.25rem;
+			display: inline-block;
+			font-weight: 500;
+			&:hover {
+				color: $color-orange-ember;
+			}
+		}
+	}
+}
+.sidebar-wrapper {
+	width: 100%;
+	@media (min-width: 768.98px) {
+		max-width: 350px;
+		padding-left: 1.5rem;
+	}
+
+	.sidebar {
+		> h5 {
+			font-family: $font-title;
+			margin-bottom: 1rem;
+		}
+
+		ul {
+			@extend %naked-list;
+			li {
+				+ li {
+					margin-top: 0.25rem;
+					a {
+						border-top: 1px solid rgba($color-cosmic-blue, 0.05);
+					}
+				}
+
+				a {
+					@extend %d-flex;
+					align-items: center;
+					gap: 0.75rem;
+					padding: 0.125rem 0;
+					font-size: 1rem;
+					font-weight: 500;
+
+					&:hover {
+						color: $color-ocean-blue;
+						.icon {
+							color: $color-orange-ember;
+						}
+					}
+
+					.badge {
+						margin-left: auto;
+						font-size: 0.675rem;
+						padding: 0.125rem 0.5rem;
+						background-color: rgba($color-cosmic-blue, 0.05);
+						border-radius: 9px;
+					}
+				}
+			}
+		}
+		+ .sidebar {
+			margin-top: 2rem;
+		}
+	}
+}
 .page {
 	&-content,
 	.banner-content {
@@ -9,7 +129,9 @@
 		padding: 4rem 0;
 	}
 }
-
+/* ****************************************************
+* 01. Sub page style
+**************************************************** */
 .page_links {
 	position: relative;
 	z-index: 1;
@@ -64,7 +186,9 @@
 	}
 }
 
-// Programm page
+/* ****************************************************
+* 01. Programs page style
+**************************************************** */
 .programs {
 	.program {
 		h2 {
