@@ -4,7 +4,7 @@ function ct_post_type()
 {
   // Campus post type
   register_post_type('campus', array(
-    'capability_type' => 'capus',
+    'capability_type' => 'campus',
     'map_meta_cap' => true,
     'rewrite' => array('slug' => 'campuses'),
     'supports' => array('title', 'editor', 'excerpt'),

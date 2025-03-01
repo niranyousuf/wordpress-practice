@@ -119,7 +119,7 @@
             <h2>General Information</h2>
             ${results.generalInfo.length ? `<ul class="search-result__list">` : `<p>No match for your search!</p>`}
               ${results.generalInfo.map((item) => {
-              return `<li><a href="${item.permalink}">${item.title}</a> ${item.postType == 'post' ? `<span>by ${item.authorName}</span>` : ''}</li>
+          return `<li><a href="${item.permalink}">${item.title}</a> ${item.postType == 'post' ? `<span>by ${item.authorName}</span>` : ''}</li>
               `}).join('')}
             ${results.generalInfo.length ? `</ul>` : ''}
           </div>
@@ -129,14 +129,14 @@
             <h2>Programs</h2>
               ${results.programs.length ? `<ul class="search-result__list">` : `<p>No Programs match! <a href="${ctData.root_url}/programs}">View all programs</a></p>`}
                 ${results.programs.map((item) => {
-                return `<li><a href="${item.permalink}">${item.title}</a></li>`
-              }).join('')}
+            return `<li><a href="${item.permalink}">${item.title}</a></li>`
+          }).join('')}
             ${results.programs.length ? `</ul>` : ''}
 
             <h2>Professors</h2>
             ${results.professors.length ? `<ul class="profile-lists">` : `<p>No Professors match!</p>`}
               ${results.professors.map((item) => {
-                return `<li class="user-profile">
+            return `<li class="user-profile">
                   <a href="${item.permalink}" class="profile-card">
                     <img class="author-image" src="${item.image}" alt="${item.title}">
                     <p>${item.title}</p>
@@ -151,14 +151,14 @@
             <h2>Campuses</h2>
               ${results.campuses.length ? `<ul class="search-result__list">` : `<p>No match found! <a href="${ctData.root_url}/campuses}">View all campuses</a></p>`}
                   ${results.campuses.map((item) => {
-                  return `<li><a href="${item.permalink}">${item.title}</a></li>`
-                }).join('')}
+              return `<li><a href="${item.permalink}">${item.title}</a></li>`
+            }).join('')}
               ${results.campuses.length ? `</ul>` : ''}
 
             <h2>Events</h2>
               ${results.events.length ? `<ul class="search-result__list">` : `<p>No Event available!</p>`}
               ${results.events.map((item) => {
-                return `<li class="event-details">
+              return `<li class="event-details">
                   <a class="event-date" href="${item.permalink}">
                     <span class="event-month">${item.month}</span>
                     <span class="event-day">${item.day}</span>
@@ -436,4 +436,5 @@
   }
 
   var post_like = new Like();
+
 })(jQuery);

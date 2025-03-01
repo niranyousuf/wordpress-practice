@@ -75,22 +75,27 @@
 }
 .new-note {
 	transition: all 200ms ease;
-	margin-bottom: 42px;
-	padding: 32px;
-	padding-top: 42px;
+	margin: 42px 0;
+	padding: 1.875rem;
+	padding-top: 2rem;
 	background-color: rgba( $color-black, 0.05);
-	border-radius: 8px;
+	border-radius: 3px;
+	box-sizing: border-box;
+
+	h2 {
+		font-size: clamp(1.5rem, 3vw, 2rem);
+		line-height: 1.1;
+		margin-bottom: 0.5rem;
+	}
 
 	.new-note-title {
 		display: inline-block;
-		
 		width: 100%;
 		color:  $color-cosmic-blue;
-		font-size: clamp(1.2rem, 2vw, 1.75rem);
-		font-weight: 500;
 		padding: 10px 20px;
 		border: 1px solid rgba( $color-black, 0.05);
 		border-bottom: 0;
+		font-size: 1.25rem;
 
 		&:focus {
 			box-shadow: none;
@@ -102,7 +107,7 @@
 	.new-note-content {
 		width: 100%;
 		color:  $color-black;
-		font-size: 18px;
+		font-size: 1.125rem;
 		resize: none;
 		display: block;
 		line-height: 1.65;
@@ -126,6 +131,7 @@
 		transition: all 300ms ease;
 		border: 1px solid  $color-cosmic-blue;
 		background-color:  $color-cosmic-blue;
+		cursor: pointer;
 
 		.icon {
 			color:  $color-white;

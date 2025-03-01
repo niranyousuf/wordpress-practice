@@ -21,7 +21,7 @@
           <h3>Social media</h3>
           <ul class="links">
             <li><a href="#"><span class="icon icon-facebook"></span> Facebook</a></li>
-            <li><a href="#"><span class="icon icon-twitter"></span> Twitter</a></li>
+            <li><a href="#"><span class="icon icon-x"></span> Twitter</a></li>
             <li><a href="#"><span class="icon icon-linkedin"></span> Linkedin</a></li>
             <li><a href="#"><span class="icon icon-instagram"></span> Instagram</a></li>
           </ul>
