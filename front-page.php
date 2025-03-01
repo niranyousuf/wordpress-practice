@@ -208,8 +208,6 @@ get_header();
 </section>
 
 
-
-
 <div class="testimonials" style="display: none;">
   <div class="testimonial owl-carousel">
 

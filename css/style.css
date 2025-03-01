@@ -114,7 +114,7 @@
 .icon-instagram:before {
   content: "\f16d";
 } /* '' */
-.footer_menu, .footer_wrapper, .related .event-details, .related .profile-lists, .sidebar-wrapper .sidebar ul li a, .posts-wrapper, .pagination, .news_wrapper .latest_news, .content-block .event-details, .events_wrapper .latest_events, .bradcumb, .news_wrapper .latest_news .news-date, .related .event-date, .content-block .event-date, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
+.footer_menu, .footer_wrapper, .profile-lists, .related .event-details, .sidebar-wrapper .sidebar ul li a, .posts-wrapper, .pagination, .news_wrapper .latest_news, .content-block .event-details, .events_wrapper .latest_events, #search__results .result_block .event-details, #search__results, .bradcumb, .news_wrapper .latest_news .news-date, .related .event-date, .content-block .event-date, #search__results .result_block .event-date, .hero-banner, header .navbar_wrapper .user_nav, header .navbar_menu .main_menu, header .navbar_menu, header .navbar_wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -125,7 +125,7 @@
   justify-content: center;
 }
 
-.related .event-date, .content-block .event-date {
+.related .event-date, .content-block .event-date, #search__results .result_block .event-date {
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -385,6 +385,9 @@ body {
   box-sizing: border-box;
   background-color: #ffffff;
   overscroll-behavior: none;
+}
+body.no-scroll {
+  overflow: hidden;
 }
 @media (min-width: 768px) {
   body.admin-bar header {
@@ -1081,9 +1084,67 @@ header .navbar_toggler span.bar {
   padding-top: 48px;
   padding-bottom: 48px;
 }
+#search__results .result_block {
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  #search__results .result_block {
+    max-width: calc(33.33333333% - 12px);
+  }
+}
+#search__results .result_block .event-details {
+  width: 100%;
+  transition: all ease 300ms;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 31, 63, 0.02);
+  background-color: rgba(0, 31, 63, 0.02);
+  margin-top: 2.25rem;
+  padding: 0;
+}
+#search__results .result_block .event-details:hover .event-title {
+  color: #ff4500;
+}
+#search__results .result_block .event-date {
+  background-color: #fff5ee;
+  gap: 0.25rem;
+  width: 5.5rem;
+}
+#search__results .result_block .event-date .event-month {
+  font-size: 1.375rem;
+  font-family: "Poppins", serif;
+}
+#search__results .result_block .event-date .event-day {
+  font-size: 2.25rem;
+  font-family: "Oswald", serif;
+  line-height: 1.1;
+}
+#search__results .result_block .event-content {
+  flex: 1;
+  padding: 0.75rem;
+  padding-top: 0.65rem;
+  padding-left: 0;
+}
+#search__results .result_block .event-content .event-title {
+  font-family: "Oswald", serif;
+  letter-spacing: 0.05rem;
+  font-size: 1.25rem;
+}
+#search__results .result_block .event-content p {
+  padding-bottom: 0;
+  padding-top: 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+}
 #search__results h2 {
   padding-bottom: 0px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(0, 31, 63, 0.1);
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
 }
 #search__results .icon-spin6 {
   display: inline-block;
@@ -1105,54 +1166,21 @@ header .navbar_toggler span.bar {
 }
 #search__results .search-result__list li {
   padding: 10px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 31, 63, 0.05);
   font-size: clamp(1.25rem, 2vw, 1.5rem);
   font-weight: 300;
+  font-family: "Poppins", serif;
 }
 #search__results .search-result__list li a {
-  text-decoration: underline;
   font-size: inherit;
   transition: all 200ms ease;
   font-weight: 400;
 }
 #search__results .search-result__list li a:hover {
-  text-decoration: none;
+  color: #ff4500;
 }
-#search__results .search-result__list .latest-details {
-  position: relative;
-  max-width: 550px;
-  margin: 0 auto;
-  padding-left: 130px;
-  margin-bottom: 32px;
-}
-#search__results .search-result__list .latest-details .latest-date {
-  left: 0;
-  width: 94px;
-  aspect-ratio: 10/9;
-  font-size: 28px;
-  font-weight: 500;
-  padding: 12px 22px;
-  border-radius: 4px;
-  position: absolute;
-  background-color: rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-#search__results .search-result__list .latest-details .latest-date > span {
-  line-height: 1;
-}
-#search__results .search-result__list .latest-details .latest-date > span.latest-month {
-  font-weight: 300;
-  margin-bottom: 5px;
-}
-#search__results .search-result__list .latest-details .latest-date > span.latest-day {
-  font-weight: 500;
-}
-#search__results .search-result__list .latest-details .latest-content h5 > a {
-  font-weight: 600;
+#search__results .search-result__list li > span {
+  font-size: 1rem;
 }
 
 /* 03. Hero section style */
@@ -1844,42 +1872,6 @@ header .navbar_toggler span.bar {
 .related-program p {
   margin-top: 1rem;
 }
-.related .profile-lists {
-  margin-top: 1.375rem;
-}
-.related .user-profile {
-  border-radius: 4px;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
-  width: 280px;
-  aspect-ratio: 4/3;
-  transition: all ease 300ms;
-}
-.related .user-profile:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-.related .user-profile .profile-card .author-image {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.related .user-profile .profile-card p {
-  position: absolute;
-  background-color: rgba(0, 31, 63, 0.7);
-  padding: 5px 15px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: #ffffff;
-  font-weight: 600;
-}
-.related .user-profile .self-info {
-  color: #ffffff;
-  padding: 24px;
-}
 .related .event-details {
   width: 100%;
   transition: all ease 300ms;
@@ -1931,6 +1923,44 @@ header .navbar_toggler span.bar {
   -webkit-box-orient: vertical;
   overflow: hidden;
   -webkit-line-clamp: 2;
+}
+
+.profile-lists {
+  margin-top: 1.375rem;
+}
+
+.user-profile {
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04);
+  width: 280px;
+  aspect-ratio: 4/3;
+  transition: all ease 300ms;
+}
+.user-profile:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.user-profile .profile-card .author-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.user-profile .profile-card p {
+  position: absolute;
+  background-color: rgba(0, 31, 63, 0.7);
+  padding: 5px 15px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 600;
+}
+.user-profile .self-info {
+  color: #ffffff;
+  padding: 24px;
 }
 
 /* 10. Footer styles */

@@ -102,10 +102,83 @@
 #search__results {
   padding-top: 48px;
   padding-bottom: 48px;
+  @extend %d-flex;
+
+  .result_block {
+    width: 100%;
+    @media (min-width: 1024px) {
+      max-width: calc(33.33333333% - 12px);
+    }
+
+    .event {
+      &-details {
+        width: 100%;
+        transition: all ease 300ms;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0.5rem;
+        border: 1px solid rgba($color-cosmic-blue, 0.02);
+        background-color: rgba($color-cosmic-blue, 0.02);
+        margin-top: 2.25rem;
+        padding: 0;
+
+        @extend %d-flex;
+
+        &:hover {
+          .event-title {
+            color: $color-orange-ember;
+          }
+        }
+      }
+
+      &-date {
+        background-color: $color-peach-cream;
+        @extend %flex-col-center;
+        gap: 0.25rem;
+        width: 5.5rem;
+
+        .event-month {
+          font-size: 1.375rem;
+          font-family: $font-alt;
+        }
+
+        .event-day {
+          font-size: 2.25rem;
+          font-family: $font-title;
+          line-height: 1.1;
+        }
+      }
+
+      &-content {
+        flex: 1;
+        padding: 0.75rem;
+        padding-top: 0.65rem;
+        padding-left: 0;
+
+        .event-title {
+          font-family: $font-title;
+          letter-spacing: 0.05rem;
+          font-size: 1.25rem;
+        }
+        p {
+          padding-bottom: 0;
+          padding-top: 0.75rem;
+          margin-bottom: 0;
+          font-size: 1rem;
+
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          -webkit-line-clamp: 2;
+        }
+      }
+    }
+  }
 
   h2 {
     padding-bottom: 0px;
-    border-bottom: 1px solid rgba($color-white, 0.1);
+    border-bottom: 1px solid rgba($color-cosmic-blue, 0.1);
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
   }
 
   .icon-spin6 {
@@ -130,64 +203,22 @@
     margin-bottom: 30px;
     li {
       padding: 10px 0;
-      border-bottom: 1px solid rgba($color-white, 0.05);
+      border-bottom: 1px solid rgba($color-cosmic-blue, 0.05);
       font-size: clamp(1.25rem, 2vw, 1.5rem);
       font-weight: 300;
+      font-family: $font-alt;
       a {
-        text-decoration: underline;
         font-size: inherit;
         transition: all 200ms ease;
         font-weight: 400;
         &:hover {
-          text-decoration: none;
+          color: $color-orange-ember;
         }
+      }
+      > span {
+        font-size: 1rem;
       }
     }
 
-    .latest-details {
-      position: relative;
-      max-width: 550px;
-      margin: 0 auto;
-      padding-left: 130px;
-      margin-bottom: 32px;
-
-      .latest-date {
-        left: 0;
-        width: 94px;
-        aspect-ratio: 10/9;
-        font-size: 28px;
-        font-weight: 500;
-        padding: 12px 22px;
-        border-radius: 4px;
-        position: absolute;
-        background-color: rgba($color-white, 0.2);
-        text-decoration: none;
-
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-
-        > span {
-          line-height: 1;
-
-          &.latest-month {
-            font-weight: 300;
-            margin-bottom: 5px;
-          }
-          &.latest-day {
-            font-weight: 500;
-          }
-        }
-      }
-
-      .latest-content {
-        h5 {
-          > a {
-            font-weight: 600;
-          }
-        }
-      }
-    }
   }
 }

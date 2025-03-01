@@ -16,6 +16,10 @@ body {
   background-color: $color-white;
   overscroll-behavior: none; // stop scroll on mac
 
+  &.no-scroll {
+    overflow: hidden;
+  }
+
   @media (min-width: 768px) {
     &.admin-bar {
       header {
