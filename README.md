@@ -1,7 +1,6 @@
 # Practice-theme (Code monstar) 
 
 ### [See Demo](https://project.niranyousuf.me/)
-### [Video Featurs](https://www.loom.com/share/2ede1c1e7b6b499a8bd90294be845e31)
 
 # Features list
 - Custom Post
